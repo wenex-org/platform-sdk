@@ -1,0 +1,8 @@
+import { SubInterface } from '@app/common/interfaces/base';
+
+export interface Time extends SubInterface {
+  cron_exp: string;
+  duration: number;
+}
+
+export type TimeInterface = Time;
