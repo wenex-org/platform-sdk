@@ -1,0 +1,1266 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type TotalSerializer {
+  total: Int!
+}
+
+type TimeSerializer {
+  props: JSON
+  uid: String!
+  id: String
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  cron_exp: String!
+  duration: Float!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type GrantSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  subject: String!
+  action: Action!
+  object: Resource!
+  field: [String!]
+  filter: [String!]
+  location: [String!]
+  time: [TimeSerializer!]
+}
+
+enum Action {
+  Any
+  Create
+  Read
+  Update
+  Delete
+  Restore
+  Destroy
+  CreateOwn
+  ReadOwn
+  UpdateOwn
+  DeleteOwn
+  RestoreOwn
+  DestroyOwn
+  CreateShare
+  ReadShare
+  UpdateShare
+  DeleteShare
+  RestoreShare
+  DestroyShare
+  CreateGroup
+  ReadGroup
+  UpdateGroup
+  DeleteGroup
+  RestoreGroup
+  DestroyGroup
+  CreateClient
+  ReadClient
+  UpdateClient
+  DeleteClient
+  RestoreClient
+  DestroyClient
+}
+
+enum Resource {
+  All
+  Configs
+  Auth
+  AuthGrants
+  AuthAuthorization
+  AuthAuthentication
+  Domain
+  DomainApps
+  DomainClients
+  Identity
+  IdentityUsers
+  IdentityProfiles
+  IdentitySessions
+  General
+  GeneralArtifacts
+}
+
+type GrantsSerializer {
+  data: [GrantSerializer!]!
+}
+
+type PolicyTimeSerializer {
+  cron_exp: String!
+  duration: Float!
+}
+
+type PolicySerializer {
+  time: [PolicyTimeSerializer!]
+  subject: String!
+  action: Action!
+  object: Resource!
+  field: [String!]
+  filter: [String!]
+  location: [String!]
+}
+
+type ChangeLogSerializer {
+  props: JSON
+  uid: String!
+  id: String
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  code: String!
+  changes: [String!]
+  deprecated_at: Date
+}
+
+type AppSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  cid: String!
+  type: AppType!
+  name: String!
+  status: Status!
+  scopes: [Scope!]!
+  grant_types: [GrantType!]!
+  access_token_ttl: Float!
+  refresh_token_ttl: Float!
+  url: String
+  logo: String
+  site: String
+  slogan: String
+  redirect_uri: String
+  change_logs: [ChangeLogSerializer!]
+}
+
+enum AppType {
+  Web
+  Mobile
+  Desktop
+  Application
+}
+
+enum Status {
+  Active
+  Inactive
+}
+
+enum Scope {
+  Whole
+  Read
+  Write
+  Manage
+  ManageAuth
+  ReadAuthGrants
+  WriteAuthGrants
+  ManageAuthGrants
+  ReadConfigs
+  WriteConfigs
+  ManageConfigs
+  ReadIdentity
+  WriteIdentity
+  ManageIdentity
+  ReadIdentityUsers
+  WriteIdentityUsers
+  ManageIdentityUsers
+  ReadIdentityProfiles
+  WriteIdentityProfiles
+  ManageIdentityProfiles
+  ReadIdentitySessions
+  WriteIdentitySessions
+  ManageIdentitySessions
+  ReadDomain
+  WriteDomain
+  ManageDomain
+  ReadDomainApps
+  WriteDomainApps
+  ManageDomainApps
+  ReadDomainClients
+  WriteDomainClients
+  ManageDomainClients
+  ReadGeneral
+  WriteGeneral
+  ManageGeneral
+  ReadGeneralArtifacts
+  WriteGeneralArtifacts
+  ManageGeneralArtifacts
+}
+
+enum GrantType {
+  OTP
+  Password
+  RefreshToken
+  ClientCredential
+  AuthorizationCode
+}
+
+type AppsSerializer {
+  data: [AppSerializer!]!
+}
+
+type OtpServiceSerializer {
+  props: JSON
+  uid: String!
+  id: String
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  config: JSON!
+  type: OtpType!
+  provider: OtpProvider!
+}
+
+enum OtpType {
+  SMS
+  Call
+  Email
+}
+
+enum OtpProvider {
+  Wenex
+  Unknown
+}
+
+type DomainSerializer {
+  props: JSON
+  uid: String!
+  id: String
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  status: Status!
+  address: String!
+  roles: [String!]!
+}
+
+type ClientSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  domains: [DomainSerializer!]!
+  otp_services: [OtpServiceSerializer!]!
+  name: String!
+  plan: Plan!
+  url: String
+  logo: String
+  site: String
+  slogan: String
+  state: State!
+  status: Status!
+  api_key: String!
+  client_id: String!
+  client_secret: String!
+  access_token_ttl: Float!
+  refresh_token_ttl: Float!
+  expiration_date: Date!
+  scopes: [Scope!]!
+  redirect_uri: String
+  grant_types: [GrantType!]!
+}
+
+enum Plan {
+  Aluminum
+  Gold
+  Platinum
+}
+
+enum State {
+  Pending
+  Approved
+  Rejected
+  Verified
+  Unknown
+}
+
+type ClientsSerializer {
+  data: [ClientSerializer!]!
+}
+
+type ConfigSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  value: JSON
+  key: String!
+  type: ValueType!
+}
+
+enum ValueType {
+  Null
+  Array
+  Object
+  String
+  Number
+  Boolean
+}
+
+type ConfigsSerializer {
+  data: [ConfigSerializer!]!
+}
+
+type UserSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  status: Status!
+  phone: String
+  email: String
+  username: String
+  subjects: [String!]
+  verified_at: Date
+  verified_by: String
+  verified_in: String
+}
+
+type UsersSerializer {
+  data: [UserSerializer!]!
+}
+
+type SessionSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  agent: String!
+}
+
+type SessionsSerializer {
+  data: [SessionSerializer!]!
+}
+
+type PlaceSerializer {
+  props: JSON
+  uid: String!
+  id: String
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  type: PlaceType!
+  country: String!
+  name: String
+  address: String
+  postal_code: String
+  location: String
+}
+
+enum PlaceType {
+  Home
+  Work
+  Favor
+}
+
+type ProfileSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  state: State!
+  gender: Gender!
+  person_type: PersonType!
+  cover: String
+  avatar: String
+  nickname: String
+  last_name: String
+  first_name: String
+  middle_name: String
+  nationality: String
+  national_code: String
+  places: [PlaceSerializer!]
+  birth_date: Date
+}
+
+enum Gender {
+  Male
+  Female
+  Unknown
+}
+
+enum PersonType {
+  Real
+  Legal
+}
+
+type ProfilesSerializer {
+  data: [ProfileSerializer!]!
+}
+
+type ArtifactSerializer {
+  id: ID
+  props: JSON
+  owner: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  created_at: Date
+  created_by: String
+  created_in: String
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  value: JSON
+  key: String!
+  type: ValueType!
+}
+
+type ArtifactsSerializer {
+  data: [ArtifactSerializer!]!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type Query {
+  countGrant(filter: QueryFilterDto!): TotalSerializer!
+  findGrants(filter: FilterDto!): GrantsSerializer!
+  findGrant(id: String!): GrantSerializer!
+  countConfig(filter: QueryFilterDto!): TotalSerializer!
+  findConfigs(filter: FilterDto!): ConfigsSerializer!
+  findConfig(id: String!): ConfigSerializer!
+  countApp(filter: QueryFilterDto!): TotalSerializer!
+  findApps(filter: FilterDto!): AppsSerializer!
+  findApp(id: String!): AppSerializer!
+  countClient(filter: QueryFilterDto!): TotalSerializer!
+  findClients(filter: FilterDto!): ClientsSerializer!
+  findClient(id: String!): ClientSerializer!
+  countUser(filter: QueryFilterDto!): TotalSerializer!
+  findUsers(filter: FilterDto!): UsersSerializer!
+  findUser(id: String!): UserSerializer!
+  countProfile(filter: QueryFilterDto!): TotalSerializer!
+  findProfiles(filter: FilterDto!): ProfilesSerializer!
+  findProfile(id: String!): ProfileSerializer!
+  countSession(filter: QueryFilterDto!): TotalSerializer!
+  findSessions(filter: FilterDto!): SessionsSerializer!
+  findSession(id: String!): SessionSerializer!
+  countArtifact(filter: QueryFilterDto!): TotalSerializer!
+  findArtifacts(filter: FilterDto!): ArtifactsSerializer!
+  findArtifact(id: String!): ArtifactSerializer!
+}
+
+input QueryFilterDto {
+  query: JSON!
+}
+
+input FilterDto {
+  query: JSON!
+  projection: JSON
+  pagination: JSON
+}
+
+type Mutation {
+  createGrant(data: CreateGrantDto!): GrantSerializer!
+  deleteGrant(id: String!): GrantSerializer!
+  restoreGrant(id: String!): GrantSerializer!
+  destroyGrant(id: String!): GrantSerializer!
+  updateGrant(id: String!, data: UpdateGrantDto!): GrantSerializer!
+  updateGrants(data: UpdateGrantDto!, filter: QueryFilterDto!): TotalSerializer!
+  createConfig(data: CreateConfigDto!): ConfigSerializer!
+  deleteConfig(id: String!): ConfigSerializer!
+  restoreConfig(id: String!): ConfigSerializer!
+  destroyConfig(id: String!): ConfigSerializer!
+  updateConfig(id: String!, data: UpdateConfigDto!): ConfigSerializer!
+  updateConfigs(data: UpdateConfigDto!, filter: QueryFilterDto!): TotalSerializer!
+  createApp(data: CreateAppDto!): AppSerializer!
+  deleteApp(id: String!): AppSerializer!
+  restoreApp(id: String!): AppSerializer!
+  destroyApp(id: String!): AppSerializer!
+  updateApp(id: String!, data: UpdateAppDto!): AppSerializer!
+  updateApps(data: UpdateAppDto!, filter: QueryFilterDto!): TotalSerializer!
+  createClient(data: CreateClientDto!): ClientSerializer!
+  deleteClient(id: String!): ClientSerializer!
+  restoreClient(id: String!): ClientSerializer!
+  destroyClient(id: String!): ClientSerializer!
+  updateClient(id: String!, data: UpdateClientDto!): ClientSerializer!
+  updateClients(data: UpdateClientDto!, filter: QueryFilterDto!): TotalSerializer!
+  createUser(data: CreateUserDto!): UserSerializer!
+  deleteUser(id: String!): UserSerializer!
+  restoreUser(id: String!): UserSerializer!
+  destroyUser(id: String!): UserSerializer!
+  updateUser(id: String!, data: UpdateUserDto!): UserSerializer!
+  updateUsers(data: UpdateUserDto!, filter: QueryFilterDto!): TotalSerializer!
+  createProfile(data: CreateProfileDto!): ProfileSerializer!
+  deleteProfile(id: String!): ProfileSerializer!
+  restoreProfile(id: String!): ProfileSerializer!
+  destroyProfile(id: String!): ProfileSerializer!
+  updateProfile(id: String!, data: UpdateProfileDto!): ProfileSerializer!
+  updateProfiles(data: UpdateProfileDto!, filter: QueryFilterDto!): TotalSerializer!
+  createSession(data: CreateSessionDto!): SessionSerializer!
+  deleteSession(id: String!): SessionSerializer!
+  restoreSession(id: String!): SessionSerializer!
+  destroySession(id: String!): SessionSerializer!
+  updateSession(id: String!, data: UpdateSessionDto!): SessionSerializer!
+  updateSessions(data: UpdateSessionDto!, filter: QueryFilterDto!): TotalSerializer!
+  createArtifact(data: CreateArtifactDto!): ArtifactSerializer!
+  deleteArtifact(id: String!): ArtifactSerializer!
+  restoreArtifact(id: String!): ArtifactSerializer!
+  destroyArtifact(id: String!): ArtifactSerializer!
+  updateArtifact(id: String!, data: UpdateArtifactDto!): ArtifactSerializer!
+  updateArtifacts(data: UpdateArtifactDto!, filter: QueryFilterDto!): TotalSerializer!
+}
+
+input CreateGrantDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  subject: String!
+  action: Action!
+  object: Resource!
+  field: [String!]
+  filter: [String!]
+  location: [String!]
+  time: [CreateTimeDto!]
+}
+
+input CreateTimeDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  cron_exp: String!
+  duration: Float!
+}
+
+input UpdateGrantDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  subject: String!
+  action: Action!
+  object: Resource!
+  field: [String!]
+  filter: [String!]
+  location: [String!]
+  time: [UpdateTimeDto!]
+}
+
+input UpdateTimeDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  cron_exp: String!
+  duration: Float!
+}
+
+input CreateConfigDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  value: JSON
+  key: String!
+  type: ValueType!
+}
+
+input UpdateConfigDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  value: JSON
+  key: String!
+  type: ValueType!
+}
+
+input CreateAppDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  cid: String!
+  type: AppType!
+  name: String!
+  status: Status!
+  scopes: [Scope!]!
+  grant_types: [GrantType!]!
+  access_token_ttl: Float!
+  refresh_token_ttl: Float!
+  url: String
+  logo: String
+  site: String
+  slogan: String
+  redirect_uri: String
+  change_logs: [CreateChangeLogDto!]
+}
+
+input CreateChangeLogDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  code: String!
+  changes: [String!]
+  deprecated_at: Date
+}
+
+input UpdateAppDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  cid: String!
+  type: AppType!
+  name: String!
+  status: Status!
+  scopes: [Scope!]!
+  grant_types: [GrantType!]!
+  access_token_ttl: Float!
+  refresh_token_ttl: Float!
+  url: String
+  logo: String
+  site: String
+  slogan: String
+  redirect_uri: String
+  change_logs: [UpdateChangeLogDto!]
+}
+
+input UpdateChangeLogDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  code: String!
+  changes: [String!]
+  deprecated_at: Date
+}
+
+input CreateClientDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  name: String!
+  plan: Plan!
+  url: String
+  logo: String
+  site: String
+  slogan: String
+  state: State!
+  status: Status!
+  api_key: String!
+  client_id: String!
+  client_secret: String!
+  access_token_ttl: Float!
+  refresh_token_ttl: Float!
+  expiration_date: Date!
+  scopes: [Scope!]!
+  domains: [CreateDomainDto!]!
+  grant_types: [GrantType!]!
+  redirect_uri: String
+  otp_services: [CreateOtpServiceDto!]!
+}
+
+input CreateDomainDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  status: Status!
+  address: String!
+  roles: [String!]!
+}
+
+input CreateOtpServiceDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  config: JSON!
+  type: OtpType!
+  provider: OtpProvider!
+}
+
+input UpdateClientDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  name: String!
+  plan: Plan!
+  url: String
+  logo: String
+  site: String
+  slogan: String
+  state: State!
+  status: Status!
+  api_key: String!
+  client_id: String!
+  client_secret: String!
+  access_token_ttl: Float!
+  refresh_token_ttl: Float!
+  expiration_date: Date!
+  scopes: [Scope!]!
+  domains: [UpdateDomainDto!]!
+  grant_types: [GrantType!]!
+  redirect_uri: String
+  otp_services: [UpdateOtpServiceDto!]!
+}
+
+input UpdateDomainDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  status: Status!
+  address: String!
+  roles: [String!]!
+}
+
+input UpdateOtpServiceDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  config: JSON!
+  type: OtpType!
+  provider: OtpProvider!
+}
+
+input CreateUserDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  status: Status!
+  phone: String
+  email: String
+  username: String
+  password: String
+  subjects: [String!]
+  verified_at: Date
+  verified_by: String
+  verified_in: String
+}
+
+input UpdateUserDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  status: Status!
+  phone: String
+  email: String
+  username: String
+  password: String
+  subjects: [String!]
+  verified_at: Date
+  verified_by: String
+  verified_in: String
+}
+
+input CreateProfileDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  state: State!
+  gender: Gender!
+  person_type: PersonType!
+  cover: String
+  avatar: String
+  nickname: String
+  last_name: String
+  first_name: String
+  middle_name: String
+  nationality: String
+  national_code: String
+  places: [CreatePlaceDto!]
+  birth_date: Date
+}
+
+input CreatePlaceDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  type: PlaceType!
+  country: String!
+  name: String
+  address: String
+  location: String
+}
+
+input UpdateProfileDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  state: State!
+  gender: Gender!
+  person_type: PersonType!
+  cover: String
+  avatar: String
+  nickname: String
+  last_name: String
+  first_name: String
+  middle_name: String
+  nationality: String
+  national_code: String
+  places: [UpdatePlaceDto!]
+  birth_date: Date
+}
+
+input UpdatePlaceDto {
+  props: JSON
+  uid: String!
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  updated_at: Date
+  updated_by: String
+  updated_in: String
+  deleted_at: Date
+  deleted_by: String
+  deleted_in: String
+  restored_at: Date
+  restored_by: String
+  restored_in: String
+  description: String
+  version: String
+  tags: [String!]
+  type: PlaceType!
+  country: String!
+  name: String
+  address: String
+  postal_code: String
+  location: String
+}
+
+input CreateSessionDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  agent: String!
+}
+
+input UpdateSessionDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  agent: String!
+}
+
+input CreateArtifactDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  value: JSON
+  key: String!
+  type: ValueType!
+}
+
+input UpdateArtifactDto {
+  props: JSON
+  ref: String
+  shares: [String!]
+  groups: [String!]
+  clients: [String!]!
+  description: String
+  version: String
+  tags: [String!]
+  value: JSON
+  key: String!
+  type: ValueType!
+}

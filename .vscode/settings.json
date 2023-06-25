@@ -2,7 +2,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "cSpell.words": [
-    "Wenex"
-  ]
+  "cSpell.words": ["codegen", "Wenex"]
 }

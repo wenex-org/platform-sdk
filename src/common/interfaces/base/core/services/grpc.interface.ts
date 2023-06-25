@@ -30,10 +30,7 @@ export interface GrpcService<T> {
   destroyById: (filter: UniqueFilter, meta?: Metadata) => Observable<T>;
 
   updateOne: (body: Update<T, OneFilter>, meta?: Metadata) => Observable<T>;
-  updateBulk: (
-    body: Update<T, QueryFilter>,
-    meta?: Metadata,
-  ) => Observable<Total>;
+  updateBulk: (body: Update<T, QueryFilter>, meta?: Metadata) => Observable<Total>;
   updateById: (body: Update<T, UniqueFilter>, meta?: Metadata) => Observable<T>;
 }
 
