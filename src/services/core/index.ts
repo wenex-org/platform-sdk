@@ -1,2 +1,2 @@
-export * from './base.core';
+export * from './base';
 export * from './request.core';
