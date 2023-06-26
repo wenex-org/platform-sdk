@@ -1,12 +1,13 @@
 import { AxiosInstance } from 'axios';
 
-import { AuthClient, ConfigsService, DomainClient, IdentityClient } from './services';
+import { AuthClient, ConfigsService, DomainClient, GeneralClient, IdentityClient } from './services';
 
 export * from './services';
 
 export class PlatformClient {
   private $auth!: AuthClient;
   private $domain!: DomainClient;
+  private $general!: GeneralClient;
   private $identity!: IdentityClient;
 
   private $configs!: ConfigsService;
@@ -19,6 +20,10 @@ export class PlatformClient {
 
   get domain() {
     return (this.$domain = this.$domain ?? new DomainClient(this.client));
+  }
+
+  get general() {
+    return (this.$general = this.$general ?? new GeneralClient(this.client));
   }
 
   get identity() {

@@ -1,7 +1,9 @@
-import { HelloWorld } from '../src';
+import axios from 'axios';
 
-describe('test hello function', () => {
-  it("should return 'Hello World...!'", () => {
-    expect(HelloWorld()).toBe('Hello World...!');
+import { PlatformClient } from '../src';
+
+describe('test platform client', () => {
+  it('should define platform instance', () => {
+    expect(new PlatformClient(axios.create())).toBeDefined();
   });
 });
