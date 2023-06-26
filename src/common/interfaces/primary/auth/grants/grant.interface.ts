@@ -1,7 +1,6 @@
-import { BaseInterface } from '@app/common/interfaces';
-import { Action, Resource } from '@app/common/enums';
-
-import { TimeInterface } from './index';
+import { BaseInterface } from '../../../../../common/interfaces';
+import { Action, Resource } from '../../../../../common/enums';
+import { TimeInterface } from './time.interface';
 
 export interface Grant extends BaseInterface {
   subject: string;

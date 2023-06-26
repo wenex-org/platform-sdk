@@ -1,5 +1,5 @@
 export interface Token {
-  token: string;
+  token?: string;
 }
 
 export type TokenInterface = Token;

@@ -1,5 +1,5 @@
-import { Gender, PersonType, State } from '@app/common/enums';
-import { BaseInterface } from '@app/common/interfaces';
+import { Gender, PersonType, State } from '../../../../../common/enums';
+import { BaseInterface } from '../../../../../common/interfaces';
 
 import { PlaceInterface } from './index';
 

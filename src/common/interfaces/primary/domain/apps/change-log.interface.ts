@@ -1,4 +1,4 @@
-import { SubInterface } from '@app/common/interfaces';
+import { SubInterface } from '../../../../../common/interfaces';
 
 export interface ChangeLog extends SubInterface {
   code: string;

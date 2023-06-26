@@ -1,4 +1,4 @@
-import { SubInterface } from '@app/common/interfaces/base';
+import { SubInterface } from '../../../../../common/interfaces';
 
 export interface Time extends SubInterface {
   cron_exp: string;

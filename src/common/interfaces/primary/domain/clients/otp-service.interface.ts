@@ -1,5 +1,6 @@
-import { OtpProvider, OtpType } from '@app/common/enums';
-import { SubInterface } from '@app/common/interfaces';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { OtpProvider, OtpType } from '../../../../../common/enums';
+import { SubInterface } from '../../../../../common/interfaces';
 
 export interface OtpService extends SubInterface {
   type: OtpType;

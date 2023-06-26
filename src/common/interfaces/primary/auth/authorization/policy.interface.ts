@@ -1,13 +1,21 @@
-import { Action, Resource } from '@app/common/enums';
+import { Action, Resource } from '../../../../../common/enums';
+
+export interface PolicyTime {
+  cron_exp: string;
+  duration: number;
+}
 
 export interface Policy {
-  strict?: boolean;
+  subject: string;
+  action: Action;
+  object: Resource;
 
-  action: Action | 'any';
-  object: Resource | 'all';
+  field?: string[];
+  filter?: string[];
+  location?: string[];
 
-  ip?: string;
-  time?: Date;
+  time?: PolicyTime[];
 }
 
 export type PolicyInterface = Policy;
+export type PolicyTimeInterface = PolicyTime;

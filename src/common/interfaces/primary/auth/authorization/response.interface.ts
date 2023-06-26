@@ -1,8 +1,8 @@
-import { Ability } from './index';
+import { Policy } from './policy.interface';
 
 export interface AuthorizationResponse {
   granted: boolean;
-  abilities: Ability[];
+  policies: Policy[];
 }
 
 export type AuthorizationResponseInterface = AuthorizationResponse;

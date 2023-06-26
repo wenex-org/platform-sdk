@@ -1,4 +1,4 @@
-import { GrantType, ResponseType, Scope } from '@app/common/enums';
+import { GrantType, ResponseType, Scope } from '../../../../../common/enums';
 
 export interface AuthenticationRequest {
   client_id: string;

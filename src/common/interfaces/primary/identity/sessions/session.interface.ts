@@ -1,4 +1,4 @@
-import { BaseInterface } from '@app/common/interfaces/base';
+import { BaseInterface } from '../../../../../common/interfaces/base';
 
 export interface Session extends BaseInterface {
   agent: string;

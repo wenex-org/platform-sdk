@@ -1,5 +1,5 @@
-import { AppType, GrantType, Scope, Status } from '@app/common/enums';
-import { BaseInterface } from '@app/common/interfaces';
+import { AppType, GrantType, Scope, Status } from '../../../../../common/enums';
+import { BaseInterface } from '../../../../../common/interfaces';
 
 import { ChangeLogInterface } from './index';
 

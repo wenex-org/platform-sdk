@@ -1,5 +1,6 @@
-import { BaseInterface } from '@app/common/interfaces';
-import { ValueType } from '@app/common/enums';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { BaseInterface } from '../../../../common/interfaces';
+import { ValueType } from '../../../../common/enums';
 
 export interface Config extends BaseInterface {
   key: string;

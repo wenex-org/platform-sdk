@@ -11,8 +11,9 @@
     "experimentalDecorators": true,
     "types": ["node", "jest"],
     "removeComments": false,
-    "outDir": "./dist",
+    "outDir": "./",
     "strict": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["./docs", "./node_modules"]
 }

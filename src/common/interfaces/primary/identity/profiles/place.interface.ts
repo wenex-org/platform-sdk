@@ -1,5 +1,5 @@
-import { SubInterface } from '@app/common/interfaces';
-import { PlaceType } from '@app/common/enums';
+import { SubInterface } from '../../../../../common/interfaces';
+import { PlaceType } from '../../../../../common/enums';
 
 export interface Place extends SubInterface {
   type: PlaceType;

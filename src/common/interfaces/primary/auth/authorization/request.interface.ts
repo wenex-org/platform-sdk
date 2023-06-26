@@ -1,11 +1,11 @@
-import { Action, Resource } from '@app/common/enums';
+import { Action, Resource } from '../../../../../common/enums';
 
 export interface AuthorizationRequest {
   token: string;
   strict?: boolean;
 
-  action: Action | 'any';
-  object: Resource | 'all';
+  action: Action;
+  object: Resource;
 
   ip?: string;
   time?: Date;

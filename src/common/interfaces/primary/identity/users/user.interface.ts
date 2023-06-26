@@ -1,5 +1,5 @@
-import { BaseInterface } from '@app/common/interfaces';
-import { Status } from '@app/common/enums';
+import { BaseInterface } from '../../../../../common/interfaces';
+import { Status } from '../../../../../common/enums';
 
 export interface User extends BaseInterface {
   status: Status;

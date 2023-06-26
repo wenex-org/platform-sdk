@@ -1,4 +1,4 @@
-import { Scope } from '@app/common/enums';
+import { Scope } from '../../../../../common/enums';
 
 export interface JwtToken {
   cid: string;

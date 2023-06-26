@@ -1,5 +1,5 @@
-import { GrantType, Plan, Scope, State, Status } from '@app/common/enums';
-import { BaseInterface } from '@app/common/interfaces';
+import { GrantType, Plan, Scope, State, Status } from '../../../../../common/enums';
+import { BaseInterface } from '../../../../../common/interfaces';
 
 import { DomainInterface, OtpServiceInterface } from './index';
 
