@@ -1,7 +1,7 @@
 {
   "name": "@wenex/sdk",
-  "version": "0.0.0",
-  "description": "Wenex platform SDK.",
+  "version": "0.0.1",
+  "description": "Wenex Platform SDK",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -27,7 +27,10 @@
   },
   "keywords": [
     "sdk",
-    "platform-sdk"
+    "wenex",
+    "wenex-sdk",
+    "platform-sdk",
+    "wenex-platform-sdk"
   ],
   "homepage": "https://github.com/wenex-org/platform-sdk#readme",
   "dependencies": {
