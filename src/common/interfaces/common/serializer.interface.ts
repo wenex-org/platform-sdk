@@ -1,32 +1,46 @@
-import { Result as ResultEnum } from '@app/common/enums';
-
-import { Base, BaseSub } from './base';
-import { Core } from './core.interface';
-import { Optional } from './generic.interface';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Result as ResultEnum } from '../../enums';
+import { MakeRequired } from './generic.interface';
 
 export type Total = { total: number };
-
 export type Result = { result: ResultEnum };
 
 // ----------------------------------------
-// Data Interfaces
+// Wrapper Interfaces
 // ----------------------------------------
 
-export type Data<T extends Optional<Core>> = {
-  data: T;
-};
-
-export type Items<T extends Optional<Core>> = {
-  items: T[];
-};
+export type Data<T = any> = { data: T };
+export type Items<T = any> = { items: T[] };
 
 // ----------------------------------------
-// Serializer Interfaces
+// Serializer Interface
 // ----------------------------------------
 
-export type Serializer<T extends Optional<Core>> = Omit<
+export type Serializer<
+  T extends {
+    id?: string;
+
+    owner?: string;
+    clients?: string[];
+
+    created_at?: Date;
+    created_by?: string;
+    created_in?: string;
+
+    version?: string;
+
+    rand?: string;
+    timestamp?: string;
+  },
+> = MakeRequired<
   T,
-  'id' | 'created_at' | 'version' | 'rand' | 'timestamp'
-> &
-  Required<Pick<T, 'id' | 'created_at' | 'version' | 'rand' | 'timestamp'>>;
-export type SerializerInterface<T extends Optional<Core>> = Serializer<T>;
+  | 'id'
+  | 'owner'
+  | 'clients'
+  | 'created_at'
+  | 'created_by'
+  | 'created_in'
+  | 'version'
+  | 'rand'
+  | 'timestamp'
+>;

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
+import { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 export type GraphqlException = { messages: string; extensions: { code: string } };
 
@@ -9,10 +9,17 @@ export type GraphqlResponse<T = any> = { data: T | null; errors?: GraphqlExcepti
 export class GraphqlService {
   constructor(protected readonly client: AxiosInstance) {}
 
-  request<T>(
+  async request<T>(
     data: GraphqlRequest,
     config?: AxiosRequestConfig,
-  ): AxiosPromise<GraphqlResponse<T>> {
-    return this.client.post<GraphqlResponse<T>>('/graphql', data, config);
+  ): Promise<GraphqlResponse<T>> {
+    const { data: res } = await this.client.post<GraphqlResponse<T>>(
+      '/graphql',
+      data,
+      config,
+    );
+
+    if (res?.errors?.length) throw res;
+    else return res;
   }
 }

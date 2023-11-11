@@ -1,10 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
 
-import { RequestService } from './request.core';
-import { Array, Data, Filter, QueryFilter, Total } from '../interfaces';
+import {
+  Core,
+  Data,
+  Dto,
+  Filter,
+  Items,
+  QueryFilter,
+  Serializer,
+  Total,
+} from '../interfaces';
+import { RequestService } from '../providers';
 
-export class RestfulService<Dto, Serializer> extends RequestService {
+export class RestfulService<
+  T extends Core,
+  D extends Dto<T>,
+  S extends Serializer<T>,
+> extends RequestService {
   protected readonly url = (path: string) => `/${this.name}/${path}`;
 
   constructor(
@@ -14,50 +27,70 @@ export class RestfulService<Dto, Serializer> extends RequestService {
     super(client);
   }
 
-  count(filter: QueryFilter<Dto>, config?: AxiosRequestConfig): AxiosPromise<Total> {
+  count(filter: QueryFilter<Dto<D>>, config?: AxiosRequestConfig): AxiosPromise<Total> {
     const params = { filter, ...config?.params };
     return this.get<Total>(this.url('/count'), { ...config, params });
   }
 
-  create(data: Dto, config?: AxiosRequestConfig): AxiosPromise<T> {
-    return this.post<T>(this.url(''), data, config);
+  create(data: Dto<D>, config?: AxiosRequestConfig): AxiosPromise<Serializer<S>> {
+    return this.post<Serializer<S>, Dto<D>>(this.url(''), data, config);
   }
 
-  createBulk(data: T[], config?: AxiosRequestConfig): AxiosPromise<T> {
-    return this.post<T>(this.url(''), data, config);
+  createBulk(
+    data: Dto<D>[],
+    config?: AxiosRequestConfig,
+  ): AxiosPromise<Items<Serializer<S>>> {
+    return this.post<Items<Serializer<S>>, Dto<D>[]>(this.url(''), data, config);
   }
 
-  find(filter: Filter<T>, config?: AxiosRequestConfig): AxiosPromise<Array<T>> {
+  find(
+    filter: Filter<T>,
+    config?: AxiosRequestConfig,
+  ): AxiosPromise<Items<Serializer<S>>> {
     const params = { filter, ...config?.params };
-    return this.get<Array<T>>(this.url(''), { ...config, params });
+    return this.get<Items<Serializer<S>>>(this.url(''), { ...config, params });
   }
 
-  findById(id: string, config?: AxiosRequestConfig): AxiosPromise<Data<T>> {
-    return this.get<Data<T>>(this.url(id), config);
+  findById(id: string, config?: AxiosRequestConfig): AxiosPromise<Data<Serializer<S>>> {
+    return this.get<Data<Serializer<S>>>(this.url(id), config);
   }
 
-  deleteById(id: string, config?: AxiosRequestConfig): AxiosPromise<Data<T>> {
-    return this.delete<Data<T>>(this.url(id), config);
+  deleteById(id: string, config?: AxiosRequestConfig): AxiosPromise<Data<Serializer<S>>> {
+    return this.delete<Data<Serializer<S>>>(this.url(id), config);
   }
 
-  restoreById(id: string, config?: AxiosRequestConfig): AxiosPromise<Data<T>> {
-    return this.put<Data<T>>(`${this.url(id)}/restore`, undefined, config);
+  restoreById(
+    id: string,
+    config?: AxiosRequestConfig,
+  ): AxiosPromise<Data<Serializer<S>>> {
+    return this.put<Data<Serializer<S>>, undefined>(
+      `${this.url(id)}/restore`,
+      undefined,
+      config,
+    );
   }
 
-  destroyById(id: string, config?: AxiosRequestConfig): AxiosPromise<Data<T>> {
-    return this.delete<Data<T>>(`${this.url(id)}/destroy`, config);
+  destroyById(
+    id: string,
+    config?: AxiosRequestConfig,
+  ): AxiosPromise<Data<Serializer<S>>> {
+    return this.delete<Data<Serializer<S>>>(`${this.url(id)}/destroy`, config);
   }
 
-  updateById(id: string, data: T, config?: AxiosRequestConfig): AxiosPromise<Data<T>> {
-    return this.patch<Data<T>>(`${this.url(id)}`, data, config);
+  updateById(
+    id: string,
+    data: Dto<D>,
+    config?: AxiosRequestConfig,
+  ): AxiosPromise<Data<Serializer<S>>> {
+    return this.patch<Data<Serializer<S>>, Dto<D>>(`${this.url(id)}`, data, config);
   }
 
   updateBulk(
-    data: T,
+    data: Dto<D>,
     filter: QueryFilter<T>,
     config?: AxiosRequestConfig,
   ): AxiosPromise<Total> {
     const params = { filter, ...config?.params };
-    return this.patch<Total>('/bulk', data, { ...config, params });
+    return this.patch<Total, Dto<D>>('/bulk', data, { ...config, params });
   }
 }
