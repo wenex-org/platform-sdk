@@ -30,6 +30,6 @@ export type Dto<T extends Base> = MakeOptional<
 >;
 
 export type MakeDto<
-  T extends Base & { [X: string]: [Base] },
+  T extends Base & { [X: string]: Array<Base> },
   K extends keyof T,
-> = Dto<T> & { [P in K]?: Dto<T[P][0]> };
+> = Dto<T> & { [P in K]?: Dto<T[P][number]> };
