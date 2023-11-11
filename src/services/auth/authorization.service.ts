@@ -1,19 +1,32 @@
-import { AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-import { RequestService } from '../../common/core';
-import { AuthorizationRequest, AuthorizationResponse } from '../../common/interfaces';
+import {
+  AuthorizationCanRequest,
+  AuthorizationCanResponse,
+  AuthorizationPolicyRequest,
+  AuthorizationPolicyResponse,
+} from '../../common/interfaces';
+import { RequestService } from '../../common/providers';
 
 export class Authorization {
   constructor(protected readonly request: RequestService) {}
 
   protected readonly url = (path: string) => `/auth/${path}`;
 
-  can(data: AuthorizationRequest, config?: AxiosRequestConfig) {
-    return this.request.post<AuthorizationResponse>(this.url('can'), data, config);
+  can(data: AuthorizationCanRequest, config?: AxiosRequestConfig) {
+    return this.request.post<AuthorizationCanResponse, AuthorizationCanRequest>(
+      this.url('can'),
+      data,
+      config,
+    );
   }
 
-  grant(data: AuthorizationRequest, config?: AxiosRequestConfig) {
-    return this.request.post<AuthorizationResponse>(this.url('grant'), data, config);
+  policy(data: AuthorizationPolicyRequest, config?: AxiosRequestConfig) {
+    return this.request.post<AuthorizationPolicyResponse, AuthorizationPolicyRequest>(
+      this.url('grant'),
+      data,
+      config,
+    );
   }
 
   static build(client: AxiosInstance) {

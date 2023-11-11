@@ -1,8 +1,8 @@
-import { AxiosInstance } from 'axios';
+import type { AxiosInstance } from 'axios';
 
-import { Authentication } from './authentication.service';
-import { Authorization } from './authorization.service';
 import { GrantsService } from './grants.service';
+import { Authorization } from './authorization.service';
+import { Authentication } from './authentication.service';
 
 export * from './grants.service';
 export * from './authorization.service';
@@ -15,9 +15,8 @@ export class AuthClient {
 
   constructor(protected client: AxiosInstance) {}
 
-  get authentication() {
-    return (this.$authentication =
-      this.$authentication ?? Authentication.build(this.client));
+  get grants() {
+    return (this.$grants = this.$grants ?? new GrantsService(this.client));
   }
 
   get authorization() {
@@ -25,7 +24,8 @@ export class AuthClient {
       this.$authorization ?? Authorization.build(this.client));
   }
 
-  get grants() {
-    return (this.$grants = this.$grants ?? new GrantsService(this.client));
+  get authentication() {
+    return (this.$authentication =
+      this.$authentication ?? Authentication.build(this.client));
   }
 }
