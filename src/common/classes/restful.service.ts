@@ -16,7 +16,7 @@ import { RequestService } from '../providers';
 export class RestfulService<
   T extends Core,
   D extends Dto<T>,
-  S extends Serializer<T>,
+  S extends Serializer<T> = Serializer<T>,
 > extends RequestService {
   protected readonly url = (path: string) => `/${this.name}/${path}`;
 

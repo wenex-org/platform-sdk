@@ -1,22 +1,22 @@
 import { MakeOptional } from './generic.interface';
 
-type Base = {
-  id?: string;
+export type Dto<
+  T extends {
+    id?: string;
 
-  owner?: string;
-  clients?: string[];
+    owner?: string;
+    clients?: string[];
 
-  created_at?: Date;
-  created_by?: string;
-  created_in?: string;
+    created_at?: Date;
+    created_by?: string;
+    created_in?: string;
 
-  version?: string;
+    version?: string;
 
-  rand?: string;
-  timestamp?: string;
-};
-
-export type Dto<T extends Base> = MakeOptional<
+    rand?: string;
+    timestamp?: string;
+  },
+> = MakeOptional<
   T,
   | 'id'
   | 'owner'
@@ -28,8 +28,3 @@ export type Dto<T extends Base> = MakeOptional<
   | 'rand'
   | 'timestamp'
 >;
-
-export type MakeDto<
-  T extends Base & { [X: string]: Array<Base> },
-  K extends keyof T,
-> = Dto<T> & { [P in K]?: Dto<T[P][number]> };
