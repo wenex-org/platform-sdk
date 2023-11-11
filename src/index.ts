@@ -1,7 +1,7 @@
-import { AxiosInstance } from 'axios';
+import type { AxiosInstance } from 'axios';
 
-import { GraphqlService } from './common/core';
-import { AuthClient, ConfigsService, DomainClient, IdentityClient } from './services';
+import { GraphqlService } from './common/classes';
+import { AuthClient, ConfigClient, DomainClient, IdentityClient } from './services';
 
 export * from './services';
 
@@ -9,8 +9,8 @@ export class PlatformClient {
   private $graphql!: GraphqlService;
 
   private $auth!: AuthClient;
+  private $config!: ConfigClient;
   private $domain!: DomainClient;
-  private $configs!: ConfigsService;
   private $identity!: IdentityClient;
 
   constructor(protected client: AxiosInstance) {}
@@ -27,8 +27,8 @@ export class PlatformClient {
     return (this.$domain = this.$domain ?? new DomainClient(this.client));
   }
 
-  get configs() {
-    return (this.$configs = this.$configs ?? new ConfigsService(this.client));
+  get config() {
+    return (this.$config = this.$config ?? new ConfigClient(this.client));
   }
 
   get identity() {

@@ -1,9 +1,9 @@
-import { AxiosInstance } from 'axios';
+import type { AxiosInstance } from 'axios';
 
-import { Profile } from '../../common/interfaces';
-import { RestfulService } from '../../common/core';
+import { RestfulService } from '../../common/classes';
+import { Profile, ProfileDto } from '../../common/interfaces';
 
-export class ProfilesService extends RestfulService<Profile> {
+export class ProfilesService extends RestfulService<Profile, ProfileDto> {
   constructor(protected client: AxiosInstance) {
     super('profiles', client);
   }

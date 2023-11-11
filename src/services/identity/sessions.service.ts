@@ -1,9 +1,9 @@
 import { AxiosInstance } from 'axios';
 
-import { Session } from '../../common/interfaces';
-import { RestfulService } from '../../common/core';
+import { RestfulService } from '../../common/classes';
+import { Session, SessionDto } from '../../common/interfaces';
 
-export class SessionsService extends RestfulService<Session> {
+export class SessionsService extends RestfulService<Session, SessionDto> {
   constructor(protected client: AxiosInstance) {
     super('sessions', client);
   }
