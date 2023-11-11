@@ -31,7 +31,8 @@
     "wenex-sdk"
   ],
   "peerDependencies": {
-    "axios": "^1.5.0"
+    "axios": "^1.5.0",
+    "mongoose": "^8.0.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.11",

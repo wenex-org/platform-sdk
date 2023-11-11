@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
 
 export class RequestService {
@@ -8,7 +7,7 @@ export class RequestService {
     return this.client.get<T>(url, config);
   }
 
-  post<T>(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise<T> {
+  post<T, D>(url: string, data?: D, config?: AxiosRequestConfig): AxiosPromise<T> {
     return this.client.post<T>(url, data, config);
   }
 
@@ -16,11 +15,11 @@ export class RequestService {
     return this.client.delete<T>(url, config);
   }
 
-  put<T>(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise<T> {
+  put<T, D>(url: string, data?: D, config?: AxiosRequestConfig): AxiosPromise<T> {
     return this.client.put<T>(url, data, config);
   }
 
-  patch<T>(url: string, data: any, config?: AxiosRequestConfig): AxiosPromise<T> {
+  patch<T, D>(url: string, data: D, config?: AxiosRequestConfig): AxiosPromise<T> {
     return this.client.patch<T>(url, data, config);
   }
 }
