@@ -1,5 +1,5 @@
 {
-  "name": "platform-sdk",
+  "name": "@wenex/sdk",
   "version": "0.0.5",
   "description": "Wenex SDK",
   "main": "index.js",
