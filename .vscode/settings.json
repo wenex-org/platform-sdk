@@ -2,8 +2,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "cSpell.words": [
-    "Vahid",
-    "Wenex"
-  ]
+  "cSpell.words": ["Vahid", "webfactory", "Wenex"]
 }
