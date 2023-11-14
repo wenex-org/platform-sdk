@@ -1,3 +1,4 @@
+export type Metadata = Record<string, any>;
 export type Properties = Record<string, any>;
 export type Optional<T> = {
     [P in keyof T]?: T[P];
