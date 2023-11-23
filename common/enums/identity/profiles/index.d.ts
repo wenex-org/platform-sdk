@@ -1,1 +1,1 @@
-export * from './person-type.enum';
+export * from './profile-type.enum';

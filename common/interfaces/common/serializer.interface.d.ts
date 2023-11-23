@@ -5,10 +5,10 @@ export type Total = {
 export type Result = {
     result: 'OK' | 'NOK';
 };
-export type Data<T = any> = {
+export type Data<T> = {
     data: T;
 };
-export type Items<T = any> = {
+export type Items<T> = {
     items: T[];
 };
 export type Serializer<T extends {

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.83% </span>
+                <span class="strong">45.26% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/96</span>
+                <span class='fraction'>43/95</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.83% </span>
+                <span class="strong">45.26% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/96</span>
+                <span class='fraction'>43/95</span>
             </div>
         
             
@@ -158,9 +158,7 @@
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
 <a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -259,9 +257,9 @@
 import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
 &nbsp;
 import {
+  Dto as DtoInterface,
   Core,
   Data,
-  Dto,
   Filter,
   Items,
   QueryFilter,
@@ -272,8 +270,7 @@ import { RequestService } from '../providers';
 &nbsp;
 export class RestfulService&lt;
   T extends Core,
-  D extends Dto&lt;Core&gt;,
-  S extends Serializer&lt;Core&gt; = Serializer&lt;T&gt;,
+  Dto extends DtoInterface&lt;Core&gt;,
 &gt; extends RequestService {
   protected readonly url = (path: string) =&gt; `/${this.name}/${path}`;
 &nbsp;
@@ -284,43 +281,43 @@ export class RestfulService&lt;
 <span class="cstat-no" title="statement not covered" >    super(client);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  count(filter: QueryFilter&lt;Dto&lt;D&gt;&gt;, config?: AxiosRequestConfig): AxiosPromise&lt;Total&gt; {</span>
+<span class="fstat-no" title="function not covered" >  count(filter: QueryFilter&lt;T&gt;, config?: AxiosRequestConfig): AxiosPromise&lt;Total&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const params = { filter, ...config?.params };</span>
 <span class="cstat-no" title="statement not covered" >    return this.get&lt;Total&gt;(this.url('/count'), { ...config, params });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  create(data: Dto&lt;D&gt;, config?: AxiosRequestConfig): AxiosPromise&lt;Serializer&lt;S&gt;&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return this.post&lt;Serializer&lt;S&gt;, Dto&lt;D&gt;&gt;(this.url(''), data, config);</span>
+<span class="fstat-no" title="function not covered" >  create(data: Dto, config?: AxiosRequestConfig): AxiosPromise&lt;Serializer&lt;T&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.post&lt;Serializer&lt;T&gt;, Dto&gt;(this.url(''), data, config);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  createBulk(</span>
-<span class="cstat-no" title="statement not covered" >    data: Dto&lt;D&gt;[],</span>
+<span class="cstat-no" title="statement not covered" >    data: Dto[],</span>
 <span class="cstat-no" title="statement not covered" >    config?: AxiosRequestConfig,</span>
-<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Items&lt;Serializer&lt;S&gt;&gt;&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return this.post&lt;Items&lt;Serializer&lt;S&gt;&gt;, Dto&lt;D&gt;[]&gt;(this.url(''), data, config);</span>
+<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Items&lt;Serializer&lt;T&gt;&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.post&lt;Items&lt;Serializer&lt;T&gt;&gt;, Dto[]&gt;(this.url(''), data, config);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  find(</span>
 <span class="cstat-no" title="statement not covered" >    filter: Filter&lt;T&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    config?: AxiosRequestConfig,</span>
-<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Items&lt;Serializer&lt;S&gt;&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Items&lt;Serializer&lt;T&gt;&gt;&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const params = { filter, ...config?.params };</span>
-<span class="cstat-no" title="statement not covered" >    return this.get&lt;Items&lt;Serializer&lt;S&gt;&gt;&gt;(this.url(''), { ...config, params });</span>
+<span class="cstat-no" title="statement not covered" >    return this.get&lt;Items&lt;Serializer&lt;T&gt;&gt;&gt;(this.url(''), { ...config, params });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  findById(id: string, config?: AxiosRequestConfig): AxiosPromise&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return this.get&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt;(this.url(id), config);</span>
+<span class="fstat-no" title="function not covered" >  findById(id: string, config?: AxiosRequestConfig): AxiosPromise&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.get&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt;(this.url(id), config);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  deleteById(id: string, config?: AxiosRequestConfig): AxiosPromise&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return this.delete&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt;(this.url(id), config);</span>
+<span class="fstat-no" title="function not covered" >  deleteById(id: string, config?: AxiosRequestConfig): AxiosPromise&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.delete&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt;(this.url(id), config);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  restoreById(</span>
 <span class="cstat-no" title="statement not covered" >    id: string,</span>
 <span class="cstat-no" title="statement not covered" >    config?: AxiosRequestConfig,</span>
-<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return this.put&lt;Data&lt;Serializer&lt;S&gt;&gt;, undefined&gt;(</span>
+<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.put&lt;Data&lt;Serializer&lt;T&gt;&gt;, undefined&gt;(</span>
 <span class="cstat-no" title="statement not covered" >      `${this.url(id)}/restore`,</span>
 <span class="cstat-no" title="statement not covered" >      undefined,</span>
 <span class="cstat-no" title="statement not covered" >      config,</span>
@@ -330,25 +327,25 @@ export class RestfulService&lt;
 <span class="fstat-no" title="function not covered" >  destroyById(</span>
 <span class="cstat-no" title="statement not covered" >    id: string,</span>
 <span class="cstat-no" title="statement not covered" >    config?: AxiosRequestConfig,</span>
-<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return this.delete&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt;(`${this.url(id)}/destroy`, config);</span>
+<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.delete&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt;(`${this.url(id)}/destroy`, config);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  updateById(</span>
 <span class="cstat-no" title="statement not covered" >    id: string,</span>
-<span class="cstat-no" title="statement not covered" >    data: Dto&lt;D&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    data: Dto,</span>
 <span class="cstat-no" title="statement not covered" >    config?: AxiosRequestConfig,</span>
-<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Data&lt;Serializer&lt;S&gt;&gt;&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return this.patch&lt;Data&lt;Serializer&lt;S&gt;&gt;, Dto&lt;D&gt;&gt;(`${this.url(id)}`, data, config);</span>
+<span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Data&lt;Serializer&lt;T&gt;&gt;&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.patch&lt;Data&lt;Serializer&lt;T&gt;&gt;, Dto&gt;(`${this.url(id)}`, data, config);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  updateBulk(</span>
-<span class="cstat-no" title="statement not covered" >    data: Dto&lt;D&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    data: Dto,</span>
 <span class="cstat-no" title="statement not covered" >    filter: QueryFilter&lt;T&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    config?: AxiosRequestConfig,</span>
 <span class="cstat-no" title="statement not covered" >  ): AxiosPromise&lt;Total&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const params = { filter, ...config?.params };</span>
-<span class="cstat-no" title="statement not covered" >    return this.patch&lt;Total, Dto&lt;D&gt;&gt;('/bulk', data, { ...config, params });</span>
+<span class="cstat-no" title="statement not covered" >    return this.patch&lt;Total, Dto&gt;('/bulk', data, { ...config, params });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -358,7 +355,7 @@ export class RestfulService&lt;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-14T09:08:59.531Z
+                at 2023-11-23T08:48:59.197Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
