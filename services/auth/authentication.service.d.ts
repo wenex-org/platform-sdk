@@ -5,8 +5,8 @@ export declare class Authentication {
     protected readonly request: RequestService;
     constructor(request: RequestService);
     protected readonly url: (path: string) => string;
-    token(data: AuthenticationRequest, config?: AxiosRequestConfig): import("axios").AxiosPromise<AuthenticationResponse>;
-    logout(data: Token, config?: AxiosRequestConfig): import("axios").AxiosPromise<Result>;
-    verify(data: Token, config?: AxiosRequestConfig): import("axios").AxiosPromise<JwtToken>;
+    token(data: AuthenticationRequest, config?: AxiosRequestConfig): Promise<AuthenticationResponse>;
+    logout(data: Token, config?: AxiosRequestConfig): Promise<Result>;
+    verify(data: Token, config?: AxiosRequestConfig): Promise<JwtToken>;
     static build(client: AxiosInstance): Authentication;
 }

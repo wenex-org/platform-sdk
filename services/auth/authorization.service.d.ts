@@ -5,7 +5,7 @@ export declare class Authorization {
     protected readonly request: RequestService;
     constructor(request: RequestService);
     protected readonly url: (path: string) => string;
-    can(data: AuthorizationCanRequest, config?: AxiosRequestConfig): import("axios").AxiosPromise<AuthorizationCanResponse>;
-    policy(data: AuthorizationPolicyRequest, config?: AxiosRequestConfig): import("axios").AxiosPromise<AuthorizationPolicyResponse>;
+    can(data: AuthorizationCanRequest, config?: AxiosRequestConfig): Promise<AuthorizationCanResponse>;
+    policy(data: AuthorizationPolicyRequest, config?: AxiosRequestConfig): Promise<AuthorizationPolicyResponse>;
     static build(client: AxiosInstance): Authorization;
 }
