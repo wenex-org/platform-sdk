@@ -13,17 +13,17 @@ export class IdentityClient {
   private $profiles!: ProfilesService;
   private $sessions!: SessionsService;
 
-  constructor(protected client: AxiosInstance) {}
+  constructor(readonly axios: AxiosInstance) {}
 
   get users() {
-    return (this.$users = this.$users ?? new UsersService(this.client));
+    return (this.$users = this.$users ?? new UsersService(this.axios));
   }
 
   get profiles() {
-    return (this.$profiles = this.$profiles ?? new ProfilesService(this.client));
+    return (this.$profiles = this.$profiles ?? new ProfilesService(this.axios));
   }
 
   get sessions() {
-    return (this.$sessions = this.$sessions ?? new SessionsService(this.client));
+    return (this.$sessions = this.$sessions ?? new SessionsService(this.axios));
   }
 }

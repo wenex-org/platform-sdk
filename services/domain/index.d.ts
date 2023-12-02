@@ -4,10 +4,10 @@ import { AppsService } from './apps.service';
 export * from './apps.service';
 export * from './clients.service';
 export declare class DomainClient {
-    protected client: AxiosInstance;
+    readonly axios: AxiosInstance;
     private $apps;
     private $clients;
-    constructor(client: AxiosInstance);
+    constructor(axios: AxiosInstance);
     get apps(): AppsService;
     get clients(): ClientsService;
 }

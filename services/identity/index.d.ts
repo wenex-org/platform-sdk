@@ -6,11 +6,11 @@ export * from './users.service';
 export * from './profiles.service';
 export * from './sessions.service';
 export declare class IdentityClient {
-    protected client: AxiosInstance;
+    readonly axios: AxiosInstance;
     private $users;
     private $profiles;
     private $sessions;
-    constructor(client: AxiosInstance);
+    constructor(axios: AxiosInstance);
     get users(): UsersService;
     get profiles(): ProfilesService;
     get sessions(): SessionsService;

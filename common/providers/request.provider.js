@@ -11,32 +11,32 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RequestService = void 0;
 class RequestService {
-    constructor(client) {
-        this.client = client;
+    constructor(axios) {
+        this.axios = axios;
     }
     get(url, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.client.get(url, config)).data;
+            return (yield this.axios.get(url, config)).data;
         });
     }
     post(url, data, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.client.post(url, data, config)).data;
+            return (yield this.axios.post(url, data, config)).data;
         });
     }
     delete(url, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.client.delete(url, config)).data;
+            return (yield this.axios.delete(url, config)).data;
         });
     }
     put(url, data, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.client.put(url, data, config)).data;
+            return (yield this.axios.put(url, data, config)).data;
         });
     }
     patch(url, data, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.client.patch(url, data, config)).data;
+            return (yield this.axios.patch(url, data, config)).data;
         });
     }
 }

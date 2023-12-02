@@ -20,16 +20,16 @@ const apps_service_1 = require("./apps.service");
 __exportStar(require("./apps.service"), exports);
 __exportStar(require("./clients.service"), exports);
 class DomainClient {
-    constructor(client) {
-        this.client = client;
+    constructor(axios) {
+        this.axios = axios;
     }
     get apps() {
         var _a;
-        return (this.$apps = (_a = this.$apps) !== null && _a !== void 0 ? _a : new apps_service_1.AppsService(this.client));
+        return (this.$apps = (_a = this.$apps) !== null && _a !== void 0 ? _a : new apps_service_1.AppsService(this.axios));
     }
     get clients() {
         var _a;
-        return (this.$clients = (_a = this.$clients) !== null && _a !== void 0 ? _a : new clients_service_1.ClientsService(this.client));
+        return (this.$clients = (_a = this.$clients) !== null && _a !== void 0 ? _a : new clients_service_1.ClientsService(this.axios));
     }
 }
 exports.DomainClient = DomainClient;

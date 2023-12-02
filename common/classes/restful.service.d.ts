@@ -3,9 +3,9 @@ import { Dto as DtoInterface, Core, Filter, QueryFilter, Serializer } from '../i
 import { RequestService } from '../providers';
 export declare class RestfulService<T extends Core, Dto extends DtoInterface<Core>> extends RequestService {
     protected readonly name: string;
-    protected readonly client: AxiosInstance;
+    protected readonly axios: AxiosInstance;
     protected readonly url: (path: string) => string;
-    constructor(name: string, client: AxiosInstance);
+    constructor(name: string, axios: AxiosInstance);
     count(filter: QueryFilter<T>, config?: AxiosRequestConfig): Promise<number>;
     create(data: Dto, config?: AxiosRequestConfig): Promise<Serializer<T>>;
     createBulk(data: Dto[], config?: AxiosRequestConfig): Promise<Serializer<T>[]>;

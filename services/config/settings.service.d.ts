@@ -1,7 +1,7 @@
 import type { AxiosInstance } from 'axios';
 import { RestfulService } from '../../common/classes';
-import { Profile, ProfileDto } from '../../common/interfaces';
-export declare class ProfilesService extends RestfulService<Profile, ProfileDto> {
+import { Setting, SettingDto } from '../../common/interfaces';
+export declare class SettingsService extends RestfulService<Setting, SettingDto> {
     protected axios: AxiosInstance;
     constructor(axios: AxiosInstance);
 }

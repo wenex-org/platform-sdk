@@ -11,13 +11,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GraphqlService = void 0;
 class GraphqlService {
-    constructor(client) {
-        this.client = client;
+    constructor(axios) {
+        this.axios = axios;
     }
     request(data, config) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            const { data: res } = yield this.client.post('/graphql', data, config);
+            const { data: res } = yield this.axios.post('/graphql', data, config);
             if ((_a = res === null || res === void 0 ? void 0 : res.errors) === null || _a === void 0 ? void 0 : _a.length)
                 throw res;
             else

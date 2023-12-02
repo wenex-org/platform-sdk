@@ -22,22 +22,21 @@ __exportStar(require("./grants.service"), exports);
 __exportStar(require("./authorization.service"), exports);
 __exportStar(require("./authentication.service"), exports);
 class AuthClient {
-    constructor(client) {
-        this.client = client;
+    constructor(axios) {
+        this.axios = axios;
     }
     get grants() {
         var _a;
-        return (this.$grants = (_a = this.$grants) !== null && _a !== void 0 ? _a : new grants_service_1.GrantsService(this.client));
+        return (this.$grants = (_a = this.$grants) !== null && _a !== void 0 ? _a : new grants_service_1.GrantsService(this.axios));
     }
     get authorization() {
         var _a;
-        return (this.$authorization =
-            (_a = this.$authorization) !== null && _a !== void 0 ? _a : authorization_service_1.Authorization.build(this.client));
+        return (this.$authorization = (_a = this.$authorization) !== null && _a !== void 0 ? _a : authorization_service_1.Authorization.build(this.axios));
     }
     get authentication() {
         var _a;
         return (this.$authentication =
-            (_a = this.$authentication) !== null && _a !== void 0 ? _a : authentication_service_1.Authentication.build(this.client));
+            (_a = this.$authentication) !== null && _a !== void 0 ? _a : authentication_service_1.Authentication.build(this.axios));
     }
 }
 exports.AuthClient = AuthClient;

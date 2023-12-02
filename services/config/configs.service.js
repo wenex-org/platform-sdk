@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConfigsService = void 0;
 const classes_1 = require("../../common/classes");
 class ConfigsService extends classes_1.RestfulService {
-    constructor(client) {
-        super('configs', client);
-        this.client = client;
+    constructor(axios) {
+        super('configs', axios);
+        this.axios = axios;
     }
 }
 exports.ConfigsService = ConfigsService;

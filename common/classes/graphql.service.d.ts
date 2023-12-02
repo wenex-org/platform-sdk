@@ -15,7 +15,7 @@ export type GraphqlResponse<T = any> = {
     errors?: GraphqlException[];
 };
 export declare class GraphqlService {
-    protected readonly client: AxiosInstance;
-    constructor(client: AxiosInstance);
+    protected readonly axios: AxiosInstance;
+    constructor(axios: AxiosInstance);
     request<T>(data: GraphqlRequest, config?: AxiosRequestConfig): Promise<GraphqlResponse<T>>;
 }

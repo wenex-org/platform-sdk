@@ -10,13 +10,13 @@ export class DomainClient {
   private $apps!: AppsService;
   private $clients!: ClientsService;
 
-  constructor(protected client: AxiosInstance) {}
+  constructor(readonly axios: AxiosInstance) {}
 
   get apps() {
-    return (this.$apps = this.$apps ?? new AppsService(this.client));
+    return (this.$apps = this.$apps ?? new AppsService(this.axios));
   }
 
   get clients() {
-    return (this.$clients = this.$clients ?? new ClientsService(this.client));
+    return (this.$clients = this.$clients ?? new ClientsService(this.axios));
   }
 }

@@ -13,19 +13,18 @@ export class AuthClient {
   private $authorization!: Authorization;
   private $authentication!: Authentication;
 
-  constructor(protected client: AxiosInstance) {}
+  constructor(readonly axios: AxiosInstance) {}
 
   get grants() {
-    return (this.$grants = this.$grants ?? new GrantsService(this.client));
+    return (this.$grants = this.$grants ?? new GrantsService(this.axios));
   }
 
   get authorization() {
-    return (this.$authorization =
-      this.$authorization ?? Authorization.build(this.client));
+    return (this.$authorization = this.$authorization ?? Authorization.build(this.axios));
   }
 
   get authentication() {
     return (this.$authentication =
-      this.$authentication ?? Authentication.build(this.client));
+      this.$authentication ?? Authentication.build(this.axios));
   }
 }

@@ -22,20 +22,20 @@ __exportStar(require("./users.service"), exports);
 __exportStar(require("./profiles.service"), exports);
 __exportStar(require("./sessions.service"), exports);
 class IdentityClient {
-    constructor(client) {
-        this.client = client;
+    constructor(axios) {
+        this.axios = axios;
     }
     get users() {
         var _a;
-        return (this.$users = (_a = this.$users) !== null && _a !== void 0 ? _a : new users_service_1.UsersService(this.client));
+        return (this.$users = (_a = this.$users) !== null && _a !== void 0 ? _a : new users_service_1.UsersService(this.axios));
     }
     get profiles() {
         var _a;
-        return (this.$profiles = (_a = this.$profiles) !== null && _a !== void 0 ? _a : new profiles_service_1.ProfilesService(this.client));
+        return (this.$profiles = (_a = this.$profiles) !== null && _a !== void 0 ? _a : new profiles_service_1.ProfilesService(this.axios));
     }
     get sessions() {
         var _a;
-        return (this.$sessions = (_a = this.$sessions) !== null && _a !== void 0 ? _a : new sessions_service_1.SessionsService(this.client));
+        return (this.$sessions = (_a = this.$sessions) !== null && _a !== void 0 ? _a : new sessions_service_1.SessionsService(this.axios));
     }
 }
 exports.IdentityClient = IdentityClient;

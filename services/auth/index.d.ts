@@ -6,11 +6,11 @@ export * from './grants.service';
 export * from './authorization.service';
 export * from './authentication.service';
 export declare class AuthClient {
-    protected client: AxiosInstance;
+    readonly axios: AxiosInstance;
     private $grants;
     private $authorization;
     private $authentication;
-    constructor(client: AxiosInstance);
+    constructor(axios: AxiosInstance);
     get grants(): GrantsService;
     get authorization(): Authorization;
     get authentication(): Authentication;

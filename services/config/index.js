@@ -16,14 +16,19 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConfigClient = void 0;
 const configs_service_1 = require("./configs.service");
+const settings_service_1 = require("./settings.service");
 __exportStar(require("./configs.service"), exports);
 class ConfigClient {
-    constructor(client) {
-        this.client = client;
+    constructor(axios) {
+        this.axios = axios;
     }
     get configs() {
         var _a;
-        return (this.$configs = (_a = this.$configs) !== null && _a !== void 0 ? _a : new configs_service_1.ConfigsService(this.client));
+        return (this.$configs = (_a = this.$configs) !== null && _a !== void 0 ? _a : new configs_service_1.ConfigsService(this.axios));
+    }
+    get settings() {
+        var _a;
+        return (this.$settings = (_a = this.$settings) !== null && _a !== void 0 ? _a : new settings_service_1.SettingsService(this.axios));
     }
 }
 exports.ConfigClient = ConfigClient;

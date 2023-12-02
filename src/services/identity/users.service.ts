@@ -4,7 +4,7 @@ import { RestfulService } from '../../common/classes';
 import { User, UserDto } from '../../common/interfaces';
 
 export class UsersService extends RestfulService<User, UserDto> {
-  constructor(protected client: AxiosInstance) {
-    super('users', client);
+  constructor(protected axios: AxiosInstance) {
+    super('users', axios);
   }
 }

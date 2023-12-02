@@ -12,10 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RestfulService = void 0;
 const providers_1 = require("../providers");
 class RestfulService extends providers_1.RequestService {
-    constructor(name, client) {
-        super(client);
+    constructor(name, axios) {
+        super(axios);
         this.name = name;
-        this.client = client;
+        this.axios = axios;
         this.url = (path) => `/${this.name}/${path}`;
     }
     count(filter, config) {
