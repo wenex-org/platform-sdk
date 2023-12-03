@@ -22,7 +22,7 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import type { FilterQuery, PopulateOptions, ProjectionFields, SortOrder } from 'mongoose';
+import type { FilterQuery, PopulateOptions, ProjectionType, SortOrder } from 'mongoose';
 import { Core } from './core.interface';
 export type QueryID = {
     id: string;
@@ -30,7 +30,7 @@ export type QueryID = {
 };
 export type Query<T = Core> = FilterQuery<T>;
 export type Populate = PopulateOptions[];
-export type Projection<T = Core> = ProjectionFields<T>;
+export type Projection<T = Core> = ProjectionType<T>;
 export type Pagination<T = Core> = {
     limit?: number;
     skip?: number;
