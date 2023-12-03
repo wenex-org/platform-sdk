@@ -13,7 +13,7 @@ export class PlatformClient {
   private $domain!: DomainClient;
   private $identity!: IdentityClient;
 
-  constructor(protected axios: AxiosInstance) {}
+  constructor(readonly axios: AxiosInstance) {}
 
   get graphql() {
     return (this.$graphql = this.$graphql ?? new GraphqlService(this.axios));

@@ -3,7 +3,7 @@ import { GraphqlService } from './common/classes';
 import { AuthClient, ConfigClient, DomainClient, IdentityClient } from './services';
 export * from './services';
 export declare class PlatformClient {
-    protected axios: AxiosInstance;
+    readonly axios: AxiosInstance;
     private $graphql;
     private $auth;
     private $config;
