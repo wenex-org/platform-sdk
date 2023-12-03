@@ -20,7 +20,7 @@ class RestfulService extends providers_1.RequestService {
     }
     count(filter, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            const params = Object.assign({ filter }, config === null || config === void 0 ? void 0 : config.params);
+            const params = Object.assign(Object.assign({}, filter), Object.assign({}, config === null || config === void 0 ? void 0 : config.params));
             return (yield this.get(this.url('/count'), Object.assign(Object.assign({}, config), { params }))).total;
         });
     }
@@ -37,7 +37,7 @@ class RestfulService extends providers_1.RequestService {
     }
     find(filter, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            const params = Object.assign({ filter }, config === null || config === void 0 ? void 0 : config.params);
+            const params = Object.assign(Object.assign({}, filter), Object.assign({}, config === null || config === void 0 ? void 0 : config.params));
             return (yield this.get(this.url(''), Object.assign(Object.assign({}, config), { params })))
                 .items;
         });
@@ -71,7 +71,7 @@ class RestfulService extends providers_1.RequestService {
     }
     updateBulk(data, filter, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            const params = Object.assign({ filter }, config === null || config === void 0 ? void 0 : config.params);
+            const params = Object.assign(Object.assign({}, filter), Object.assign({}, config === null || config === void 0 ? void 0 : config.params));
             return (yield this.patch('/bulk', data, Object.assign(Object.assign({}, config), { params }))).total;
         });
     }
