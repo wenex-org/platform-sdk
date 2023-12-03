@@ -19,28 +19,28 @@ const classes_1 = require("./common/classes");
 const services_1 = require("./services");
 __exportStar(require("./services"), exports);
 class PlatformClient {
-    constructor(client) {
-        this.client = client;
+    constructor(axios) {
+        this.axios = axios;
     }
     get graphql() {
         var _a;
-        return (this.$graphql = (_a = this.$graphql) !== null && _a !== void 0 ? _a : new classes_1.GraphqlService(this.client));
+        return (this.$graphql = (_a = this.$graphql) !== null && _a !== void 0 ? _a : new classes_1.GraphqlService(this.axios));
     }
     get auth() {
         var _a;
-        return (this.$auth = (_a = this.$auth) !== null && _a !== void 0 ? _a : new services_1.AuthClient(this.client));
+        return (this.$auth = (_a = this.$auth) !== null && _a !== void 0 ? _a : new services_1.AuthClient(this.axios));
     }
     get domain() {
         var _a;
-        return (this.$domain = (_a = this.$domain) !== null && _a !== void 0 ? _a : new services_1.DomainClient(this.client));
+        return (this.$domain = (_a = this.$domain) !== null && _a !== void 0 ? _a : new services_1.DomainClient(this.axios));
     }
     get config() {
         var _a;
-        return (this.$config = (_a = this.$config) !== null && _a !== void 0 ? _a : new services_1.ConfigClient(this.client));
+        return (this.$config = (_a = this.$config) !== null && _a !== void 0 ? _a : new services_1.ConfigClient(this.axios));
     }
     get identity() {
         var _a;
-        return (this.$identity = (_a = this.$identity) !== null && _a !== void 0 ? _a : new services_1.IdentityClient(this.client));
+        return (this.$identity = (_a = this.$identity) !== null && _a !== void 0 ? _a : new services_1.IdentityClient(this.axios));
     }
 }
 exports.PlatformClient = PlatformClient;
