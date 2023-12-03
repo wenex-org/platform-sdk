@@ -31,11 +31,9 @@ export interface User extends Core {
     mfa?: UserMFA;
     i18n: string;
     oauth?: UserOAuth[];
-    secret?: string;
     email?: string;
     phone?: string;
     username?: string;
-    password?: string;
     subjects: string[];
 }
 export type UserDoc = User & Document;
