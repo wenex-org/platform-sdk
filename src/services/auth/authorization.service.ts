@@ -23,7 +23,7 @@ export class Authorization {
 
   policy(data: AuthorizationPolicyRequest, config?: AxiosRequestConfig) {
     return this.request.post<AuthorizationPolicyResponse, AuthorizationPolicyRequest>(
-      this.url('grant'),
+      this.url('policy'),
       data,
       config,
     );

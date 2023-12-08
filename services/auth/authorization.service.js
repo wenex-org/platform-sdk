@@ -11,7 +11,7 @@ class Authorization {
         return this.request.post(this.url('can'), data, config);
     }
     policy(data, config) {
-        return this.request.post(this.url('grant'), data, config);
+        return this.request.post(this.url('policy'), data, config);
     }
     static build(client) {
         return new Authorization(new providers_1.RequestService(client));
