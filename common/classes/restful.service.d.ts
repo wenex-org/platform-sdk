@@ -24,6 +24,6 @@ export declare class RestfulService<T extends Core, Dto extends DtoInterface<Cor
     deleteById(id: string, config?: RequestConfig<T>): Promise<Serializer<T>>;
     restoreById(id: string, config?: RequestConfig<T>): Promise<Serializer<T>>;
     destroyById(id: string, config?: RequestConfig<T>): Promise<Serializer<T>>;
-    updateById(id: string, data: Dto, config?: RequestConfig<T>): Promise<Serializer<T>>;
-    updateBulk(data: Dto, filter: QueryFilter<T>, config?: RequestConfig<T>): Promise<number>;
+    updateById(id: string, data: Optional<Dto>, config?: RequestConfig<T>): Promise<Serializer<T>>;
+    updateBulk(data: Optional<Dto>, filter: QueryFilter<T>, config?: RequestConfig<T>): Promise<number>;
 }

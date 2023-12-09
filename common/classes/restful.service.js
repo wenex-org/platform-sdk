@@ -65,14 +65,14 @@ class RestfulService extends providers_1.RequestService {
     }
     updateById(id, data, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.patch(`${this.url(id)}`, data, config))
-                .data;
+            return (yield this.patch(`${this.url(id)}`, data, config)).data;
         });
     }
     updateBulk(data, filter, config) {
         return __awaiter(this, void 0, void 0, function* () {
             const params = Object.assign(Object.assign({}, filter), Object.assign({}, config === null || config === void 0 ? void 0 : config.params));
-            return (yield this.patch('/bulk', data, Object.assign(Object.assign({}, config), { params }))).total;
+            return (yield this.patch('/bulk', data, Object.assign(Object.assign({}, config), { params })))
+                .total;
         });
     }
 }
