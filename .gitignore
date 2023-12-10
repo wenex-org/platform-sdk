@@ -1,3 +1,7 @@
+common/
+services/
+./index.*
+
 # Logs
 logs
 *.log
