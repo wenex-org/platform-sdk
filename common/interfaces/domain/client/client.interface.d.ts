@@ -43,6 +43,7 @@ export interface Client extends Core {
     state: State;
     status: Status;
     client_id: string;
+    client_secret: string;
     expiration_date: Date;
     access_token_ttl: number;
     refresh_token_ttl: number;
