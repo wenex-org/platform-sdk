@@ -13,10 +13,10 @@ export class SpecialClient {
   constructor(readonly axios: AxiosInstance) {}
 
   get files() {
-    return (this.$files = this.$files ?? new StatsService(this.axios));
+    return (this.$files = this.$files ?? new FilesService(this.axios));
   }
 
   get stats() {
-    return (this.$stats = this.$stats ?? new FilesService(this.axios));
+    return (this.$stats = this.$stats ?? new StatsService(this.axios));
   }
 }
