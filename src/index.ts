@@ -1,7 +1,13 @@
 import type { AxiosInstance } from 'axios';
 
+import {
+  AuthClient,
+  ConfigClient,
+  DomainClient,
+  IdentityClient,
+  SpecialClient,
+} from './services';
 import { GraphqlService } from './common/classes';
-import { AuthClient, ConfigClient, DomainClient, IdentityClient } from './services';
 
 export * from './services';
 
@@ -11,6 +17,7 @@ export class PlatformClient {
   private $auth!: AuthClient;
   private $config!: ConfigClient;
   private $domain!: DomainClient;
+  private $special!: SpecialClient;
   private $identity!: IdentityClient;
 
   constructor(readonly axios: AxiosInstance) {}
@@ -29,6 +36,10 @@ export class PlatformClient {
 
   get config() {
     return (this.$config = this.$config ?? new ConfigClient(this.axios));
+  }
+
+  get special() {
+    return (this.$special = this.$special ?? new SpecialClient(this.axios));
   }
 
   get identity() {
