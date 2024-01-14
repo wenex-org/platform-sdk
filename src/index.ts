@@ -6,6 +6,7 @@ import {
   DomainClient,
   IdentityClient,
   SpecialClient,
+  TouchClient,
 } from './services';
 import { GraphqlService } from './common/classes';
 
@@ -15,6 +16,7 @@ export class PlatformClient {
   private $graphql!: GraphqlService;
 
   private $auth!: AuthClient;
+  private $touch!: TouchClient;
   private $config!: ConfigClient;
   private $domain!: DomainClient;
   private $special!: SpecialClient;
@@ -28,6 +30,10 @@ export class PlatformClient {
 
   get auth() {
     return (this.$auth = this.$auth ?? new AuthClient(this.axios));
+  }
+
+  get touch() {
+    return (this.$touch = this.$touch ?? new TouchClient(this.axios));
   }
 
   get domain() {
