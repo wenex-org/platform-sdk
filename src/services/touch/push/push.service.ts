@@ -1,8 +1,8 @@
 import type { AxiosInstance } from 'axios';
 
 import { PushHistoryService } from './history.service';
-import { RestfulService } from '../../../common/classes';
-import { Push, PushDto } from '../../../common/interfaces';
+import { RequestConfig, RestfulService } from '../../../common/classes';
+import { Push, PushDto, PushHistory, PushHistoryDto } from '../../../common/interfaces';
 
 export class PushService extends RestfulService<Push, PushDto> {
   private $histories!: PushHistoryService;
@@ -13,5 +13,12 @@ export class PushService extends RestfulService<Push, PushDto> {
 
   get histories() {
     return (this.$histories = this.$histories ?? new PushHistoryService(this.axios));
+  }
+
+  async send(
+    data: PushHistoryDto,
+    config?: RequestConfig<PushHistory>,
+  ): Promise<PushHistory[]> {
+    return await this.post<PushHistory[], PushHistoryDto>(this.url('send'), data, config);
   }
 }

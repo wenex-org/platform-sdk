@@ -1,6 +1,6 @@
 {
   "name": "@wenex/sdk",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Wenex SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@types/debug": "^4.1.12",
     "@types/jest": "^29.5.11",
-    "@types/node": "^20.11.0",
+    "@types/node": "^20.11.1",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "dotenv": "^16.3.1",

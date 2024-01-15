@@ -3,8 +3,8 @@ import { AxiosInstance } from 'axios';
 import { MailsService } from './mails.service';
 import { PushService } from './push';
 
+export * from './push';
 export * from './mails.service';
-export * from './push/push.service';
 
 export class TouchClient {
   private $push!: PushService;
