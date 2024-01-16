@@ -15,10 +15,7 @@ export class PushService extends RestfulService<Push, PushDto> {
     return (this.$histories = this.$histories ?? new PushHistoryService(this.axios));
   }
 
-  async send(
-    data: PushHistoryDto,
-    config?: RequestConfig<PushHistory>,
-  ): Promise<PushHistory[]> {
-    return await this.post<PushHistory[], PushHistoryDto>(this.url('send'), data, config);
+  async send(data: PushHistoryDto, config?: RequestConfig<PushHistory>): Promise<void> {
+    return await this.post<void, PushHistoryDto>(this.url('send'), data, config);
   }
 }
