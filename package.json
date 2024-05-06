@@ -16,7 +16,6 @@
   "homepage": "https://github.com/wenex-org/platform-sdk#readme",
   "scripts": {
     "debug": "jest --watch",
-    "prebuild": "rimraf dist",
     "build": "tsc -p ./tsconfig.json",
     "clean": "rm -rf ./dist && rm -rf ./coverage",
     "lint": "eslint . '*/**/*.{js,ts}' --quiet --fix",
