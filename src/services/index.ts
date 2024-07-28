@@ -3,5 +3,7 @@ export * from './touch';
 export * from './domain';
 export * from './config';
 export * from './special';
+export * from './general';
 export * from './identity';
+export * from './logistic';
 export * from './financial';
