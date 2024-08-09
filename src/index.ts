@@ -8,6 +8,7 @@ import {
   SpecialClient,
   TouchClient,
   FinancialClient,
+  LogisticClient,
 } from './services';
 import { GraphqlService } from './common/classes';
 
@@ -22,6 +23,7 @@ export class PlatformClient {
   private $domain!: DomainClient;
   private $special!: SpecialClient;
   private $identity!: IdentityClient;
+  private $logistic!: LogisticClient;
   private $financial!: FinancialClient;
 
   constructor(readonly axios: AxiosInstance) {}
@@ -52,6 +54,10 @@ export class PlatformClient {
 
   get identity() {
     return (this.$identity = this.$identity ?? new IdentityClient(this.axios));
+  }
+
+  get logistic() {
+    return (this.$logistic = this.$logistic ?? new LogisticClient(this.axios));
   }
 
   get financial() {
