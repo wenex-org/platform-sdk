@@ -1,3 +1,4 @@
 [submodule "src/common"]
 	path = src/common
 	url = git@github.com:wenex-org/platform-sdk-common.git
+	branch = main
