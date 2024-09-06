@@ -16,7 +16,7 @@ export class FilesService extends RestfulService<File, FileDto> {
   ): Promise<T> {
     config.responseType = responseType;
     const url = this.url(`download/${id}`);
-    return await this.get<T>(url, config);
+    return this.get<T>(url, config);
   }
 
   async upload(
@@ -34,6 +34,6 @@ export class FilesService extends RestfulService<File, FileDto> {
     });
 
     const url: string = this.url(`upload/${scope}`);
-    return await this.post<Serializer<File>[], FormData>(url, form, config);
+    return this.post<Serializer<File>[], FormData>(url, form, config);
   }
 }

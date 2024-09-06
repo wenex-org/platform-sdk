@@ -9,6 +9,6 @@ export class MailsService extends RestfulService<Mail, MailDto> {
   }
 
   async send(data: MailDto, config?: RequestConfig<Mail>): Promise<Mail> {
-    return await this.post<Serializer<Mail>, MailDto>(this.url('send'), data, config);
+    return this.post<Serializer<Mail>, MailDto>(this.url('send'), data, config);
   }
 }
