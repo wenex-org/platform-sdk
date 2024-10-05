@@ -5,7 +5,7 @@ import { SettingsService } from './settings.service';
 
 export * from './configs.service';
 
-export class ConfigClient {
+export class ContextClient {
   private $configs!: ConfigsService;
   private $settings!: SettingsService;
 

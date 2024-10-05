@@ -2,7 +2,7 @@ import type { AxiosInstance } from 'axios';
 
 import {
   AuthClient,
-  ConfigClient,
+  ContextClient,
   DomainClient,
   IdentityClient,
   SpecialClient,
@@ -19,8 +19,8 @@ export class PlatformClient {
 
   private $auth!: AuthClient;
   private $touch!: TouchClient;
-  private $config!: ConfigClient;
   private $domain!: DomainClient;
+  private $context!: ContextClient;
   private $special!: SpecialClient;
   private $identity!: IdentityClient;
   private $logistic!: LogisticClient;
@@ -44,8 +44,8 @@ export class PlatformClient {
     return (this.$domain = this.$domain ?? new DomainClient(this.axios));
   }
 
-  get config() {
-    return (this.$config = this.$config ?? new ConfigClient(this.axios));
+  get context() {
+    return (this.$context = this.$context ?? new ContextClient(this.axios));
   }
 
   get special() {
