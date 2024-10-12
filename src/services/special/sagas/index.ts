@@ -1,2 +1,2 @@
-export * from './push.service';
+export * from './sagas.service';
 export * from './history.service';

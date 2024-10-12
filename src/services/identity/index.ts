@@ -9,9 +9,9 @@ export * from './profiles.service';
 export * from './sessions.service';
 
 export class IdentityClient {
-  private $users!: UsersService;
-  private $profiles!: ProfilesService;
-  private $sessions!: SessionsService;
+  protected $users?: UsersService;
+  protected $profiles?: ProfilesService;
+  protected $sessions?: SessionsService;
 
   constructor(readonly axios: AxiosInstance) {}
 

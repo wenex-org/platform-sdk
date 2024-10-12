@@ -7,8 +7,8 @@ export * from './apps.service';
 export * from './clients.service';
 
 export class DomainClient {
-  private $apps!: AppsService;
-  private $clients!: ClientsService;
+  protected $apps?: AppsService;
+  protected $clients?: ClientsService;
 
   constructor(readonly axios: AxiosInstance) {}
 

@@ -13,11 +13,11 @@ export * from './vehicles.service';
 export * from './locations.service';
 
 export class LogisticClient {
-  private $cargos!: CargosService;
-  private $drivers!: DriversService;
-  private $travels!: TravelsService;
-  private $vehicles!: VehiclesService;
-  private $locations!: LocationsService;
+  protected $cargos?: CargosService;
+  protected $drivers?: DriversService;
+  protected $travels?: TravelsService;
+  protected $vehicles?: VehiclesService;
+  protected $locations?: LocationsService;
 
   constructor(readonly axios: AxiosInstance) {}
 

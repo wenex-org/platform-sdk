@@ -11,10 +11,10 @@ export * from './accounts.service';
 export * from './transactions.service';
 
 export class FinancialClient {
-  private $coins!: CoinsService;
-  private $wallets!: WalletsService;
-  private $accounts!: AccountsService;
-  private $transactions!: TransactionsService;
+  protected $coins?: CoinsService;
+  protected $wallets?: WalletsService;
+  protected $accounts?: AccountsService;
+  protected $transactions?: TransactionsService;
 
   constructor(readonly axios: AxiosInstance) {}
 

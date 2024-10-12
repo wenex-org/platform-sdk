@@ -9,9 +9,9 @@ export * from './authorization.service';
 export * from './authentication.service';
 
 export class AuthClient {
-  private $grants!: GrantsService;
-  private $authorization!: Authorization;
-  private $authentication!: Authentication;
+  protected $grants?: GrantsService;
+  protected $authorization?: Authorization;
+  protected $authentication?: Authentication;
 
   constructor(readonly axios: AxiosInstance) {}
 

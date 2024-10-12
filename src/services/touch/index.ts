@@ -1,14 +1,14 @@
 import { AxiosInstance } from 'axios';
 
 import { MailsService } from './mails.service';
-import { PushService } from './push';
+import { PushesService } from './pushes';
 
-export * from './push';
+export * from './pushes';
 export * from './mails.service';
 
 export class TouchClient {
-  private $push!: PushService;
-  private $mails!: MailsService;
+  protected $mails?: MailsService;
+  protected $pushes?: PushesService;
 
   constructor(readonly axios: AxiosInstance) {}
 
@@ -16,7 +16,7 @@ export class TouchClient {
     return (this.$mails = this.$mails ?? new MailsService(this.axios));
   }
 
-  get push() {
-    return (this.$push = this.$push ?? new PushService(this.axios));
+  get pushes() {
+    return (this.$pushes = this.$pushes ?? new PushesService(this.axios));
   }
 }

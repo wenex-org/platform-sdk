@@ -6,8 +6,8 @@ import { SettingsService } from './settings.service';
 export * from './configs.service';
 
 export class ContextClient {
-  private $configs!: ConfigsService;
-  private $settings!: SettingsService;
+  protected $configs?: ConfigsService;
+  protected $settings?: SettingsService;
 
   constructor(readonly axios: AxiosInstance) {}
 

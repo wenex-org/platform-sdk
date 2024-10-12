@@ -7,8 +7,8 @@ export * from './artifacts.service';
 export * from './workflows.service';
 
 export class GeneralClient {
-  private $artifacts!: ArtifactsService;
-  private $workflows!: WorkflowsService;
+  protected $artifacts?: ArtifactsService;
+  protected $workflows?: WorkflowsService;
 
   constructor(readonly axios: AxiosInstance) {}
 

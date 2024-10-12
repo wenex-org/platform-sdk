@@ -15,16 +15,16 @@ import { GraphqlService } from './common/classes';
 export * from './services';
 
 export class PlatformClient {
-  private $graphql!: GraphqlService;
+  protected $graphql?: GraphqlService;
 
-  private $auth!: AuthClient;
-  private $touch!: TouchClient;
-  private $domain!: DomainClient;
-  private $context!: ContextClient;
-  private $special!: SpecialClient;
-  private $identity!: IdentityClient;
-  private $logistic!: LogisticClient;
-  private $financial!: FinancialClient;
+  protected $auth?: AuthClient;
+  protected $touch?: TouchClient;
+  protected $domain?: DomainClient;
+  protected $context?: ContextClient;
+  protected $special?: SpecialClient;
+  protected $identity?: IdentityClient;
+  protected $logistic?: LogisticClient;
+  protected $financial?: FinancialClient;
 
   constructor(readonly axios: AxiosInstance) {}
 
