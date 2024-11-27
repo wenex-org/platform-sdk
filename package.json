@@ -53,19 +53,11 @@
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.16.0"
   },
-  "engines": {
-    "node": ">=22.x.x <23",
-    "npm": "~10.9.1"
-  },
-  "os": [
-    "!win32"
-  ],
   "files": [
     "/common",
     "/services",
     "/index.js",
     "/index.d.ts",
     "/index.js.map"
-  ],
-  "packageManager": "pnpm@9.14.2"
+  ]
 }
