@@ -19,5 +19,5 @@
     "noFallthroughCasesInSwitch": false
   },
   "include": ["src/**/*"],
-  "exclude": ["./docs", "./node_modules"]
+  "exclude": ["./docs", "./coverage", "./node_modules"]
 }

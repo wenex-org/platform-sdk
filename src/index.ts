@@ -1,3 +1,3 @@
-console.log("");
-
-export { }
+export function hello() {
+  return 'Hello, World!';
+}
