@@ -1,6 +1,6 @@
 # Build
-common/
-services/
+/common/
+/services/
 index.js
 index.d.ts
 index.js.map
