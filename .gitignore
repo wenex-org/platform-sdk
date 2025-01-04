@@ -1,3 +1,5 @@
+circular-dependencies.*
+
 # Build
 /common/
 /services/
