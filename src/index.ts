@@ -5,7 +5,7 @@ import { GraphqlService } from './common/core/classes';
 
 export * from './services';
 
-export class PlatformClient<Properties extends object = object> {
+export class Platform<Properties extends object = object> {
   protected _graphql?: GraphqlService;
 
   protected _auth?: Services.AuthClient<Properties>;
@@ -46,6 +46,6 @@ export class PlatformClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new PlatformClient<Properties>(axios);
+    return new Platform<Properties>(axios);
   }
 }
