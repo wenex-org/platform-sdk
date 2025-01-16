@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-import { PlatformClient } from '../src';
+import { Platform } from '../src';
 
-describe('test platform client', () => {
+describe('test platform', () => {
   it('should define platform instance', () => {
-    expect(PlatformClient.build(axios.create())).toBeDefined();
+    expect(Platform.build(axios.create())).toBeDefined();
   });
 });
