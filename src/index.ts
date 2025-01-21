@@ -14,6 +14,7 @@ export class Platform<Properties extends object = object> {
   protected _essential?: Services.EssentialClient<Properties>;
   protected _identity?: Services.IdentityClient<Properties>;
   protected _special?: Services.SpecialClient<Properties>;
+  protected _touch?: Services.TouchClient<Properties>;
 
   constructor(readonly axios: AxiosInstance) {}
 
@@ -39,6 +40,10 @@ export class Platform<Properties extends object = object> {
 
   get special() {
     return (this._special = this._special ?? Services.SpecialClient.build<Properties>(this.axios));
+  }
+
+  get touch() {
+    return (this._touch = this._touch ?? Services.TouchClient.build<Properties>(this.axios));
   }
 
   get graphql() {
