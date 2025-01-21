@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "prebuild": "rimraf tsconfig.tsbuildinfo index.* common services",
-    "preinstall": "npx husky",
+    "preinstall": "husky",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint \"{src,test}/**/*.ts\" --quiet --fix",
     "test": "jest",
