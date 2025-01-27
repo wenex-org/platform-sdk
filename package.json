@@ -1,6 +1,6 @@
 {
   "name": "@wenex/sdk",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Wenex SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -45,6 +45,7 @@
     "class-validator": "^0.14.1",
     "cron-validate": "^1.4.5",
     "debug": "^4.4.0",
+    "lodash": "^4.17.21",
     "luxon": "^3.5.0",
     "naming-conventions-modeler": "^1.4.6",
     "phone": "^3.1.57",
@@ -56,6 +57,7 @@
     "@types/debug": "^4.1.12",
     "@types/geojson": "^7946.0.15",
     "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.14",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.10.5",
     "@types/qs": "^6.9.17",
