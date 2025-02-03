@@ -29,7 +29,9 @@
     "test:cov": "jest --coverage && npm run make-coverage-badge",
     "doc": "npx typedoc --entryPointStrategy expand --out docs src/",
     "check": "madge --circular --warning --ts-config ./tsconfig.json --extensions ts --image circular-dependencies.png ./src",
-    "make-coverage-badge": "make-coverage-badge --report-path coverage/coverage-summary.json --output-path coverage-badge.svg"
+    "make-coverage-badge": "make-coverage-badge --report-path coverage/coverage-summary.json --output-path coverage-badge.svg",
+    "git": "bash ./scripts/git-submodule.sh",
+    "git:clone": "git submodule update --init --recursive"
   },
   "lint-staged": {
     "*.ts": [
