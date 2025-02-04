@@ -1,6 +1,6 @@
 {
   "name": "@wenex/sdk",
-  "version": "1.0.18",
+  "version": "1.0.20",
   "description": "Wenex SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -22,10 +22,11 @@
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "prebuild": "rimraf tsconfig.tsbuildinfo index.* common services",
-    "prepare": "husky",
+    "prepare": "echo -e prepare for development by: npm run husky",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint \"{src,test}/**/*.ts\" --quiet --fix",
     "test": "jest",
+    "husky": "husky",
     "test:cov": "jest --coverage && npm run make-coverage-badge",
     "doc": "npx typedoc --entryPointStrategy expand --out docs src/",
     "check": "madge --circular --warning --ts-config ./tsconfig.json --extensions ts --image circular-dependencies.png ./src",
