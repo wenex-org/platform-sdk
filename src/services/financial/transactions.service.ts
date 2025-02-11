@@ -16,8 +16,9 @@ export class TransactionsService<Properties extends object = object> extends Res
     data: TransactionInitDto<Properties>,
     config?: RequestConfig<Transaction<Properties>>,
   ): Promise<Serializer<Transaction<Properties>>> {
-    return (await this.post<Data<Serializer<Transaction<Properties>>>, TransactionInitDto<Properties>>(this.url(), data, config))
-      .data;
+    return (
+      await this.post<Data<Serializer<Transaction<Properties>>>, TransactionInitDto<Properties>>(this.url('init'), data, config)
+    ).data;
   }
 
   async abort<Path extends object = object>(
