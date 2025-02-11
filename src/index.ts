@@ -12,6 +12,7 @@ export class Platform<Properties extends object = object> {
   protected _context?: Services.ContextClient<Properties>;
   protected _domain?: Services.DomainClient<Properties>;
   protected _essential?: Services.EssentialClient<Properties>;
+  protected _financial?: Services.FinancialClient<Properties>;
   protected _identity?: Services.IdentityClient<Properties>;
   protected _special?: Services.SpecialClient<Properties>;
   protected _touch?: Services.TouchClient<Properties>;
@@ -32,6 +33,10 @@ export class Platform<Properties extends object = object> {
 
   get essential() {
     return (this._essential = this._essential ?? Services.EssentialClient.build<Properties>(this.axios));
+  }
+
+  get financial() {
+    return (this._financial = this._financial ?? Services.FinancialClient.build<Properties>(this.axios));
   }
 
   get identity() {
