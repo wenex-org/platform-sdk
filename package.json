@@ -1,6 +1,6 @@
 {
   "name": "@wenex/sdk",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "Wenex SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -75,7 +75,7 @@
     "lint-staged": "^15.3.0",
     "madge": "^8.0.0",
     "make-coverage-badge": "^1.2.0",
-    "mongoose": "^8.9.3",
+    "mongoose": "^8.9.5",
     "prettier": "^3.4.2",
     "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
