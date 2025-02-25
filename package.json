@@ -1,6 +1,6 @@
 {
   "name": "@wenex/sdk",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "Wenex SDK",
   "main": "index.js",
   "types": "index.d.ts",
