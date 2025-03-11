@@ -3,6 +3,7 @@ export * from './context';
 export * from './domain';
 export * from './essential';
 export * from './financial';
+export * from './general';
 export * from './identity';
 export * from './special';
 export * from './touch';
