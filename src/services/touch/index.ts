@@ -1,19 +1,26 @@
 import type { AxiosInstance } from 'axios';
 
 import { SmssService } from './smss.service';
+import { PushesService } from './pushes.service';
 import { EmailsService } from './emails.service';
 
 export * from './smss.service';
+export * from './pushes.service';
 export * from './emails.service';
 
 export class TouchClient<Properties extends object = object> {
   protected _smss?: SmssService<any, Properties>;
+  protected _pushes?: PushesService<Properties>;
   protected _emails?: EmailsService<Properties>;
 
   constructor(readonly axios: AxiosInstance) {}
 
   get smss() {
     return (this._smss = this._smss ?? new SmssService<any, Properties>(this.axios));
+  }
+
+  get pushes() {
+    return (this._pushes = this._pushes ?? new PushesService<Properties>(this.axios));
   }
 
   get emails() {
