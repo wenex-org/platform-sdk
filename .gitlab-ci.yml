@@ -20,6 +20,9 @@ build:
     - npm install -g pnpm@10.5.2
     - pnpm install --frozen-lockfile
     - npm run build
+  after_script:
+    - rm -f .npmrc
+    - echo "Build completed."
   artifacts:
     paths:
       - src/common
@@ -75,9 +78,8 @@ publish:
     - job: build
       artifacts: true
   script:
-    - rm -f .npmrc
     - echo "@scope:registry=https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
     - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
-    - npm publish
+    - npm publish --registry "https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
   # rules:
   #   - if: '$CI_COMMIT_TAG =~ /^[0-9]+\.[0-9]+\.[0-9]+$/'
