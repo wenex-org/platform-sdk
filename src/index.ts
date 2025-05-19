@@ -9,6 +9,7 @@ export class Platform<Properties extends object = object> {
   protected _graphql?: GraphqlService;
 
   protected _auth?: Services.AuthClient<Properties>;
+  protected _content?: Services.ContentClient<Properties>;
   protected _context?: Services.ContextClient<Properties>;
   protected _domain?: Services.DomainClient<Properties>;
   protected _essential?: Services.EssentialClient<Properties>;
@@ -22,6 +23,10 @@ export class Platform<Properties extends object = object> {
 
   get auth() {
     return (this._auth = this._auth ?? Services.AuthClient.build<Properties>(this.axios));
+  }
+
+  get content() {
+    return (this._content = this._content ?? Services.ContentClient.build<Properties>(this.axios));
   }
 
   get context() {
