@@ -11,16 +11,11 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Setup SSH agent
-        uses: webfactory/ssh-agent@v0.9.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           submodules: recursive
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4.4.0
