@@ -18,14 +18,16 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm@10.5.2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.5.2
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
