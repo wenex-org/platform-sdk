@@ -28,6 +28,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
 
+      - name: Clone submodules
+        run: npm run git:clone
+
       - name: Install pnpm
         run: npm install -g pnpm@10.5.2
 
