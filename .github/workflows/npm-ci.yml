@@ -1,8 +1,9 @@
 name: Build, Test, and Publish
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   build-and-publish:
