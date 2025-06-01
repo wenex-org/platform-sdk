@@ -1,4 +1,7 @@
 export default {
+  maxWorkers: 2,
+  maxConcurrency: 4,
+
   collectCoverage: true,
   coverageDirectory: './coverage',
   coveragePathIgnorePatterns: ['/node_modules/'],

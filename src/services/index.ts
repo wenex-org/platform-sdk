@@ -7,3 +7,5 @@ export * from './general';
 export * from './identity';
 export * from './special';
 export * from './touch';
+export * from './content';
+export * from './logistic';

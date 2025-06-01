@@ -1,7 +1,7 @@
 import type { AxiosInstance, ResponseType } from 'axios';
 
-import { Serializer } from '../../common/core/interfaces';
 import { File, FileDto } from '../../common/interfaces/special';
+import { Items, Serializer } from '../../common/core/interfaces';
 import { RequestConfig, RestfulService } from '../../common/core/classes';
 
 export class FilesService<Properties extends object = object> extends RestfulService<File<Properties>, FileDto<Properties>> {
@@ -15,7 +15,7 @@ export class FilesService<Properties extends object = object> extends RestfulSer
     return this.get<T>(url, config);
   }
 
-  upload(
+  async upload(
     items: { value: Blob; filename?: string }[],
     scope: 'private' | 'public',
     config: RequestConfig<File<Properties>> = {},
@@ -24,7 +24,7 @@ export class FilesService<Properties extends object = object> extends RestfulSer
     items.forEach((item) => form.append('file', item.value, item.filename));
     Object.assign(config, { headers: { 'Content-Type': 'multipart/form-data' } });
     const url: string = this.url(`upload/${scope}`);
-    return this.post<Serializer<File<Properties>>[], FormData>(url, form, config);
+    return (await this.post<Items<Serializer<File<Properties>>>, FormData>(url, form, config)).items;
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
