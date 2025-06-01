@@ -11,6 +11,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - conjoint services.
 
+## [1.1.2] - 2025-06-01
+
+### Changed
+
+- rename `collection` prop of essential to `bucket` @vhidvz
+
+## [1.1.1] - 2025-06-01
+
+### Changed
+
+- refactor path definition base on collection @vhidvz
+
+## [1.1.0] - 2025-06-01
+
+### Changed
+
+- core collection type definition @vhidvz
+- refactor essential schema definition @vhidvz
+
 ## [1.0.56] - 2025-05-28
 
 ### Changed
@@ -46,7 +65,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.0.56...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.2...HEAD
+[1.1.2]: https://github.com/wenex-org/platform-sdk/compare/1.1.1...1.1.2
+[1.1.1]: https://github.com/wenex-org/platform-sdk/compare/1.1.0...1.1.1
+[1.1.0]: https://github.com/wenex-org/platform-sdk/compare/1.0.56...1.1.0
 [1.0.56]: https://github.com/wenex-org/platform-sdk/compare/1.0.55...1.0.56
 [1.0.55]: https://github.com/wenex-org/platform-sdk/compare/1.0.54...1.0.55
 [1.0.54]: https://github.com/wenex-org/platform-sdk/compare/1.0.53...1.0.54
