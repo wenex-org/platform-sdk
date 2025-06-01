@@ -5,7 +5,7 @@ import { Driver, DriverDto } from '../../common/interfaces/logistic';
 
 export class DriversService<Properties extends object = object> extends RestfulService<Driver<Properties>, DriverDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('drivers', axios);
+    super('logistic/drivers', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

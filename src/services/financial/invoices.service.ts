@@ -9,7 +9,7 @@ export class InvoicesService<Properties extends object = object> extends Restful
   InvoiceDto<Properties>
 > {
   constructor(protected axios: AxiosInstance) {
-    super('invoices', axios);
+    super('financial/invoices', axios);
   }
 
   async payment<Path extends object = object>(

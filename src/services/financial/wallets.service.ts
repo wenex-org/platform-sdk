@@ -5,7 +5,7 @@ import { Wallet, WalletDto } from '../../common/interfaces/financial';
 
 export class WalletsService<Properties extends object = object> extends RestfulService<Wallet<Properties>, WalletDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('wallets', axios);
+    super('financial/wallets', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

@@ -5,7 +5,7 @@ import { Ticket, TicketDto } from '../../common/interfaces/content';
 
 export class TicketsService<Properties extends object = object> extends RestfulService<Ticket<Properties>, TicketDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('tickets', axios);
+    super('content/tickets', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

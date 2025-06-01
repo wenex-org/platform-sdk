@@ -9,7 +9,7 @@ export class TransactionsService<Properties extends object = object> extends Res
   TransactionDto<Properties>
 > {
   constructor(protected axios: AxiosInstance) {
-    super('transactions', axios);
+    super('financial/transactions', axios);
   }
 
   async init(

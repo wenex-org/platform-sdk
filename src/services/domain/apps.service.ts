@@ -5,7 +5,7 @@ import { App, AppDto } from '../../common/interfaces/domain';
 
 export class AppsService<Properties extends object = object> extends RestfulService<App<Properties>, AppDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('apps', axios);
+    super('domain/apps', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

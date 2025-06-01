@@ -5,7 +5,7 @@ import { Notice, NoticeDto } from '../../common/interfaces/general';
 
 export class NoticesService<Properties extends object = object> extends RestfulService<Notice<Properties>, NoticeDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('notices', axios);
+    super('general/notices', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

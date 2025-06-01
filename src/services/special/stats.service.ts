@@ -6,7 +6,7 @@ import { Stat, StatCollectDto, StatDto } from '../../common/interfaces/special';
 
 export class StatsService<Properties extends object = object> extends RestfulService<Stat<Properties>, StatDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('stats', axios);
+    super('special/stats', axios);
   }
 
   async collect(

@@ -9,7 +9,7 @@ export class LocationsService<Properties extends object = object> extends Restfu
   LocationDto<Properties>
 > {
   constructor(protected axios: AxiosInstance) {
-    super('locations', axios);
+    super('logistic/locations', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

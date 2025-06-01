@@ -5,7 +5,7 @@ import { Config, ConfigDto } from '../../common/interfaces/context';
 
 export class ConfigsService<Properties extends object = object> extends RestfulService<Config<Properties>, ConfigDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('configs', axios);
+    super('context/configs', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

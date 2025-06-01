@@ -6,7 +6,7 @@ import { Push, PushDto, PusHistory, PusHistorySendDto } from '../../common/inter
 
 export class PushesService<Properties extends object = object> extends RestfulService<Push<Properties>, PushDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('pushes', axios);
+    super('touch/pushes', axios);
   }
 
   async send(data: PusHistorySendDto, config?: RequestConfig<PusHistory>): Promise<Serializer<PusHistory>> {

@@ -10,7 +10,7 @@ export class SagaStagesService<
   Properties extends object = object,
 > extends RestfulService<SagaStage<T, D, Properties>, SagaStageDto<T, D, Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('saga-stages', axios);
+    super('essential/saga-stages', axios);
   }
 
   static build<T extends Core = Core, D extends Dto<Core> = Dto<Core>, Properties extends object = object>(axios: AxiosInstance) {

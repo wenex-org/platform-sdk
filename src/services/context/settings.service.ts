@@ -8,7 +8,7 @@ export class SettingsService<Properties extends object = object> extends Restful
   SettingDto<Properties>
 > {
   constructor(protected axios: AxiosInstance) {
-    super('settings', axios);
+    super('context/settings', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

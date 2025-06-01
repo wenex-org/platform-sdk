@@ -8,7 +8,7 @@ export class SagasService<Properties extends object = object> extends RestfulSer
   protected _stages?: SagaStagesService;
 
   constructor(protected axios: AxiosInstance) {
-    super('sagas', axios);
+    super('essential/sagas', axios);
   }
 
   start(data: SagaStartDto<Properties>, config?: RequestConfig<Saga<Properties>>) {

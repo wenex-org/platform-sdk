@@ -8,7 +8,7 @@ export class ProfilesService<Properties extends object = object> extends Restful
   ProfileDto<Properties>
 > {
   constructor(protected axios: AxiosInstance) {
-    super('profiles', axios);
+    super('identity/profiles', axios);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

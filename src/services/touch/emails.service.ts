@@ -6,7 +6,7 @@ import { Email, EmailDto, EmailSendDto } from '../../common/interfaces/touch';
 
 export class EmailsService<Properties extends object = object> extends RestfulService<Email<Properties>, EmailDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('emails', axios);
+    super('touch/emails', axios);
   }
 
   async send(data: EmailSendDto<Properties>, config?: RequestConfig<Email<Properties>>): Promise<Serializer<Email<Properties>>> {

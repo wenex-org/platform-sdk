@@ -6,7 +6,7 @@ import { RequestConfig, RestfulService } from '../../common/core/classes';
 
 export class FilesService<Properties extends object = object> extends RestfulService<File<Properties>, FileDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
-    super('files', axios);
+    super('special/files', axios);
   }
 
   download<T = any>(id: string, config: RequestConfig<File<Properties>> = {}, responseType: ResponseType = 'blob'): Promise<T> {
