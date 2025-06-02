@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - conjoint services.
 
+## [1.1.3] - 2025-06-02
+
+### Fixed
+
+- push history doc type @vhidvz
+
 ## [1.1.2] - 2025-06-01
 
 ### Changed
@@ -65,7 +71,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.2...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.3...HEAD
+[1.1.3]: https://github.com/wenex-org/platform-sdk/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/wenex-org/platform-sdk/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/wenex-org/platform-sdk/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/wenex-org/platform-sdk/compare/1.0.56...1.1.0
