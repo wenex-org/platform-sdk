@@ -15,6 +15,7 @@ build:
   image: $NODE_IMAGE
   before_script:
     - echo "Starting build..."
+    - bash ./scripts/ci/setup.sh
   script:
     - npm run git:clone
     - npm install -g pnpm@10.5.2
@@ -30,6 +31,7 @@ build:
       - index.js.map
       - node_modules
       - tsconfig.tsbuildinfo
+      - sonar-project.properties
     when: on_success
     expire_in: 1 hrs 30 min
 

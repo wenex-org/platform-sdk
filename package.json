@@ -1,6 +1,6 @@
 {
   "name": "@wenex/sdk",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Wenex SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -32,7 +32,8 @@
     "check": "madge --circular --warning --ts-config ./tsconfig.json --extensions ts --image circular-dependencies.png ./src",
     "make-coverage-badge": "make-coverage-badge --report-path coverage/coverage-summary.json --output-path coverage-badge.svg",
     "git": "bash ./scripts/git-submodule.sh",
-    "git:clone": "git submodule update --init --recursive"
+    "git:clone": "git submodule update --init --recursive",
+    "git:remote:add": "bash ./scripts/git-remote-add.sh"
   },
   "lint-staged": {
     "*.ts": [
