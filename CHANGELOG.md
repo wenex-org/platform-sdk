@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - conjoint services.
 
+## [1.1.8] - 2025-06-11
+
+### Changed
+
+- feat: expand Scope enum with additional actions for content, general, and logistic @iranmanesh-dev
+
 ## [1.1.7] - 2025-06-11
 
 ### Changed
@@ -66,7 +72,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.7...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.8...HEAD
+[1.1.7]: https://github.com/wenex-org/platform-sdk/compare/1.1.7...1.1.8
 [1.1.7]: https://github.com/wenex-org/platform-sdk/compare/1.1.6...1.1.7
 [1.1.6]: https://github.com/wenex-org/platform-sdk/compare/1.1.5...1.1.6
 [1.1.5]: https://github.com/wenex-org/platform-sdk/compare/1.1.4...1.1.5
