@@ -21,19 +21,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- remove trailing slash from baseURL in cursor method
+- remove trailing slash from baseURL in cursor method @vhidvz
 
 ## [1.1.5] - 2025-06-10
 
 ### Fixed
 
-- correct cursor URL construction in RestfulService
+- correct cursor URL construction in RestfulService @vhidvz
 
 ## [1.1.4] - 2025-06-09
 
 ### Changed
 
-- CI
+- CI @vhidvz
 
 ## [1.1.3] - 2025-06-02
 
