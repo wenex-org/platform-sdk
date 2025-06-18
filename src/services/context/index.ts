@@ -6,7 +6,7 @@ import { SettingsService } from './settings.service';
 export * from './configs.service';
 export * from './settings.service';
 
-export class ContextClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _configs?: ConfigsService<Properties>;
   protected _settings?: SettingsService<Properties>;
 
@@ -21,6 +21,6 @@ export class ContextClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ContextClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

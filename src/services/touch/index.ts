@@ -8,7 +8,7 @@ export * from './smss.service';
 export * from './pushes.service';
 export * from './emails.service';
 
-export class TouchClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _smss?: SmssService<any, Properties>;
   protected _pushes?: PushesService<Properties>;
   protected _emails?: EmailsService<Properties>;
@@ -28,6 +28,6 @@ export class TouchClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new TouchClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

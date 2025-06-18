@@ -8,7 +8,7 @@ export * from './users.service';
 export * from './profiles.service';
 export * from './sessions.service';
 
-export class IdentityClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _users?: UsersService<Properties>;
   protected _profiles?: ProfilesService<Properties>;
   protected _sessions?: SessionsService<Properties>;
@@ -28,6 +28,6 @@ export class IdentityClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new IdentityClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

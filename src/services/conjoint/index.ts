@@ -12,7 +12,7 @@ export * from './channels.service';
 export * from './contacts.service';
 export * from './messages.service';
 
-export class ConjointClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _members?: MembersService<Properties>;
   protected _accounts?: AccountsService<Properties>;
   protected _channels?: ChannelsService<Properties>;
@@ -42,6 +42,6 @@ export class ConjointClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ConjointClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

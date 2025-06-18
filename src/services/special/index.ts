@@ -6,7 +6,7 @@ import { StatsService } from './stats.service';
 export * from './files.service';
 export * from './stats.service';
 
-export class SpecialClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _files?: FilesService<Properties>;
   protected _stats?: StatsService<Properties>;
 
@@ -21,6 +21,6 @@ export class SpecialClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new SpecialClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

@@ -4,7 +4,7 @@ import { SagasService } from './sagas.service';
 
 export * from './sagas.service';
 
-export class EssentialClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _sagas?: SagasService<Properties>;
 
   constructor(readonly axios: AxiosInstance) {}
@@ -14,6 +14,6 @@ export class EssentialClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new EssentialClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

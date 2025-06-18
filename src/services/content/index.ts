@@ -8,7 +8,7 @@ export * from './notes.service';
 export * from './posts.service';
 export * from './tickets.service';
 
-export class ContentClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _notes?: NotesService<Properties>;
   protected _posts?: PostsService<Properties>;
   protected _tickets?: TicketsService<Properties>;
@@ -28,6 +28,6 @@ export class ContentClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ContentClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

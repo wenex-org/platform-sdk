@@ -12,7 +12,7 @@ export * from './invoices.service';
 export * from './currencies.service';
 export * from './transactions.service';
 
-export class FinancialClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _wallets?: WalletsService<Properties>;
   protected _accounts?: AccountsService<Properties>;
   protected _invoices?: InvoicesService<Properties>;
@@ -42,6 +42,6 @@ export class FinancialClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new FinancialClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

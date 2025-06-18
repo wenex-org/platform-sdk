@@ -6,7 +6,7 @@ import { GrantsService } from './grants.service';
 export * from './auths.service';
 export * from './grants.service';
 
-export class AuthClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _auths?: AuthsService;
   protected _grants?: GrantsService<Properties>;
 
@@ -21,6 +21,6 @@ export class AuthClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new AuthClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

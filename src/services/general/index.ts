@@ -10,7 +10,7 @@ export * from './artifacts.service';
 export * from './workflows.service';
 export * from './activities.service';
 
-export class GeneralClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _notices?: NoticesService<Properties>;
   protected _artifacts?: ArtifactsService<Properties>;
   protected _workflows?: WorkflowsService<Properties>;
@@ -35,6 +35,6 @@ export class GeneralClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new GeneralClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }

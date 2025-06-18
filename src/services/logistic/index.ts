@@ -12,7 +12,7 @@ export * from './travels.service';
 export * from './vehicles.service';
 export * from './locations.service';
 
-export class LogisticClient<Properties extends object = object> {
+export class Client<Properties extends object = object> {
   protected _cargoes?: CargoesService<Properties>;
   protected _drivers?: DriversService<Properties>;
   protected _travels?: TravelsService<Properties>;
@@ -42,6 +42,6 @@ export class LogisticClient<Properties extends object = object> {
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new LogisticClient<Properties>(axios);
+    return new Client<Properties>(axios);
   }
 }
