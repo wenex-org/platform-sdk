@@ -1,7 +1,7 @@
 import type { AxiosInstance } from 'axios';
 
-import { RestfulService } from '../../common/core/classes';
-import { Account, AccountDto } from '../../common/interfaces/conjoint';
+import { RequestConfig, RestfulService } from '../../common/core/classes';
+import { Account, AccountDto, Credential } from '../../common/interfaces/conjoint';
 
 export class AccountsService<Properties extends object = object> extends RestfulService<
   Account<Properties>,
@@ -9,6 +9,10 @@ export class AccountsService<Properties extends object = object> extends Restful
 > {
   constructor(protected axios: AxiosInstance) {
     super('conjoint/accounts', axios);
+  }
+
+  cred(config?: RequestConfig<Credential>): Promise<Credential> {
+    return this.post<Credential, object>(this.url('cred'), {}, config);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

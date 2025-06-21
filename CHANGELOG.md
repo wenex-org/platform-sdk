@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.11] - 2025-06-21
+
+### Added
+
+- add `cred` functionality to conjoint.accounts service @vhidvz
+
 ## [1.1.10] - 2025-06-18
 
 ### Changed
