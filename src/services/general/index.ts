@@ -1,25 +1,25 @@
 import type { AxiosInstance } from 'axios';
 
-import { NoticesService } from './notices.service';
+import { EventsService } from './events.service';
 import { ArtifactsService } from './artifacts.service';
 import { WorkflowsService } from './workflows.service';
 import { ActivitiesService } from './activities.service';
 
-export * from './notices.service';
+export * from './events.service';
 export * from './artifacts.service';
 export * from './workflows.service';
 export * from './activities.service';
 
 export class Client<Properties extends object = object> {
-  protected _notices?: NoticesService<Properties>;
+  protected _events?: EventsService<Properties>;
   protected _artifacts?: ArtifactsService<Properties>;
   protected _workflows?: WorkflowsService<Properties>;
   protected _activities?: ActivitiesService<Properties>;
 
   constructor(readonly axios: AxiosInstance) {}
 
-  get notices() {
-    return (this._notices = this._notices ?? NoticesService.build<Properties>(this.axios));
+  get events() {
+    return (this._events = this._events ?? EventsService.build<Properties>(this.axios));
   }
 
   get artifacts() {
