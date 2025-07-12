@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.15] - 2025-07-12
+
+### Added
+
+- `message` added to `general/activities` @iranmanesh-dev
+- `state` and `title` added to `special/files` @iranmanesh-dev
+
 ## [1.1.14] - 2025-07-08
 
 ### Added
@@ -18,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `visited` and `icon` added to `touch/notices` @iranamesh-dev
+- `visited` and `icon` added to `touch/notices` @iranmanesh-dev
 
 ## [1.1.12] - 2025-07-07
 
