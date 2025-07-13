@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- optional `icon` property to `NoticeAction` @iranmanesh-dev
+- correct spelling of `subtile` to `subtitle` in `touch/notices` @vhidvz
+
 ## [1.1.15] - 2025-07-12
 
 ### Added
