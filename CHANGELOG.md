@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.19] - 2025-07-17
+
+### Added
+
+- new `Scope.None` to use in scope hot reload @vhidvz
+
 ## [1.1.18] - 2025-07-16
 
 ### Added
@@ -135,7 +141,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.18...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.19...HEAD
+[1.1.19]: https://github.com/wenex-org/platform-sdk/compare/1.1.18...1.1.19
 [1.1.18]: https://github.com/wenex-org/platform-sdk/compare/1.1.17...1.1.18
 [1.1.17]: https://github.com/wenex-org/platform-sdk/compare/1.1.16...1.1.17
 [1.1.16]: https://github.com/wenex-org/platform-sdk/compare/1.1.15...1.1.16
