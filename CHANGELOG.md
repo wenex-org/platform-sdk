@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.21] - 2025-07-19
+
+### Added
+
+- new metadata key `x-exclude-soft-delete-query` to ignore `assignSoftDeleteQuery` functionality @vhidvz
+
+### Changed
+
+- auth grants action and object type to include any string value @vhidvz
+
 ## [1.1.20] - 2025-07-17
 
 ### Added
@@ -147,7 +157,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.20...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.21...HEAD
+[1.1.21]: https://github.com/wenex-org/platform-sdk/compare/1.1.20...1.1.21
 [1.1.20]: https://github.com/wenex-org/platform-sdk/compare/1.1.19...1.1.20
 [1.1.19]: https://github.com/wenex-org/platform-sdk/compare/1.1.18...1.1.19
 [1.1.18]: https://github.com/wenex-org/platform-sdk/compare/1.1.17...1.1.18
