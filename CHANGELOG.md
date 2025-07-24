@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.23] - 2025-07-24
+
+### Added
+
+- `name` and `title` as optional field to `logistic/locations` @vhidvz
+- `message_time` and `message_size` added to `touch/email.smtp` @vhidvz
+
+### Fixed
+
+- GraphQL enum names to prefixed with service name @vhidvz
+
+### Changed
+
+- `identity` property moved to core schema as **optional mongo id string** @vhidvz
+
+#### --- [ Breaking Changes ] !!!
+
+- name of `identity` property in `context/configs` changed to `eid` @vhidvz
+- name of `identity` property in `identity/profiles` changed to `national_code` @vhidvz
+- name of `identity` property in `touch/email.smtp` property changed to `message_id` @vhidvz
+- replaced `entity` mongo id property from `general/workflows` and replaced with `name` string @vhidvz
+
 ## [1.1.22] - 2025-07-23
 
 ### Fixed
@@ -163,7 +185,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.22...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.23...HEAD
+[1.1.23]: https://github.com/wenex-org/platform-sdk/compare/1.1.22...1.1.23
 [1.1.22]: https://github.com/wenex-org/platform-sdk/compare/1.1.21...1.1.22
 [1.1.21]: https://github.com/wenex-org/platform-sdk/compare/1.1.20...1.1.21
 [1.1.20]: https://github.com/wenex-org/platform-sdk/compare/1.1.19...1.1.20
