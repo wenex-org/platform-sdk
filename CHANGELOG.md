@@ -7,13 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.25] - 2025-07-30
+
 ### Added
 
-- `categories` added to `career/business`
+- `categories` added to `career/business` @iranmanesh-dev
 
 ### Changed
 
-- `category` changed to `categories` in `career/service`
+- `category` changed to `categories` in `career/service` @iranmanesh-dev
 
 ## [1.1.24] - 2025-07-27
 
@@ -200,7 +202,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - initial release 🎉​🎊​.
 
 [unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.24...HEAD
-[1.1.23]: https://github.com/wenex-org/platform-sdk/compare/1.1.23...1.1.24
+[1.1.24]: https://github.com/wenex-org/platform-sdk/compare/1.1.23...1.1.24
 [1.1.23]: https://github.com/wenex-org/platform-sdk/compare/1.1.22...1.1.23
 [1.1.22]: https://github.com/wenex-org/platform-sdk/compare/1.1.21...1.1.22
 [1.1.21]: https://github.com/wenex-org/platform-sdk/compare/1.1.20...1.1.21
