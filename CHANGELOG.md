@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.26] - 2025-07-30
+
+### Changed
+
+- update `CurrencyProvider` @vhidvz
+
 ## [1.1.25] - 2025-07-30
 
 ### Added
@@ -201,7 +207,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.25...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.26...HEAD
+[1.1.26]: https://github.com/wenex-org/platform-sdk/compare/1.1.25...1.1.26
 [1.1.25]: https://github.com/wenex-org/platform-sdk/compare/1.1.24...1.1.25
 [1.1.24]: https://github.com/wenex-org/platform-sdk/compare/1.1.23...1.1.24
 [1.1.23]: https://github.com/wenex-org/platform-sdk/compare/1.1.22...1.1.23
