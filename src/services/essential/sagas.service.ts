@@ -1,5 +1,6 @@
 import type { AxiosInstance } from 'axios';
 
+import { Data } from '../../common/core/interfaces';
 import { SagaStagesService } from './saga-stages.service';
 import { RequestConfig, RestfulService } from '../../common/core/classes';
 import { Saga, SagaDto, SagaStage, SagaStageAddDto, SagaStartDto } from '../../common/interfaces/essential';
@@ -11,20 +12,20 @@ export class SagasService<Properties extends object = object> extends RestfulSer
     super('essential/sagas', axios);
   }
 
-  start(data: SagaStartDto<Properties>, config?: RequestConfig<Saga<Properties>>) {
-    return this.post<Saga<Properties>, SagaStartDto<Properties>>(this.url('start'), data, config);
+  async start(data: SagaStartDto<Properties>, config?: RequestConfig<Saga<Properties>>) {
+    return (await this.post<Data<Saga<Properties>>, SagaStartDto<Properties>>(this.url('start'), data, config)).data;
   }
 
-  add(data: SagaStageAddDto, config?: RequestConfig<Saga<Properties>>) {
-    return this.post<SagaStage, SagaStageAddDto>(this.url('add'), data, config);
+  async add(data: SagaStageAddDto, config?: RequestConfig<Saga<Properties>>) {
+    return (await this.post<Data<SagaStage>, SagaStageAddDto>(this.url('add'), data, config)).data;
   }
 
-  abort(id: string, config?: RequestConfig<Saga<Properties>>) {
-    return this.get<Saga<Properties>>(this.url(`${id}/abort`), config);
+  async abort(id: string, config?: RequestConfig<Saga<Properties>>) {
+    return (await this.get<Data<Saga<Properties>>>(this.url(`${id}/abort`), config)).data;
   }
 
-  commit(id: string, config?: RequestConfig<Saga<Properties>>) {
-    return this.get<Saga<Properties>>(this.url(`${id}/commit`), config);
+  async commit(id: string, config?: RequestConfig<Saga<Properties>>) {
+    return (await this.get<Data<Saga<Properties>>>(this.url(`${id}/commit`), config)).data;
   }
 
   get stages() {
