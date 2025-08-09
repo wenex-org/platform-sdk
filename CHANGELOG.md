@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- updated `BusinessType` enum @vhidvz
+
 ## [1.1.33] - 2025-08-06
 
 ### Changed
