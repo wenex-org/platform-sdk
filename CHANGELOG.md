@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- add account to channel interface @fdaei
+
+### Added
+
 - `tokenIdentity` utils @fdaei
 
 ## [1.1.31] - 2025-08-04
