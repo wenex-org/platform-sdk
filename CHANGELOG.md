@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `general/events.organizer` field renamed to `general/events.organizers` @vhidvz
+
 ## [1.1.35] - 2025-08-11
 
 ### Added
