@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `code` field to `career/branches` interface @iranmanesh-dev
+
 ## [1.1.34] - 2025-08-11
 
 ### Changed
