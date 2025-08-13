@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.37] - 2025-08-13
+
+### Changed
+
+- `profile` field added to `career/employees` interface @iranmanesh-dev
+
 ## [1.1.36] - 2025-08-13
 
 ### Changed
@@ -264,7 +270,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.36...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.37...HEAD
+[1.1.37]: https://github.com/wenex-org/platform-sdk/compare/1.1.36...1.1.37
 [1.1.36]: https://github.com/wenex-org/platform-sdk/compare/1.1.35...1.1.36
 [1.1.35]: https://github.com/wenex-org/platform-sdk/compare/1.1.34...1.1.35
 [1.1.34]: https://github.com/wenex-org/platform-sdk/compare/1.1.33...1.1.34
