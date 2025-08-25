@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.38] - 2025-08-25
+
 ### Added
 
 - new metadata key `x-file-data` to include file data in requests @iranmanesh-dev
+
+### Changed
+
+- changed upload headers in file service @iranmanesh-dev
 
 ## [1.1.37] - 2025-08-13
 

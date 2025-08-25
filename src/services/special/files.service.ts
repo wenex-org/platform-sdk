@@ -21,8 +21,9 @@ export class FilesService<Properties extends object = object> extends RestfulSer
     config: RequestConfig<File<Properties>> = {},
   ): Promise<Serializer<File<Properties>>[]> {
     const form = new FormData();
+    config.headers = config.headers ?? {};
     items.forEach((item) => form.append('file', item.value, item.filename));
-    Object.assign(config, { headers: { 'Content-Type': 'multipart/form-data' } });
+    Object.assign(config.headers, { 'Content-Type': 'multipart/form-data' });
     const url: string = this.url(`upload/${scope}`);
     return (await this.post<Items<Serializer<File<Properties>>>, FormData>(url, form, config)).items;
   }
