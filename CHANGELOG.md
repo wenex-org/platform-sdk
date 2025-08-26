@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.39] - 2025-08-26
+
+### Added
+
+- `range` location field to `career/employees` @vhidvz
+
 ### Changed
 
 - make `career/employees.profile` optional @vhidvz
@@ -284,7 +290,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.38...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.39...HEAD
+[1.1.39]: https://github.com/wenex-org/platform-sdk/compare/1.1.38...1.1.39
 [1.1.38]: https://github.com/wenex-org/platform-sdk/compare/1.1.37...1.1.38
 [1.1.37]: https://github.com/wenex-org/platform-sdk/compare/1.1.36...1.1.37
 [1.1.36]: https://github.com/wenex-org/platform-sdk/compare/1.1.35...1.1.36
