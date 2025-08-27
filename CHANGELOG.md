@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- new `Unicode` utility functions for text transformation @iranmanesh-dev
+
 ## [1.1.38] - 2025-08-25
 
 ### Added
