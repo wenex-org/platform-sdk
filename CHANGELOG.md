@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.42] - 2025-09-09
+
+### Changed
+
+- make `name` field optional in `conjoint/channel` @vhidvz
+
 ## [1.1.41] - 2025-09-08
 
 ### Changed
@@ -302,7 +308,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.41...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.42...HEAD
+[1.1.42]: https://github.com/wenex-org/platform-sdk/compare/1.1.41...1.1.42
 [1.1.41]: https://github.com/wenex-org/platform-sdk/compare/1.1.40...1.1.41
 [1.1.40]: https://github.com/wenex-org/platform-sdk/compare/1.1.39...1.1.40
 [1.1.39]: https://github.com/wenex-org/platform-sdk/compare/1.1.38...1.1.39
