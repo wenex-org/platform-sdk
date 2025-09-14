@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.44] - 2025-09-14
+
+### Added
+
+- feat: enhance `RequestConfig` and `ResponseType` for improved type safety @vhidvz
+- feat: new meta keys `x-change-projection-value` and `x-ignore-change-projection` added @vhidvz
+
 ## [1.1.43] - 2025-09-09
 
 ### Fixed
@@ -314,7 +321,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.43...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.44...HEAD
+[1.1.44]: https://github.com/wenex-org/platform-sdk/compare/1.1.43...1.1.44
 [1.1.43]: https://github.com/wenex-org/platform-sdk/compare/1.1.42...1.1.43
 [1.1.42]: https://github.com/wenex-org/platform-sdk/compare/1.1.41...1.1.42
 [1.1.41]: https://github.com/wenex-org/platform-sdk/compare/1.1.40...1.1.41
