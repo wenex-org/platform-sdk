@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.45] - 2025-09-17
+
 ### Added
 
 - `state` field to `financial/invoice` interface @iranmanesh-dev
@@ -325,7 +327,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.44...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.45...HEAD
+[1.1.45]: https://github.com/wenex-org/platform-sdk/compare/1.1.44...1.1.45
 [1.1.44]: https://github.com/wenex-org/platform-sdk/compare/1.1.43...1.1.44
 [1.1.43]: https://github.com/wenex-org/platform-sdk/compare/1.1.42...1.1.43
 [1.1.42]: https://github.com/wenex-org/platform-sdk/compare/1.1.41...1.1.42
