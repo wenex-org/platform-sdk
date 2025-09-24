@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- add `check` post method to `AuthsService` @vhidvz
+
 ## [1.1.45] - 2025-09-17
 
 ### Added

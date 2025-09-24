@@ -1,6 +1,7 @@
 import type { AxiosInstance } from 'axios';
 
 import {
+  AuthCheck,
   AuthenticationRequest,
   AuthenticationResponse,
   AuthorizationRequest,
@@ -16,6 +17,10 @@ export class AuthsService extends RequestService {
 
   constructor(protected readonly axios: AxiosInstance) {
     super(axios);
+  }
+
+  check(data: AuthCheck, config?: RequestConfig) {
+    return this.post<Result, AuthCheck>(this.url('check'), data, config);
   }
 
   token(data: AuthenticationRequest, config?: RequestConfig) {
