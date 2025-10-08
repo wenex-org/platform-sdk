@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.47] - 2025-10-08
+
+### Added
+
+- feat: add file sharing @vhidvz
+
 ## [1.1.46] - 2025-09-25
 
 ### Added
@@ -333,7 +339,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.46...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.47...HEAD
+[1.1.47]: https://github.com/wenex-org/platform-sdk/compare/1.1.46...1.1.47
 [1.1.46]: https://github.com/wenex-org/platform-sdk/compare/1.1.45...1.1.46
 [1.1.45]: https://github.com/wenex-org/platform-sdk/compare/1.1.44...1.1.45
 [1.1.44]: https://github.com/wenex-org/platform-sdk/compare/1.1.43...1.1.44

@@ -1,8 +1,8 @@
 import type { AxiosInstance, ResponseType } from 'axios';
 
-import { File, FileDto } from '../../common/interfaces/special';
-import { Items, Serializer } from '../../common/core/interfaces';
+import { Data, Items, Serializer } from '../../common/core/interfaces';
 import { RequestConfig, RestfulService } from '../../common/core/classes';
+import { File, FileDto, ShareLinkReq, ShareLinkRes } from '../../common/interfaces/special';
 
 export class FilesService<Properties extends object = object> extends RestfulService<File<Properties>, FileDto<Properties>> {
   constructor(protected axios: AxiosInstance) {
@@ -13,6 +13,10 @@ export class FilesService<Properties extends object = object> extends RestfulSer
     config.responseType = responseType;
     const url = this.url(`download/${id}`);
     return this.get<T>(url, config);
+  }
+
+  async share(id: string, data: ShareLinkReq, config: RequestConfig<File<Properties>> = {}): Promise<ShareLinkRes> {
+    return (await this.post<Data<ShareLinkRes>, ShareLinkReq>(this.url(`${id}/share`), data, config)).data;
   }
 
   async upload(
