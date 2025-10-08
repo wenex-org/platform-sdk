@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.48] - 2025-10-08
+
+### Added
+
+- `profit` and `discount` to `financial/invoices` in `invoice.items` @vhidvz
+
 ## [1.1.47] - 2025-10-08
 
 ### Added
@@ -339,7 +345,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.47...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.48...HEAD
+[1.1.48]: https://github.com/wenex-org/platform-sdk/compare/1.1.47...1.1.48
 [1.1.47]: https://github.com/wenex-org/platform-sdk/compare/1.1.46...1.1.47
 [1.1.46]: https://github.com/wenex-org/platform-sdk/compare/1.1.45...1.1.46
 [1.1.45]: https://github.com/wenex-org/platform-sdk/compare/1.1.44...1.1.45
