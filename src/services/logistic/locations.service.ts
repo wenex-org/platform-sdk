@@ -1,7 +1,8 @@
 import type { AxiosInstance } from 'axios';
 
+import { RequestConfig } from '../../common/core/types';
 import { Data, Items } from '../../common/core/interfaces';
-import { RequestConfig, RestfulService } from '../../common/core/classes';
+import { RestfulService } from '../../common/core/classes';
 import { AddressLookup, GeocodeLookup, Location, LocationDto, NominatimPlace } from '../../common/interfaces/logistic';
 
 export class LocationsService<Properties extends object = object> extends RestfulService<

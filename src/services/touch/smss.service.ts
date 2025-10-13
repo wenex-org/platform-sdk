@@ -1,8 +1,9 @@
 import type { AxiosInstance } from 'axios';
 
+import { RequestConfig } from '../../common/core/types';
+import { RestfulService } from '../../common/core/classes';
 import { Data, Serializer } from '../../common/core/interfaces';
 import { Sms, SmsDto, SmsSendDto } from '../../common/interfaces/touch';
-import { RequestConfig, RestfulService } from '../../common/core/classes';
 
 export class SmssService<T = any, Properties extends object = object> extends RestfulService<
   Sms<T, Properties>,

@@ -1,8 +1,9 @@
 import type { AxiosInstance } from 'axios';
 
 import { Data } from '../../common/core/interfaces';
+import { RequestConfig } from '../../common/core/types';
 import { SagaStagesService } from './saga-stages.service';
-import { RequestConfig, RestfulService } from '../../common/core/classes';
+import { RestfulService } from '../../common/core/classes';
 import { Saga, SagaDto, SagaStage, SagaStageAddDto, SagaStartDto } from '../../common/interfaces/essential';
 
 export class SagasService<Properties extends object = object> extends RestfulService<Saga<Properties>, SagaDto<Properties>> {

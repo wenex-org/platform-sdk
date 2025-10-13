@@ -1,7 +1,8 @@
 import type { AxiosInstance } from 'axios';
 
+import { RequestConfig } from '../../common/core/types';
+import { RestfulService } from '../../common/core/classes';
 import { Data, Serializer } from '../../common/core/interfaces';
-import { RequestConfig, RestfulService } from '../../common/core/classes';
 import { Transaction, Invoice, InvoiceDto } from '../../common/interfaces/financial';
 
 export class InvoicesService<Properties extends object = object> extends RestfulService<

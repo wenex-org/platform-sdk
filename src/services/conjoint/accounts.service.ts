@@ -1,6 +1,7 @@
 import type { AxiosInstance } from 'axios';
 
-import { RequestConfig, RestfulService } from '../../common/core/classes';
+import { RequestConfig } from '../../common/core/types';
+import { RestfulService } from '../../common/core/classes';
 import { Account, AccountDto, Credential } from '../../common/interfaces/conjoint';
 
 export class AccountsService<Properties extends object = object> extends RestfulService<

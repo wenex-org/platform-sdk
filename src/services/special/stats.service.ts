@@ -1,7 +1,8 @@
 import type { AxiosInstance } from 'axios';
 
+import { RequestConfig } from '../../common/core/types';
+import { RestfulService } from '../../common/core/classes';
 import { Items, Result, Serializer } from '../../common/core/interfaces';
-import { RequestConfig, RestfulService } from '../../common/core/classes';
 import { Stat, StatCollectDto, StatDto } from '../../common/interfaces/special';
 
 export class StatsService<Properties extends object = object> extends RestfulService<Stat<Properties>, StatDto<Properties>> {

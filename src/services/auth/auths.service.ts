@@ -8,7 +8,7 @@ import {
   AuthorizationResponse,
 } from '../../common/interfaces/auth';
 import { Result } from '../../common/core/interfaces';
-import { RequestConfig } from '../../common/core/classes';
+import { RequestConfig } from '../../common/core/types';
 import { JwtToken } from '../../common/core/interfaces/auth';
 import { RequestService } from '../../common/core/providers';
 

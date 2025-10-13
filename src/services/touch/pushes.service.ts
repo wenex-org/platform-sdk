@@ -1,7 +1,8 @@
 import type { AxiosInstance } from 'axios';
 
+import { RequestConfig } from '../../common/core/types';
+import { RestfulService } from '../../common/core/classes';
 import { Data, Serializer } from '../../common/core/interfaces';
-import { RequestConfig, RestfulService } from '../../common/core/classes';
 import { Push, PushDto, PusHistory, PusHistorySendDto } from '../../common/interfaces/touch';
 
 export class PushesService<Properties extends object = object> extends RestfulService<Push<Properties>, PushDto<Properties>> {

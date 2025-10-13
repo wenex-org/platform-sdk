@@ -1,7 +1,8 @@
 import type { AxiosInstance, ResponseType } from 'axios';
 
+import { RequestConfig } from '../../common/core/types';
+import { RestfulService } from '../../common/core/classes';
 import { Data, Items, Serializer } from '../../common/core/interfaces';
-import { RequestConfig, RestfulService } from '../../common/core/classes';
 import { File, FileDto, ShareLinkReq, ShareLinkRes } from '../../common/interfaces/special';
 
 export class FilesService<Properties extends object = object> extends RestfulService<File<Properties>, FileDto<Properties>> {
