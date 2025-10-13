@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.52] - 2025-10-13
+
+### Changed
+
+- remove `buffer` and `base64url` npm package @vhidvz
+
 ## [1.1.51] - 2025-10-13
 
 ### Changed
@@ -363,7 +369,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.51...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.52...HEAD
+[1.1.52]: https://github.com/wenex-org/platform-sdk/compare/1.1.51...1.1.52
 [1.1.51]: https://github.com/wenex-org/platform-sdk/compare/1.1.50...1.1.51
 [1.1.50]: https://github.com/wenex-org/platform-sdk/compare/1.1.49...1.1.50
 [1.1.49]: https://github.com/wenex-org/platform-sdk/compare/1.1.48...1.1.49
