@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.50] - 2025-10-13
+
+### Added
+
+- add `brotli` helper and comparison functionality to compress query string @vhidvz
+
 ## [1.1.49] - 2025-10-12
 
 ### Added
@@ -351,7 +357,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.49...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.1.50...HEAD
+[1.1.50]: https://github.com/wenex-org/platform-sdk/compare/1.1.49...1.1.50
 [1.1.49]: https://github.com/wenex-org/platform-sdk/compare/1.1.48...1.1.49
 [1.1.48]: https://github.com/wenex-org/platform-sdk/compare/1.1.47...1.1.48
 [1.1.47]: https://github.com/wenex-org/platform-sdk/compare/1.1.46...1.1.47
