@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.4] - 2025-10-25
+
+### Added
+
+- add x-lang header in metadata @fdaei
+
 ## [1.2.3] - 2025-10-20
 
 ### Fixed
@@ -123,7 +129,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.2.3...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.2.4...HEAD
+[1.2.4]: https://github.com/wenex-org/platform-sdk/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/wenex-org/platform-sdk/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/wenex-org/platform-sdk/compare/1.2.1...1.2.2
 [1.2.1]: https://github.com/wenex-org/platform-sdk/compare/1.2.0...1.2.1
