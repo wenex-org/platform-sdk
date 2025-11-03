@@ -1,6 +1,6 @@
 {
   "name": "@wenex/sdk",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Wenex SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -69,6 +69,7 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
+    "@elastic/elasticsearch": "^8.18.2",
     "@eslint/js": "^9.17.0",
     "@types/debug": "^4.1.12",
     "@types/geojson": "^7946.0.15",
