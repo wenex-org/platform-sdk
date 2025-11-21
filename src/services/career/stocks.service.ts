@@ -1,0 +1,14 @@
+import type { AxiosInstance } from 'axios';
+
+import { RestfulService } from '../../common/core/classes';
+import { Stock, StockDto } from '../../common/interfaces/career';
+
+export class StocksService<Properties extends object = object> extends RestfulService<Stock<Properties>, StockDto<Properties>> {
+  constructor(protected axios: AxiosInstance) {
+    super('career/stocks', axios);
+  }
+
+  static build<Properties extends object = object>(axios: AxiosInstance) {
+    return new StocksService<Properties>(axios);
+  }
+}
