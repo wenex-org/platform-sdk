@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.8] - 2025-12-23
+
+### Added
+
+- add `auth/apts` service @vhidvz
+
 ## [1.2.7] - 2025-12-20
 
 ### Fixed
@@ -147,7 +153,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.2.7...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.2.8...HEAD
+[1.2.8]: https://github.com/wenex-org/platform-sdk/compare/1.2.7...1.2.8
 [1.2.7]: https://github.com/wenex-org/platform-sdk/compare/1.2.6...1.2.7
 [1.2.6]: https://github.com/wenex-org/platform-sdk/compare/1.2.5...1.2.6
 [1.2.5]: https://github.com/wenex-org/platform-sdk/compare/1.2.4...1.2.5
