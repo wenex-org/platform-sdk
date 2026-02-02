@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.10] - 2026-02-02
+
+### Added
+
+- add `thing` services @vhidvz
+- add `travels/routing` service @m-hadi-arefi
+
 ## [1.2.9] - 2026-01-24
 
 ### Changed
@@ -159,7 +166,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.2.9...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.2.10...HEAD
+[1.2.10]: https://github.com/wenex-org/platform-sdk/compare/1.2.9...1.2.10
 [1.2.9]: https://github.com/wenex-org/platform-sdk/compare/1.2.8...1.2.9
 [1.2.8]: https://github.com/wenex-org/platform-sdk/compare/1.2.7...1.2.8
 [1.2.7]: https://github.com/wenex-org/platform-sdk/compare/1.2.6...1.2.7

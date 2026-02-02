@@ -21,6 +21,7 @@ export class Platform<Properties extends object = object> {
   protected _logistic?: Services.LogisticClient<Properties>;
   protected _conjoint?: Services.ConjointClient<Properties>;
   protected _career?: Services.CareerClient<Properties>;
+  protected _thing?: Services.ThingClient<Properties>;
 
   constructor(readonly axios: AxiosInstance) {}
 
@@ -74,6 +75,10 @@ export class Platform<Properties extends object = object> {
 
   get career() {
     return (this._career = this._career ?? Services.CareerClient.build<Properties>(this.axios));
+  }
+
+  get thing() {
+    return (this._thing = this._thing ?? Services.ThingClient.build<Properties>(this.axios));
   }
 
   get graphql() {
