@@ -1,17 +1,20 @@
 import type { AxiosInstance } from 'axios';
 
 import { EventsService } from './events.service';
+import { CommentsService } from './comments.service';
 import { ArtifactsService } from './artifacts.service';
 import { WorkflowsService } from './workflows.service';
 import { ActivitiesService } from './activities.service';
 
 export * from './events.service';
+export * from './comments.service';
 export * from './artifacts.service';
 export * from './workflows.service';
 export * from './activities.service';
 
 export class Client<Properties extends object = object> {
   protected _events?: EventsService<Properties>;
+  protected _comments?: CommentsService<Properties>;
   protected _artifacts?: ArtifactsService<Properties>;
   protected _workflows?: WorkflowsService<Properties>;
   protected _activities?: ActivitiesService<Properties>;
@@ -20,6 +23,10 @@ export class Client<Properties extends object = object> {
 
   get events() {
     return (this._events = this._events ?? EventsService.build<Properties>(this.axios));
+  }
+
+  get comments() {
+    return (this._comments = this._comments ?? CommentsService.build<Properties>(this.axios));
   }
 
   get artifacts() {
