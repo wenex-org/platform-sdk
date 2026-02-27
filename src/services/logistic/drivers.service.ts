@@ -11,7 +11,7 @@ export class DriversService<Properties extends object = object> extends RestfulS
     super('logistic/drivers', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new DriversService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new DriversService<Properties>(axios, prefix || '/');
   }
 }

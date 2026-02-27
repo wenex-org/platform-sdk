@@ -17,7 +17,7 @@ export class PushesService<Properties extends object = object> extends RestfulSe
     return (await this.post<Data<Serializer<PusHistory>>, PusHistorySendDto>(this.url('send'), data, config)).data;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new PushesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new PushesService<Properties>(axios, prefix || '/');
   }
 }

@@ -11,7 +11,7 @@ export class NoticesService<Properties extends object = object> extends RestfulS
     super('touch/notices', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new NoticesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new NoticesService<Properties>(axios, prefix || '/');
   }
 }

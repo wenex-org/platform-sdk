@@ -33,7 +33,7 @@ export class MessagesService<T = any, Properties extends object = object> extend
       return (await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, { ...config, params })) as Response;
   }
 
-  static build<T = any, Properties extends object = object>(axios: AxiosInstance) {
-    return new MessagesService<T, Properties>(axios);
+  static build<T = any, Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new MessagesService<T, Properties>(axios, prefix);
   }
 }

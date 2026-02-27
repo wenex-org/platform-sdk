@@ -42,7 +42,7 @@ export class AuthsService extends RequestService {
     return this.post<AuthorizationResponse, AuthorizationRequest>(this.url('can'), data, config);
   }
 
-  static build(axios: AxiosInstance) {
-    return new AuthsService(axios);
+  static build(axios: AxiosInstance, prefix: string = '/') {
+    return new AuthsService(axios, prefix || '/');
   }
 }

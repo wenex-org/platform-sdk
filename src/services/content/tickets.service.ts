@@ -11,7 +11,7 @@ export class TicketsService<Properties extends object = object> extends RestfulS
     super('content/tickets', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new TicketsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new TicketsService<Properties>(axios, prefix || '/');
   }
 }

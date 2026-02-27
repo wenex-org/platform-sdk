@@ -11,7 +11,7 @@ export class MetricsService<Properties extends object = object> extends RestfulS
     super('thing/metrics', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new MetricsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new MetricsService<Properties>(axios, prefix || '/');
   }
 }

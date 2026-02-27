@@ -14,7 +14,7 @@ export class ActivitiesService<Properties extends object = object> extends Restf
     super('general/activities', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ActivitiesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ActivitiesService<Properties>(axios, prefix || '/');
   }
 }

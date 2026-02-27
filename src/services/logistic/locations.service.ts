@@ -16,8 +16,8 @@ export class LocationsService<Properties extends object = object> extends Restfu
     super('logistic/locations', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new LocationsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new LocationsService<Properties>(axios, prefix || '/');
   }
 
   async addressLookup(data: AddressLookup, config?: RequestConfig<NominatimPlace>): Promise<NominatimPlace> {

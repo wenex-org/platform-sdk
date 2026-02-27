@@ -14,7 +14,7 @@ export class CommentsService<Properties extends object = object> extends Restful
     super('general/comments', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new CommentsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new CommentsService<Properties>(axios, prefix || '/');
   }
 }

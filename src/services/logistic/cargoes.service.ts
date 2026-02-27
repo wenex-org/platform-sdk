@@ -11,7 +11,7 @@ export class CargoesService<Properties extends object = object> extends RestfulS
     super('logistic/cargoes', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new CargoesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new CargoesService<Properties>(axios, prefix || '/');
   }
 }

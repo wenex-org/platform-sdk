@@ -11,7 +11,7 @@ export class ConfigsService<Properties extends object = object> extends RestfulS
     super('context/configs', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ConfigsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ConfigsService<Properties>(axios, prefix || '/');
   }
 }

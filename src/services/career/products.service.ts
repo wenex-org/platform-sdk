@@ -33,7 +33,7 @@ export class ProductsService<Properties extends object = object> extends Restful
       return (await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, { ...config, params })) as Response;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ProductsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ProductsService<Properties>(axios, prefix || '/');
   }
 }

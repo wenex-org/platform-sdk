@@ -33,10 +33,10 @@ export class SagasService<Properties extends object = object> extends RestfulSer
   }
 
   get stages() {
-    return (this._stages = this._stages ?? SagaStagesService.build(this.axios));
+    return (this._stages = this._stages ?? SagaStagesService.build(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new SagasService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new SagasService<Properties>(axios, prefix || '/');
   }
 }

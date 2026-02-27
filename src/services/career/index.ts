@@ -28,41 +28,44 @@ export class Client<Properties extends object = object> {
   protected _customers?: CustomersService<Properties>;
   protected _businesses?: BusinessesService<Properties>;
 
-  constructor(readonly axios: AxiosInstance) {}
+  constructor(
+    readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {}
 
   get stocks() {
-    return (this._stocks = this._stocks ?? StocksService.build<Properties>(this.axios));
+    return (this._stocks = this._stocks ?? StocksService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get stores() {
-    return (this._stores = this._stores ?? StoresService.build<Properties>(this.axios));
+    return (this._stores = this._stores ?? StoresService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get products() {
-    return (this._products = this._products ?? ProductsService.build<Properties>(this.axios));
+    return (this._products = this._products ?? ProductsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get branches() {
-    return (this._branches = this._branches ?? BranchesService.build<Properties>(this.axios));
+    return (this._branches = this._branches ?? BranchesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get services() {
-    return (this._services = this._services ?? ServicesService.build<Properties>(this.axios));
+    return (this._services = this._services ?? ServicesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get employees() {
-    return (this._employees = this._employees ?? EmployeesService.build<Properties>(this.axios));
+    return (this._employees = this._employees ?? EmployeesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get customers() {
-    return (this._customers = this._customers ?? CustomersService.build<Properties>(this.axios));
+    return (this._customers = this._customers ?? CustomersService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get businesses() {
-    return (this._businesses = this._businesses ?? BusinessesService.build<Properties>(this.axios));
+    return (this._businesses = this._businesses ?? BusinessesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new Client<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new Client<Properties>(axios, prefix || '/');
   }
 }

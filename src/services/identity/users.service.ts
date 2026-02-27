@@ -11,7 +11,7 @@ export class UsersService<Properties extends object = object> extends RestfulSer
     super('identity/users', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new UsersService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new UsersService<Properties>(axios, prefix || '/');
   }
 }

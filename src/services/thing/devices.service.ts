@@ -11,7 +11,7 @@ export class DevicesService<Properties extends object = object> extends RestfulS
     super('thing/devices', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new DevicesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new DevicesService<Properties>(axios, prefix || '/');
   }
 }

@@ -11,7 +11,7 @@ export class EventsService<Properties extends object = object> extends RestfulSe
     super('general/events', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new EventsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new EventsService<Properties>(axios, prefix || '/');
   }
 }

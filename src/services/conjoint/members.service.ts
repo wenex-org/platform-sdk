@@ -11,7 +11,7 @@ export class MembersService<Properties extends object = object> extends RestfulS
     super('conjoint/members', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new MembersService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new MembersService<Properties>(axios, prefix || '/');
   }
 }

@@ -36,7 +36,7 @@ export class FilesService<Properties extends object = object> extends RestfulSer
     return (await this.post<Items<Serializer<File<Properties>>>, FormData>(url, form, config)).items;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new FilesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new FilesService<Properties>(axios, prefix || '/');
   }
 }

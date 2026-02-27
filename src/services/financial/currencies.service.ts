@@ -14,7 +14,7 @@ export class CurrenciesService<Properties extends object = object> extends Restf
     super('financial/currencies', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new CurrenciesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new CurrenciesService<Properties>(axios, prefix || '/');
   }
 }

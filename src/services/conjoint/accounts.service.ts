@@ -19,7 +19,7 @@ export class AccountsService<Properties extends object = object> extends Restful
     return this.post<Credential, object>(this.url('cred'), {}, config);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new AccountsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new AccountsService<Properties>(axios, prefix || '/');
   }
 }

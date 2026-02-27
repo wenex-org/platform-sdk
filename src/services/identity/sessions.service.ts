@@ -14,7 +14,7 @@ export class SessionsService<Properties extends object = object> extends Restful
     super('identity/sessions', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new SessionsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new SessionsService<Properties>(axios, prefix || '/');
   }
 }

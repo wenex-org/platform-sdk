@@ -11,7 +11,7 @@ export class AppsService<Properties extends object = object> extends RestfulServ
     super('domain/apps', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new AppsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new AppsService<Properties>(axios, prefix || '/');
   }
 }

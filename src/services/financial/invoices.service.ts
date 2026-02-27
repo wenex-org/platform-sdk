@@ -23,7 +23,7 @@ export class InvoicesService<Properties extends object = object> extends Restful
     return (await this.get<Data<Serializer<Transaction<Properties>, Path>>>(this.url(`${id}/payment`), config)).data;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new InvoicesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new InvoicesService<Properties>(axios, prefix || '/');
   }
 }

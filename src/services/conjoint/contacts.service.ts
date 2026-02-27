@@ -14,7 +14,7 @@ export class ContactsService<Properties extends object = object> extends Restful
     super('conjoint/contacts', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ContactsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ContactsService<Properties>(axios, prefix || '/');
   }
 }

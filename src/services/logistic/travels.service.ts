@@ -17,7 +17,7 @@ export class TravelsService<Properties extends object = object> extends RestfulS
     return (await this.post<Data<RoutingResponse<Properties>>, RoutingRequest<Properties>>(this.url('routing'), data, config)).data;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new TravelsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new TravelsService<Properties>(axios, prefix || '/');
   }
 }

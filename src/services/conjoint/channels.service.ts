@@ -14,7 +14,7 @@ export class ChannelsService<Properties extends object = object> extends Restful
     super('conjoint/channels', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ChannelsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ChannelsService<Properties>(axios, prefix || '/');
   }
 }

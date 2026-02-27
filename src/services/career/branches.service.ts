@@ -11,7 +11,7 @@ export class BranchesService<Properties extends object = object> extends Restful
     super('career/branches', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new BranchesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new BranchesService<Properties>(axios, prefix || '/');
   }
 }

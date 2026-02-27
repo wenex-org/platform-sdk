@@ -11,7 +11,7 @@ export class PostsService<Properties extends object = object> extends RestfulSer
     super('content/posts', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new PostsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new PostsService<Properties>(axios, prefix || '/');
   }
 }

@@ -25,7 +25,7 @@ export class StatsService<Properties extends object = object> extends RestfulSer
     return await this.post<Result, StatCollectDto<Properties>>(this.url('stackup'), data, config);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new StatsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new StatsService<Properties>(axios, prefix || '/');
   }
 }

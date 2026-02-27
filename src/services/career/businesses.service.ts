@@ -14,7 +14,7 @@ export class BusinessesService<Properties extends object = object> extends Restf
     super('career/businesses', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new BusinessesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new BusinessesService<Properties>(axios, prefix || '/');
   }
 }

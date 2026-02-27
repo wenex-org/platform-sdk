@@ -19,29 +19,32 @@ export class Client<Properties extends object = object> {
   protected _workflows?: WorkflowsService<Properties>;
   protected _activities?: ActivitiesService<Properties>;
 
-  constructor(readonly axios: AxiosInstance) {}
+  constructor(
+    readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {}
 
   get events() {
-    return (this._events = this._events ?? EventsService.build<Properties>(this.axios));
+    return (this._events = this._events ?? EventsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get comments() {
-    return (this._comments = this._comments ?? CommentsService.build<Properties>(this.axios));
+    return (this._comments = this._comments ?? CommentsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get artifacts() {
-    return (this._artifacts = this._artifacts ?? ArtifactsService.build<Properties>(this.axios));
+    return (this._artifacts = this._artifacts ?? ArtifactsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get workflows() {
-    return (this._workflows = this._workflows ?? WorkflowsService.build<Properties>(this.axios));
+    return (this._workflows = this._workflows ?? WorkflowsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get activities() {
-    return (this._activities = this._activities ?? ActivitiesService.build<Properties>(this.axios));
+    return (this._activities = this._activities ?? ActivitiesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new Client<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new Client<Properties>(axios, prefix || '/');
   }
 }

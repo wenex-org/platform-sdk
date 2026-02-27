@@ -14,7 +14,7 @@ export class CustomersService<Properties extends object = object> extends Restfu
     super('career/customers', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new CustomersService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new CustomersService<Properties>(axios, prefix || '/');
   }
 }

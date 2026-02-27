@@ -14,7 +14,7 @@ export class ArtifactsService<Properties extends object = object> extends Restfu
     super('general/artifacts', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ArtifactsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ArtifactsService<Properties>(axios, prefix || '/');
   }
 }

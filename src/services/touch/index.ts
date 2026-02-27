@@ -16,25 +16,28 @@ export class Client<Properties extends object = object> {
   protected _emails?: EmailsService<Properties>;
   protected _notices?: NoticesService<Properties>;
 
-  constructor(readonly axios: AxiosInstance) {}
+  constructor(
+    readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {}
 
   get smss() {
-    return (this._smss = this._smss ?? new SmssService<any, Properties>(this.axios));
+    return (this._smss = this._smss ??  SmssService.build<any, Properties>(this.axios, this.pathPrefix));
   }
 
   get pushes() {
-    return (this._pushes = this._pushes ?? new PushesService<Properties>(this.axios));
+    return (this._pushes = this._pushes ?? PushesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get emails() {
-    return (this._emails = this._emails ?? new EmailsService<Properties>(this.axios));
+    return (this._emails = this._emails ?? EmailsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get notices() {
-    return (this._notices = this._notices ?? new NoticesService<Properties>(this.axios));
+    return (this._notices = this._notices ?? NoticesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new Client<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new Client<Properties>(axios, prefix || '/');
   }
 }

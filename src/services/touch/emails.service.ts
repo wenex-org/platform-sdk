@@ -17,7 +17,7 @@ export class EmailsService<Properties extends object = object> extends RestfulSe
     return (await this.post<Data<Serializer<Email<Properties>>>, EmailSendDto<Properties>>(this.url('send'), data, config)).data;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new EmailsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new EmailsService<Properties>(axios, prefix || '/');
   }
 }

@@ -20,7 +20,7 @@ export class SmssService<T = any, Properties extends object = object> extends Re
     return (await this.post<Data<Serializer<Sms<T, Properties>>>, SmsSendDto<T, Properties>>(this.url('send'), data, config)).data;
   }
 
-  static build<T = any, Properties extends object = object>(axios: AxiosInstance) {
-    return new SmssService<T, Properties>(axios);
+  static build<T = any, Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new SmssService<T, Properties>(axios, prefix);
   }
 }

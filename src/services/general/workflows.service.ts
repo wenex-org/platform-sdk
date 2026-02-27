@@ -14,7 +14,7 @@ export class WorkflowsService<Properties extends object = object> extends Restfu
     super('general/workflows', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new WorkflowsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new WorkflowsService<Properties>(axios, prefix || '/');
   }
 }

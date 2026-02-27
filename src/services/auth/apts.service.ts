@@ -39,7 +39,7 @@ export class AptsService<Properties extends object = object> extends RestfulServ
     throw new Error('Method not implemented.');
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new AptsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new AptsService<Properties>(axios, prefix || '/');
   }
 }

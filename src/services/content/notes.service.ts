@@ -11,7 +11,7 @@ export class NotesService<Properties extends object = object> extends RestfulSer
     super('content/notes', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new NotesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new NotesService<Properties>(axios, prefix || '/');
   }
 }

@@ -23,69 +23,72 @@ export class Platform<Properties extends object = object> {
   protected _career?: Services.CareerClient<Properties>;
   protected _thing?: Services.ThingClient<Properties>;
 
-  constructor(readonly axios: AxiosInstance) {}
+  constructor(
+    readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {}
 
   get auth() {
-    return (this._auth = this._auth ?? Services.AuthClient.build<Properties>(this.axios));
+    return (this._auth = this._auth ?? Services.AuthClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get context() {
-    return (this._context = this._context ?? Services.ContextClient.build<Properties>(this.axios));
+    return (this._context = this._context ?? Services.ContextClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get domain() {
-    return (this._domain = this._domain ?? Services.DomainClient.build<Properties>(this.axios));
+    return (this._domain = this._domain ?? Services.DomainClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get essential() {
-    return (this._essential = this._essential ?? Services.EssentialClient.build<Properties>(this.axios));
+    return (this._essential = this._essential ?? Services.EssentialClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get financial() {
-    return (this._financial = this._financial ?? Services.FinancialClient.build<Properties>(this.axios));
+    return (this._financial = this._financial ?? Services.FinancialClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get general() {
-    return (this._general = this._general ?? Services.GeneralClient.build<Properties>(this.axios));
+    return (this._general = this._general ?? Services.GeneralClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get identity() {
-    return (this._identity = this._identity ?? Services.IdentityClient.build<Properties>(this.axios));
+    return (this._identity = this._identity ?? Services.IdentityClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get special() {
-    return (this._special = this._special ?? Services.SpecialClient.build<Properties>(this.axios));
+    return (this._special = this._special ?? Services.SpecialClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get touch() {
-    return (this._touch = this._touch ?? Services.TouchClient.build<Properties>(this.axios));
+    return (this._touch = this._touch ?? Services.TouchClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get content() {
-    return (this._content = this._content ?? Services.ContentClient.build<Properties>(this.axios));
+    return (this._content = this._content ?? Services.ContentClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get logistic() {
-    return (this._logistic = this._logistic ?? Services.LogisticClient.build<Properties>(this.axios));
+    return (this._logistic = this._logistic ?? Services.LogisticClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get conjoint() {
-    return (this._conjoint = this._conjoint ?? Services.ConjointClient.build<Properties>(this.axios));
+    return (this._conjoint = this._conjoint ?? Services.ConjointClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get career() {
-    return (this._career = this._career ?? Services.CareerClient.build<Properties>(this.axios));
+    return (this._career = this._career ?? Services.CareerClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get thing() {
-    return (this._thing = this._thing ?? Services.ThingClient.build<Properties>(this.axios));
+    return (this._thing = this._thing ?? Services.ThingClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get graphql() {
-    return (this._graphql = this._graphql ?? GraphqlService.build(this.axios));
+    return (this._graphql = this._graphql ?? GraphqlService.build(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new Platform<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new Platform<Properties>(axios, prefix || '/');
   }
 }

@@ -14,7 +14,7 @@ export class ProfilesService<Properties extends object = object> extends Restful
     super('identity/profiles', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ProfilesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ProfilesService<Properties>(axios, prefix || '/');
   }
 }

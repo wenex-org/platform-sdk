@@ -11,7 +11,7 @@ export class ClientsService<Properties extends object = object> extends RestfulS
     super('domain/clients', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ClientsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ClientsService<Properties>(axios, prefix || '/');
   }
 }

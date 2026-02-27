@@ -11,7 +11,7 @@ export class SensorsService<Properties extends object = object> extends RestfulS
     super('thing/sensors', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new SensorsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new SensorsService<Properties>(axios, prefix || '/');
   }
 }

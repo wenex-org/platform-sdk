@@ -11,7 +11,7 @@ export class StoresService<Properties extends object = object> extends RestfulSe
     super('career/stores', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new StoresService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new StoresService<Properties>(axios, prefix || '/');
   }
 }

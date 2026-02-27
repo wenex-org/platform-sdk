@@ -11,7 +11,7 @@ export class WalletsService<Properties extends object = object> extends RestfulS
     super('financial/wallets', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new WalletsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new WalletsService<Properties>(axios, prefix || '/');
   }
 }
