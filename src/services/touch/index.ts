@@ -22,7 +22,7 @@ export class Client<Properties extends object = object> {
   ) {}
 
   get smss() {
-    return (this._smss = this._smss ??  SmssService.build<any, Properties>(this.axios, this.pathPrefix));
+    return (this._smss = this._smss ?? SmssService.build<any, Properties>(this.axios, this.pathPrefix));
   }
 
   get pushes() {
