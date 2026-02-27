@@ -7,8 +7,11 @@ export class SessionsService<Properties extends object = object> extends Restful
   Session<Properties>,
   SessionDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('identity/sessions', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('identity/sessions', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

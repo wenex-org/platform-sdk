@@ -4,8 +4,11 @@ import { RestfulService } from '../../common/core/classes';
 import { Ticket, TicketDto } from '../../common/interfaces/content';
 
 export class TicketsService<Properties extends object = object> extends RestfulService<Ticket<Properties>, TicketDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('content/tickets', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('content/tickets', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

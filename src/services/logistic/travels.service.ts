@@ -6,8 +6,11 @@ import { RestfulService } from '../../common/core/classes';
 import { RoutingRequest, RoutingResponse, Travel, TravelDto } from '../../common/interfaces/logistic';
 
 export class TravelsService<Properties extends object = object> extends RestfulService<Travel<Properties>, TravelDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('logistic/travels', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('logistic/travels', axios, pathPrefix);
   }
 
   async routing(data: RoutingRequest<Properties>, config?: RequestConfig): Promise<RoutingResponse<Properties>> {

@@ -8,8 +8,11 @@ import { Optional, Data, Total } from '../../common/core/interfaces';
 import { RequestConfig, ResponseType } from '../../common/core/types';
 
 export class AptsService<Properties extends object = object> extends RestfulService<Apt<Properties>, AptDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('auth/apts', axios);
+  constructor(
+    protected axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('auth/apts', axios, pathPrefix);
   }
 
   /**

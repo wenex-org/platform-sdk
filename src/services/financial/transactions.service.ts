@@ -9,8 +9,11 @@ export class TransactionsService<Properties extends object = object> extends Res
   Transaction<Properties>,
   TransactionDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('financial/transactions', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('financial/transactions', axios, pathPrefix);
   }
 
   async init(

@@ -12,8 +12,11 @@ export class MessagesService<T = any, Properties extends object = object> extend
   Message<T, Properties>,
   MessageDto<T, Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('conjoint/messages', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('conjoint/messages', axios, pathPrefix);
   }
 
   async search<C extends RequestConfig<Message<T, Properties>> = RequestConfig<Message<T, Properties>>>(

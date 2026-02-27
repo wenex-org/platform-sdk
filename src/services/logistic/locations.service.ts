@@ -9,8 +9,11 @@ export class LocationsService<Properties extends object = object> extends Restfu
   Location<Properties>,
   LocationDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('logistic/locations', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('logistic/locations', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

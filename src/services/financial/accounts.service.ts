@@ -7,8 +7,11 @@ export class AccountsService<Properties extends object = object> extends Restful
   Account<Properties>,
   AccountDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('financial/accounts', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('financial/accounts', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

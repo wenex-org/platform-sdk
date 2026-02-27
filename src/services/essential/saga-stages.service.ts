@@ -9,7 +9,10 @@ export class SagaStagesService<
   D extends Dto<Core> = Dto<Core>,
   Properties extends object = object,
 > extends RestfulService<SagaStage<T, D, Properties>, SagaStageDto<T, D, Properties>> {
-  constructor(protected axios: AxiosInstance) {
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
     super('essential/saga-stages', axios);
   }
 

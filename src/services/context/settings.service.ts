@@ -7,8 +7,11 @@ export class SettingsService<Properties extends object = object> extends Restful
   Setting<Properties>,
   SettingDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('context/settings', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('context/settings', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

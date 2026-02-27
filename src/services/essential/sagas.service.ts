@@ -9,8 +9,11 @@ import { Saga, SagaDto, SagaStage, SagaStageAddDto, SagaStartDto } from '../../c
 export class SagasService<Properties extends object = object> extends RestfulService<Saga<Properties>, SagaDto<Properties>> {
   protected _stages?: SagaStagesService;
 
-  constructor(protected axios: AxiosInstance) {
-    super('essential/sagas', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('essential/sagas', axios, pathPrefix);
   }
 
   async start(data: SagaStartDto<Properties>, config?: RequestConfig<Saga<Properties>>) {

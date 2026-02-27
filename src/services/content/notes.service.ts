@@ -4,8 +4,11 @@ import { RestfulService } from '../../common/core/classes';
 import { Note, NoteDto } from '../../common/interfaces/content';
 
 export class NotesService<Properties extends object = object> extends RestfulService<Note<Properties>, NoteDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('content/notes', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('content/notes', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

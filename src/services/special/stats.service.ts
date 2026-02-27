@@ -6,8 +6,11 @@ import { Items, Result, Serializer } from '../../common/core/interfaces';
 import { Stat, StatCollectDto, StatDto } from '../../common/interfaces/special';
 
 export class StatsService<Properties extends object = object> extends RestfulService<Stat<Properties>, StatDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('special/stats', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('special/stats', axios, pathPrefix);
   }
 
   async collect(

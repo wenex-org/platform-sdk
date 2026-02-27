@@ -6,8 +6,11 @@ import { Data, Serializer } from '../../common/core/interfaces';
 import { Push, PushDto, PusHistory, PusHistorySendDto } from '../../common/interfaces/touch';
 
 export class PushesService<Properties extends object = object> extends RestfulService<Push<Properties>, PushDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('touch/pushes', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('touch/pushes', axios, pathPrefix);
   }
 
   async send(data: PusHistorySendDto, config?: RequestConfig<PusHistory>): Promise<Serializer<PusHistory>> {

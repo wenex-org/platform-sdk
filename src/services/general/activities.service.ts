@@ -7,8 +7,11 @@ export class ActivitiesService<Properties extends object = object> extends Restf
   Activity<Properties>,
   ActivityDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('general/activities', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('general/activities', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

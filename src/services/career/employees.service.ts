@@ -7,8 +7,11 @@ export class EmployeesService<Properties extends object = object> extends Restfu
   Employee<Properties>,
   EmployeeDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('career/employees', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('career/employees', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

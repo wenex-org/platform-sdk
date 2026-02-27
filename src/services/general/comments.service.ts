@@ -7,8 +7,11 @@ export class CommentsService<Properties extends object = object> extends Restful
   Comment<Properties>,
   CommentDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('general/comments', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('general/comments', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

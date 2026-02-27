@@ -13,9 +13,12 @@ import { JwtToken } from '../../common/core/interfaces/auth';
 import { RequestService } from '../../common/core/providers';
 
 export class AuthsService extends RequestService {
-  protected readonly url = (path: string) => `/auth/${path}`;
+  protected readonly url = (path: string, prefix = this.pathPrefix) => `${prefix || '/'}auth/${path}`;
 
-  constructor(protected readonly axios: AxiosInstance) {
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
     super(axios);
   }
 

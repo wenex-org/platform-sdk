@@ -7,8 +7,11 @@ export class WorkflowsService<Properties extends object = object> extends Restfu
   Workflow<Properties>,
   WorkflowDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('general/workflows', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('general/workflows', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

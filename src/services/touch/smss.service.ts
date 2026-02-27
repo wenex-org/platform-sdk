@@ -9,8 +9,11 @@ export class SmssService<T = any, Properties extends object = object> extends Re
   Sms<T, Properties>,
   SmsDto<T, Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('touch/smss', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('touch/smss', axios, pathPrefix);
   }
 
   async send(data: SmsSendDto<T, Properties>, config?: RequestConfig<Sms<T, Properties>>): Promise<Serializer<Sms<T, Properties>>> {

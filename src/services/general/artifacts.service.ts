@@ -7,8 +7,11 @@ export class ArtifactsService<Properties extends object = object> extends Restfu
   Artifact<Properties>,
   ArtifactDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('general/artifacts', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('general/artifacts', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

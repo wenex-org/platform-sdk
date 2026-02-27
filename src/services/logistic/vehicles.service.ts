@@ -7,8 +7,11 @@ export class VehiclesService<Properties extends object = object> extends Restful
   Vehicle<Properties>,
   VehicleDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('logistic/vehicles', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('logistic/vehicles', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {

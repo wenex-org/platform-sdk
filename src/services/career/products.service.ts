@@ -12,8 +12,11 @@ export class ProductsService<Properties extends object = object> extends Restful
   Product<Properties>,
   ProductDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('career/products', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('career/products', axios, pathPrefix);
   }
 
   async search<C extends RequestConfig<Product<Properties>> = RequestConfig<Product<Properties>>>(

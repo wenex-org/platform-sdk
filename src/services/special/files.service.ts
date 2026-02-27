@@ -6,8 +6,11 @@ import { Data, Items, Serializer } from '../../common/core/interfaces';
 import { File, FileDto, ShareLinkReq, ShareLinkRes } from '../../common/interfaces/special';
 
 export class FilesService<Properties extends object = object> extends RestfulService<File<Properties>, FileDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('special/files', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('special/files', axios, pathPrefix);
   }
 
   download<T = any>(id: string, config: RequestConfig<File<Properties>> = {}, responseType: ResponseType = 'blob'): Promise<T> {

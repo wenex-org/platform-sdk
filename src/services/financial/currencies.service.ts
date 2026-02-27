@@ -7,8 +7,11 @@ export class CurrenciesService<Properties extends object = object> extends Restf
   Currency<Properties>,
   CurrencyDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('financial/currencies', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('financial/currencies', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance) {
