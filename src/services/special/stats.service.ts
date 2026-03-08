@@ -6,8 +6,11 @@ import { Items, Result, Serializer } from '../../common/core/interfaces';
 import { Stat, StatCollectDto, StatDto } from '../../common/interfaces/special';
 
 export class StatsService<Properties extends object = object> extends RestfulService<Stat<Properties>, StatDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('special/stats', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('special/stats', axios, pathPrefix);
   }
 
   async collect(
@@ -22,7 +25,7 @@ export class StatsService<Properties extends object = object> extends RestfulSer
     return await this.post<Result, StatCollectDto<Properties>>(this.url('stackup'), data, config);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new StatsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new StatsService<Properties>(axios, prefix || '/');
   }
 }

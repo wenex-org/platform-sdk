@@ -19,29 +19,32 @@ export class Client<Properties extends object = object> {
   protected _vehicles?: VehiclesService<Properties>;
   protected _locations?: LocationsService<Properties>;
 
-  constructor(readonly axios: AxiosInstance) {}
+  constructor(
+    readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {}
 
   get cargoes() {
-    return (this._cargoes = this._cargoes ?? CargoesService.build<Properties>(this.axios));
+    return (this._cargoes = this._cargoes ?? CargoesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get drivers() {
-    return (this._drivers = this._drivers ?? DriversService.build<Properties>(this.axios));
+    return (this._drivers = this._drivers ?? DriversService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get travels() {
-    return (this._travels = this._travels ?? TravelsService.build<Properties>(this.axios));
+    return (this._travels = this._travels ?? TravelsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get vehicles() {
-    return (this._vehicles = this._vehicles ?? VehiclesService.build<Properties>(this.axios));
+    return (this._vehicles = this._vehicles ?? VehiclesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get locations() {
-    return (this._locations = this._locations ?? LocationsService.build<Properties>(this.axios));
+    return (this._locations = this._locations ?? LocationsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new Client<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new Client<Properties>(axios, prefix || '/');
   }
 }

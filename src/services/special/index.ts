@@ -10,17 +10,20 @@ export class Client<Properties extends object = object> {
   protected _files?: FilesService<Properties>;
   protected _stats?: StatsService<Properties>;
 
-  constructor(readonly axios: AxiosInstance) {}
+  constructor(
+    readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {}
 
   get files() {
-    return (this._files = this._files ?? new FilesService<Properties>(this.axios));
+    return (this._files = this._files ?? FilesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get stats() {
-    return (this._stats = this._stats ?? new StatsService<Properties>(this.axios));
+    return (this._stats = this._stats ?? StatsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new Client<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new Client<Properties>(axios, prefix || '/');
   }
 }

@@ -7,41 +7,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.2.5] - 2025-11-03
-
-### Added
-
-- add search method to `conjoint.messages` @vhidvz
-
-## [1.2.4] - 2025-10-25
-
-### Added
-
-- add x-lang header in metadata @fdaei
-
-## [1.2.3] - 2025-10-20
+## [1.3.3] - 2026-02-27
 
 ### Fixed
 
-- fix: `Uncaught (in promise) RuntimeError: unreachable executed` @vhidvz
+- fix: cursor issue on prefix path @vhidvz
 
-## [1.2.2] - 2025-10-14
+## [1.3.2] - 2026-02-27
+
+### Fixed
+
+- fix: path prefix issues @vhidvz
+
+## [1.3.1] - 2026-02-27
+
+### Added
+
+- add: path prefix support @vhidvz
+
+## [1.3.0] - 2026-02-04
+
+### Added
+
+- add: `general/comments` module @vhidvz
+
+## [1.2.X] - 2026-02-02
+
+### Added
+
+- add `thing` services @vhidvz
+- add `travels/routing` service @m-hadi-arefi
+- add `auth/apts` service @vhidvz
+- add `stocks`, `stores`, `products` and `customers` modules to `career` service @vhidvz
+- add search method to `conjoint.messages` @vhidvz
+- add x-lang header in metadata @fdaei
 
 ### Changed
 
+- change `stats.key` type interface @vhidvz
 - make `NominatimPlaceAddress.city` optional @vhidvz
-
-## [1.2.1] - 2025-10-14
-
-### Changed
-
 - refactor: `Brotli` helper @vhidvz
-
-## [1.2.0] - 2025-10-13
-
-### Changed
-
 - path of `RequestConfig` and `ResponseType` from `core/classes` to `core/types` @vhidvz
+
+### Fixed
+
+- fix zone type @winkcor
+- fix: `Uncaught (in promise) RuntimeError: unreachable executed` @vhidvz
 
 ## [1.1.X] - 2025-10-13
 
@@ -135,12 +146,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.2.5...HEAD
-[1.2.5]: https://github.com/wenex-org/platform-sdk/compare/1.2.4...1.2.5
-[1.2.4]: https://github.com/wenex-org/platform-sdk/compare/1.2.3...1.2.4
-[1.2.3]: https://github.com/wenex-org/platform-sdk/compare/1.2.2...1.2.3
-[1.2.2]: https://github.com/wenex-org/platform-sdk/compare/1.2.1...1.2.2
-[1.2.1]: https://github.com/wenex-org/platform-sdk/compare/1.2.0...1.2.1
-[1.2.0]: https://github.com/wenex-org/platform-sdk/compare/1.1.53...1.2.0
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.3...HEAD
+[1.3.2]: https://github.com/wenex-org/platform-sdk/compare/1.3.2...1.3.3
+[1.3.2]: https://github.com/wenex-org/platform-sdk/compare/1.3.1...1.3.2
+[1.3.1]: https://github.com/wenex-org/platform-sdk/compare/1.3.0...1.3.1
+[1.3.0]: https://github.com/wenex-org/platform-sdk/compare/1.2.10...1.3.0
+[1.2.X]: https://github.com/wenex-org/platform-sdk/compare/1.1.53...1.2.10
 [1.1.X]: https://github.com/wenex-org/platform-sdk/compare/1.0.56...1.1.53
 [1.0.X]: https://github.com/wenex-org/platform-sdk/releases/tag/1.0.56

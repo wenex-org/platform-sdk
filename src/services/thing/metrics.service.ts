@@ -1,17 +1,17 @@
 import type { AxiosInstance } from 'axios';
 
 import { RestfulService } from '../../common/core/classes';
-import { Wallet, WalletDto } from '../../common/interfaces/financial';
+import { Metric, MetricDto } from '../../common/interfaces/thing';
 
-export class WalletsService<Properties extends object = object> extends RestfulService<Wallet<Properties>, WalletDto<Properties>> {
+export class MetricsService<Properties extends object = object> extends RestfulService<Metric<Properties>, MetricDto<Properties>> {
   constructor(
     protected readonly axios: AxiosInstance,
     protected readonly pathPrefix: string = '/',
   ) {
-    super('financial/wallets', axios, pathPrefix);
+    super('thing/metrics', axios, pathPrefix);
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
-    return new WalletsService<Properties>(axios, prefix || '/');
+    return new MetricsService<Properties>(axios, prefix || '/');
   }
 }

@@ -9,8 +9,11 @@ export class TransactionsService<Properties extends object = object> extends Res
   Transaction<Properties>,
   TransactionDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('financial/transactions', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('financial/transactions', axios, pathPrefix);
   }
 
   async init(
@@ -36,7 +39,7 @@ export class TransactionsService<Properties extends object = object> extends Res
     return (await this.get<Data<Serializer<Transaction<Properties>, Path>>>(this.url(`${id}/verify`), config)).data;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new TransactionsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new TransactionsService<Properties>(axios, prefix || '/');
   }
 }

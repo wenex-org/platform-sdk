@@ -7,11 +7,14 @@ export class ServicesService<Properties extends object = object> extends Restful
   Service<Properties>,
   ServiceDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('career/services', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('career/services', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new ServicesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ServicesService<Properties>(axios, prefix || '/');
   }
 }

@@ -4,24 +4,24 @@ import { Data } from '../../common/core/interfaces';
 import { getParams } from '../../common/core/utils';
 import { RestfulService } from '../../common/core/classes';
 import { Filter } from '../../common/core/interfaces/mongo';
+import { Product, ProductDto } from '../../common/interfaces/career';
 import { RequestConfig, ResponseType } from '../../common/core/types';
-import { Message, MessageDto } from '../../common/interfaces/conjoint';
 import { SearchRequest, SearchResponse } from '../../common/core/interfaces/elastic';
 
-export class MessagesService<T = any, Properties extends object = object> extends RestfulService<
-  Message<T, Properties>,
-  MessageDto<T, Properties>
+export class ProductsService<Properties extends object = object> extends RestfulService<
+  Product<Properties>,
+  ProductDto<Properties>
 > {
   constructor(
     protected readonly axios: AxiosInstance,
     protected readonly pathPrefix: string = '/',
   ) {
-    super('conjoint/messages', axios, pathPrefix);
+    super('career/products', axios, pathPrefix);
   }
 
-  async search<C extends RequestConfig<Message<T, Properties>> = RequestConfig<Message<T, Properties>>>(
+  async search<C extends RequestConfig<Product<Properties>> = RequestConfig<Product<Properties>>>(
     request: SearchRequest,
-    filter: Filter<T>,
+    filter: Filter<Product<Properties>>,
     config?: C,
   ): Promise<ResponseType<Data<SearchResponse>, SearchResponse, C>> {
     const params = await getParams(config, filter);
@@ -33,7 +33,7 @@ export class MessagesService<T = any, Properties extends object = object> extend
       return (await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, { ...config, params })) as Response;
   }
 
-  static build<T = any, Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
-    return new MessagesService<T, Properties>(axios, prefix);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new ProductsService<Properties>(axios, prefix || '/');
   }
 }

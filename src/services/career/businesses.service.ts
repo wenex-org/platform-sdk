@@ -7,11 +7,14 @@ export class BusinessesService<Properties extends object = object> extends Restf
   Business<Properties>,
   BusinessDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('career/businesses', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('career/businesses', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new BusinessesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new BusinessesService<Properties>(axios, prefix || '/');
   }
 }

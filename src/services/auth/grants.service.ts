@@ -4,11 +4,14 @@ import { RestfulService } from '../../common/core/classes';
 import { Grant, GrantDto } from '../../common/interfaces/auth';
 
 export class GrantsService<Properties extends object = object> extends RestfulService<Grant<Properties>, GrantDto<Properties>> {
-  constructor(protected axios: AxiosInstance) {
-    super('auth/grants', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('auth/grants', axios, pathPrefix);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new GrantsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new GrantsService<Properties>(axios, prefix || '/');
   }
 }

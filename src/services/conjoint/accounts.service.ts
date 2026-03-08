@@ -8,15 +8,18 @@ export class AccountsService<Properties extends object = object> extends Restful
   Account<Properties>,
   AccountDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('conjoint/accounts', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('conjoint/accounts', axios, pathPrefix);
   }
 
   cred(config?: RequestConfig<Credential>): Promise<Credential> {
     return this.post<Credential, object>(this.url('cred'), {}, config);
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new AccountsService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new AccountsService<Properties>(axios, prefix || '/');
   }
 }

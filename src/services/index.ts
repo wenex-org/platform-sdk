@@ -36,3 +36,6 @@ export { Client as ConjointClient } from './conjoint';
 
 export * as Career from './career';
 export { Client as CareerClient } from './career';
+
+export * as Thing from './thing';
+export { Client as ThingClient } from './thing';

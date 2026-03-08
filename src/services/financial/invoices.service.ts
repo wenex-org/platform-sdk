@@ -9,8 +9,11 @@ export class InvoicesService<Properties extends object = object> extends Restful
   Invoice<Properties>,
   InvoiceDto<Properties>
 > {
-  constructor(protected axios: AxiosInstance) {
-    super('financial/invoices', axios);
+  constructor(
+    protected readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {
+    super('financial/invoices', axios, pathPrefix);
   }
 
   async payment<Path extends object = object>(
@@ -20,7 +23,7 @@ export class InvoicesService<Properties extends object = object> extends Restful
     return (await this.get<Data<Serializer<Transaction<Properties>, Path>>>(this.url(`${id}/payment`), config)).data;
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new InvoicesService<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new InvoicesService<Properties>(axios, prefix || '/');
   }
 }

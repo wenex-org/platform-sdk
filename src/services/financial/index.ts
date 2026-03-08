@@ -19,29 +19,32 @@ export class Client<Properties extends object = object> {
   protected _currencies?: CurrenciesService<Properties>;
   protected _transactions?: TransactionsService<Properties>;
 
-  constructor(readonly axios: AxiosInstance) {}
+  constructor(
+    readonly axios: AxiosInstance,
+    protected readonly pathPrefix: string = '/',
+  ) {}
 
   get wallets() {
-    return (this._wallets = this._wallets ?? WalletsService.build<Properties>(this.axios));
+    return (this._wallets = this._wallets ?? WalletsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get accounts() {
-    return (this._accounts = this._accounts ?? AccountsService.build<Properties>(this.axios));
+    return (this._accounts = this._accounts ?? AccountsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get invoices() {
-    return (this._invoices = this._invoices ?? InvoicesService.build<Properties>(this.axios));
+    return (this._invoices = this._invoices ?? InvoicesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get currencies() {
-    return (this._currencies = this._currencies ?? CurrenciesService.build<Properties>(this.axios));
+    return (this._currencies = this._currencies ?? CurrenciesService.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get transactions() {
-    return (this._transactions = this._transactions ?? TransactionsService.build<Properties>(this.axios));
+    return (this._transactions = this._transactions ?? TransactionsService.build<Properties>(this.axios, this.pathPrefix));
   }
 
-  static build<Properties extends object = object>(axios: AxiosInstance) {
-    return new Client<Properties>(axios);
+  static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
+    return new Client<Properties>(axios, prefix || '/');
   }
 }
