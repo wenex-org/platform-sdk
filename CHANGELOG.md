@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- fix: Remove the brotli-compress package and use Node.js zlib instead to reduce the bundle size @yonus-a
+
 ## [1.3.3] - 2026-02-27
 
 ### Fixed

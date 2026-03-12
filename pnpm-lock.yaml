@@ -11,18 +11,12 @@ importers:
       '@microsoft/fetch-event-source':
         specifier: ^2.0.1
         version: 2.0.1
-      '@piercefreeman/brotli-compress':
-        specifier: ^1.3.3
-        version: 1.3.3
       axios:
         specifier: ^1.7.9
         version: 1.7.9(debug@4.4.0)
       base-x:
         specifier: ^5.0.0
         version: 5.0.0
-      brotli-wasm:
-        specifier: ^3.0.1
-        version: 3.0.1
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -96,6 +90,9 @@ importers:
       ajv:
         specifier: ^8.17.1
         version: 8.17.1
+      brotli-wasm:
+        specifier: ^3.0.1
+        version: 3.0.1
       eslint:
         specifier: ^9.17.0
         version: 9.17.0
@@ -517,9 +514,6 @@ packages:
     resolution: {integrity: sha512-JD6DerIKdJGmRp4jQyX5FlrQjA4tjOw1cvfsPAZXfOOEErMUHjPcPSICS+6WnM0nB0efSFARh0KAZss+bvExOA==}
     engines: {node: '>=14'}
 
-  '@piercefreeman/brotli-compress@1.3.3':
-    resolution: {integrity: sha512-/CmyS8qkprSR8+r36OVWX+yqo8QFa1qkELXFCuaKLE8YWdMvQo/PKl4ep9vmZglAuSm/d/nAe59hdsT18u9RgA==}
-
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -621,9 +615,6 @@ packages:
 
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
-
-  '@types/node@17.0.45':
-    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
   '@types/node@20.19.24':
     resolution: {integrity: sha512-FE5u0ezmi6y9OZEzlJfg37mqqf6ZDSF2V/NLjUyGrR9uTZ7Sb9F7bLNZ03S4XVUNRWGA7Ck4c1kK+YnuWjl+DA==}
@@ -869,9 +860,6 @@ packages:
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
-
-  brotli-wasm@1.3.1:
-    resolution: {integrity: sha512-Vp+v3QXddvy39Ycbmvd3/Y1kUvKhwtnprzeABcKWN4jmyg6W3W5MhGPCfXBMHeSQnizgpV59iWmkSRp7ykOnDQ==}
 
   brotli-wasm@3.0.1:
     resolution: {integrity: sha512-U3K72/JAi3jITpdhZBqzSUq+DUY697tLxOuFXB+FpAE/Ug+5C3VZrv4uA674EUZHxNAuQ9wETXNqQkxZD6oL4A==}
@@ -3260,11 +3248,6 @@ snapshots:
 
   '@opentelemetry/semantic-conventions@1.37.0': {}
 
-  '@piercefreeman/brotli-compress@1.3.3':
-    dependencies:
-      '@types/node': 17.0.45
-      brotli-wasm: 1.3.1
-
   '@pkgr/core@0.1.1': {}
 
   '@sinclair/typebox@0.27.8': {}
@@ -3365,8 +3348,6 @@ snapshots:
   '@types/luxon@3.4.2': {}
 
   '@types/ms@2.1.0': {}
-
-  '@types/node@17.0.45': {}
 
   '@types/node@20.19.24':
     dependencies:
@@ -3697,8 +3678,6 @@ snapshots:
   braces@3.0.3:
     dependencies:
       fill-range: 7.1.1
-
-  brotli-wasm@1.3.1: {}
 
   brotli-wasm@3.0.1: {}
 

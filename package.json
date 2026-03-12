@@ -51,7 +51,6 @@
   },
   "dependencies": {
     "@microsoft/fetch-event-source": "^2.0.1",
-    "@piercefreeman/brotli-compress": "^1.3.3",
     "axios": "^1.7.9",
     "base-x": "^5.0.0",
     "class-transformer": "^0.5.1",
@@ -80,6 +79,7 @@
     "@types/node": "^22.10.5",
     "@types/qs": "^6.9.17",
     "ajv": "^8.17.1",
+    "brotli-wasm": "^3.0.1",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
