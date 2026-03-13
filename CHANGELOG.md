@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.4] - 2026-03-13
+
+### Added
+
+- add: `search` method to `content.posts` @vhidvz
+
+### Changed
+
+- refactor: `RestfulService` methods @vhidvz
+
 ## [1.3.3] - 2026-02-27
 
 ### Fixed
@@ -146,8 +156,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.3...HEAD
-[1.3.2]: https://github.com/wenex-org/platform-sdk/compare/1.3.2...1.3.3
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.4...HEAD
+[1.3.4]: https://github.com/wenex-org/platform-sdk/compare/1.3.3...1.3.4
+[1.3.3]: https://github.com/wenex-org/platform-sdk/compare/1.3.2...1.3.3
 [1.3.2]: https://github.com/wenex-org/platform-sdk/compare/1.3.1...1.3.2
 [1.3.1]: https://github.com/wenex-org/platform-sdk/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/wenex-org/platform-sdk/compare/1.2.10...1.3.0

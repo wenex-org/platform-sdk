@@ -26,11 +26,8 @@ export class ProductsService<Properties extends object = object> extends Restful
   ): Promise<ResponseType<Data<SearchResponse>, SearchResponse, C>> {
     const params = await getParams(config, filter);
     type Response = ResponseType<Data<SearchResponse>, SearchResponse, C>;
-    if (!config?.fullResponse) {
-      return (await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, { ...config, params }))
-        .data as Response;
-    } else
-      return (await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, { ...config, params })) as Response;
+    const response = await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, { ...config, params });
+    return (config?.fullResponse ? response : response.data) as Response;
   }
 
   static build<Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
