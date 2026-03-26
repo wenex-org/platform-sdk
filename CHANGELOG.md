@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.6] - 2026-03-26
+
+### Added
+
+- add a new core field `relations` (Mongo ID array) @vhidvz
+
 ## [1.3.5] - 2026-03-26
 
 ### Changed
@@ -162,7 +168,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.5...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.6...HEAD
+[1.3.6]: https://github.com/wenex-org/platform-sdk/compare/1.3.5...1.3.6
 [1.3.5]: https://github.com/wenex-org/platform-sdk/compare/1.3.4...1.3.5
 [1.3.4]: https://github.com/wenex-org/platform-sdk/compare/1.3.3...1.3.4
 [1.3.3]: https://github.com/wenex-org/platform-sdk/compare/1.3.2...1.3.3
