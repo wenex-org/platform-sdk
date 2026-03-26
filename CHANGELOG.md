@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.5] - 2026-03-26
+
+### Changed
+
+- release test using trusted publisher @vhidvz
+
 ## [1.3.4] - 2026-03-13
 
 ### Added
@@ -156,7 +162,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.4...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.5...HEAD
+[1.3.5]: https://github.com/wenex-org/platform-sdk/compare/1.3.4...1.3.5
 [1.3.4]: https://github.com/wenex-org/platform-sdk/compare/1.3.3...1.3.4
 [1.3.3]: https://github.com/wenex-org/platform-sdk/compare/1.3.2...1.3.3
 [1.3.2]: https://github.com/wenex-org/platform-sdk/compare/1.3.1...1.3.2
