@@ -22,8 +22,14 @@ export class PostsService<Properties extends object = object> extends RestfulSer
     config?: C,
   ): Promise<ResponseType<Data<SearchResponse>, SearchResponse, C>> {
     const params = await getParams(config, filter);
+
     type Response = ResponseType<Data<SearchResponse>, SearchResponse, C>;
-    const response = await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, { ...config, params });
+
+    const response = await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, {
+      ...config,
+      params,
+    });
+
     return (config?.fullResponse ? response : response.data) as Response;
   }
 

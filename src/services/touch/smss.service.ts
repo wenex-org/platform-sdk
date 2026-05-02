@@ -3,7 +3,7 @@ import type { AxiosInstance } from 'axios';
 import { RequestConfig } from '../../common/core/types';
 import { RestfulService } from '../../common/core/classes';
 import { Data, Serializer } from '../../common/core/interfaces';
-import { Sms, SmsDto, SmsSendDto } from '../../common/interfaces/touch';
+import { Sms, SmsDto, SmsSendDto, SmsSendTemplateDto } from '../../common/interfaces/touch';
 
 export class SmssService<T = any, Properties extends object = object> extends RestfulService<
   Sms<T, Properties>,
@@ -18,6 +18,19 @@ export class SmssService<T = any, Properties extends object = object> extends Re
 
   async send(data: SmsSendDto<T, Properties>, config?: RequestConfig<Sms<T, Properties>>): Promise<Serializer<Sms<T, Properties>>> {
     return (await this.post<Data<Serializer<Sms<T, Properties>>>, SmsSendDto<T, Properties>>(this.url('send'), data, config)).data;
+  }
+
+  async sendByTemplate(
+    data: SmsSendTemplateDto<T, Properties>,
+    config?: RequestConfig<Sms<T, Properties>>,
+  ): Promise<Serializer<Sms<T, Properties>>> {
+    return (
+      await this.post<Data<Serializer<Sms<T, Properties>>>, SmsSendTemplateDto<T, Properties>>(
+        this.url('send/template'),
+        data,
+        config,
+      )
+    ).data;
   }
 
   static build<T = any, Properties extends object = object>(axios: AxiosInstance, prefix: string = '/') {
