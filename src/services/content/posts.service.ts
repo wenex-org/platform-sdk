@@ -17,15 +17,15 @@ export class PostsService<Properties extends object = object> extends RestfulSer
   }
 
   async search<C extends RequestConfig<Post<Properties>> = RequestConfig<Post<Properties>>>(
-    request: SearchRequest,
     filter: Filter<Post<Properties>>,
+    request: SearchRequest,
     config?: C,
-  ): Promise<ResponseType<Data<SearchResponse>, SearchResponse, C>> {
+  ): Promise<ResponseType<Data<SearchResponse<Post<Properties>>>, SearchResponse<Post<Properties>>, C>> {
     const params = await getParams(config, filter);
 
-    type Response = ResponseType<Data<SearchResponse>, SearchResponse, C>;
+    type Response = ResponseType<Data<SearchResponse<Post<Properties>>>, SearchResponse<Post<Properties>>, C>;
 
-    const response = await this.post<Data<SearchResponse>, SearchRequest>(this.url('search'), request, {
+    const response = await this.post<Data<SearchResponse<Post<Properties>>>, SearchRequest>(this.url('search'), request, {
       ...config,
       params,
     });
