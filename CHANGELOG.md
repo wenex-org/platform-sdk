@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.15] - 2026-06-25
+
 ### Added
 
 - Add PushHistoriesService exposing api.touch.pushes.histories for touch/push-histories resource. @vhidvz
@@ -193,7 +195,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.12...HEAD
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.15...HEAD
+[1.3.15]: https://github.com/wenex-org/platform-sdk/compare/1.3.12...1.3.15
 [1.3.12]: https://github.com/wenex-org/platform-sdk/compare/1.3.11...1.3.12
 [1.3.11]: https://github.com/wenex-org/platform-sdk/compare/1.3.10...1.3.11
 [1.3.10]: https://github.com/wenex-org/platform-sdk/compare/1.3.9...1.3.10
