@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - education: add EducationClient + courses/enrollments services and sdk.education getter for the education domain. @fdaei
+- education: add SubmissionsService + sdk.education.submissions, and assessments/quiz-questions/grade types. @fdaei
 
 ## [1.3.15] - 2026-06-25
 
