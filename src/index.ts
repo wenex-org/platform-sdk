@@ -22,6 +22,7 @@ export class Platform<Properties extends object = object> {
   protected _conjoint?: Services.ConjointClient<Properties>;
   protected _career?: Services.CareerClient<Properties>;
   protected _thing?: Services.ThingClient<Properties>;
+  protected _education?: Services.EducationClient<Properties>;
 
   constructor(
     readonly axios: AxiosInstance,
@@ -82,6 +83,10 @@ export class Platform<Properties extends object = object> {
 
   get thing() {
     return (this._thing = this._thing ?? Services.ThingClient.build<Properties>(this.axios, this.pathPrefix));
+  }
+
+  get education() {
+    return (this._education = this._education ?? Services.EducationClient.build<Properties>(this.axios, this.pathPrefix));
   }
 
   get graphql() {

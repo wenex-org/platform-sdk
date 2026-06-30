@@ -39,3 +39,6 @@ export { Client as CareerClient } from './career';
 
 export * as Thing from './thing';
 export { Client as ThingClient } from './thing';
+
+export * as Education from './education';
+export { Client as EducationClient } from './education';
