@@ -22,12 +22,12 @@
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "prebuild": "rimraf tsconfig.tsbuildinfo index.* common services",
-    "prepare": "echo -e prepare for development by: npm run husky",
+    "prepare": "echo -e prepare for development by: pnpm run husky",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint \"{src,test}/**/*.ts\" --quiet --fix",
     "test": "jest",
     "husky": "husky",
-    "test:cov": "jest --coverage && npm run make-coverage-badge",
+    "test:cov": "jest --coverage && pnpm run make-coverage-badge",
     "doc": "npx typedoc --entryPointStrategy expand --out docs src/",
     "check": "madge --circular --warning --ts-config ./tsconfig.json --extensions ts --image circular-dependencies.png ./src",
     "make-coverage-badge": "make-coverage-badge --report-path coverage/coverage-summary.json --output-path coverage-badge.svg",
@@ -37,8 +37,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "npm run format",
-      "npm run lint"
+      "pnpm run format",
+      "pnpm run lint"
     ]
   },
   "peerDependencies": {
