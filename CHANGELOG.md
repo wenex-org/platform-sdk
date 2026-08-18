@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.16] - 2026-08-18
+
+### Added
+
+- Add `BALE` client service provider. @fdaei
+
 ## [1.3.15] - 2026-06-25
 
 ### Added
