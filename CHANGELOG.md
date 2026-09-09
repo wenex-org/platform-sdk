@@ -7,84 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.3.16] - 2026-08-18
+## [1.4.0] - 2026-09-09
+
+### Added
+
+- add `x-auth-credential` metadata key to `MetaKey`. @vhidvz
+- add optional `meta` to `Data`, `Items`, `Total` and `Result` serializer wrappers. @vhidvz
+
+## [1.3.X] - 2026-08-18
 
 ### Added
 
 - Add `BALE` client service provider. @fdaei
-
-## [1.3.15] - 2026-06-25
-
-### Added
-
 - Add PushHistoriesService exposing api.touch.pushes.histories for touch/push-histories resource. @vhidvz
-
-## [1.3.12] - 2026-05-02
-
-## [1.3.11] - 2026-05-02
-
-## [1.3.10] - 2026-05-02
-
-## [1.3.9] - 2026-05-02
-
-## [1.3.8] - 2026-05-02
-
-### Fixed
-
-- fix the order of post service
-
-## [1.3.7] - 2026-05-02
-
 - add search to posts @fdaei
 - add template sms @fdaei
-
-### Fixed
-
-## [1.3.6] - 2026-03-26
-
-### Added
-
 - add a new core field `relations` (Mongo ID array) @vhidvz
-
-## [1.3.5] - 2026-03-26
+- add: `search` method to `content.posts` @vhidvz
+- add: path prefix support @vhidvz
+- add: `general/comments` module @vhidvz
 
 ### Changed
 
 - release test using trusted publisher @vhidvz
-
-## [1.3.4] - 2026-03-13
-
-### Added
-
-- add: `search` method to `content.posts` @vhidvz
-
-### Changed
-
 - refactor: `RestfulService` methods @vhidvz
 
-## [1.3.3] - 2026-02-27
-
 ### Fixed
 
-- fix: cursor issue on prefix path @vhidvz
-
-## [1.3.2] - 2026-02-27
-
-### Fixed
-
+- fix the order of post service
 - fix: path prefix issues @vhidvz
-
-## [1.3.1] - 2026-02-27
-
-### Added
-
-- add: path prefix support @vhidvz
-
-## [1.3.0] - 2026-02-04
-
-### Added
-
-- add: `general/comments` module @vhidvz
 
 ## [1.2.X] - 2026-02-02
 
@@ -201,21 +152,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release 🎉​🎊​.
 
-[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.3.15...HEAD
-[1.3.15]: https://github.com/wenex-org/platform-sdk/compare/1.3.12...1.3.15
-[1.3.12]: https://github.com/wenex-org/platform-sdk/compare/1.3.11...1.3.12
-[1.3.11]: https://github.com/wenex-org/platform-sdk/compare/1.3.10...1.3.11
-[1.3.10]: https://github.com/wenex-org/platform-sdk/compare/1.3.9...1.3.10
-[1.3.9]: https://github.com/wenex-org/platform-sdk/compare/1.3.8...1.3.9
-[1.3.8]: https://github.com/wenex-org/platform-sdk/compare/1.3.7...1.3.8
-[1.3.7]: https://github.com/wenex-org/platform-sdk/compare/1.3.6...1.3.7
-[1.3.6]: https://github.com/wenex-org/platform-sdk/compare/1.3.5...1.3.6
-[1.3.5]: https://github.com/wenex-org/platform-sdk/compare/1.3.4...1.3.5
-[1.3.4]: https://github.com/wenex-org/platform-sdk/compare/1.3.3...1.3.4
-[1.3.3]: https://github.com/wenex-org/platform-sdk/compare/1.3.2...1.3.3
-[1.3.2]: https://github.com/wenex-org/platform-sdk/compare/1.3.1...1.3.2
-[1.3.1]: https://github.com/wenex-org/platform-sdk/compare/1.3.0...1.3.1
-[1.3.0]: https://github.com/wenex-org/platform-sdk/compare/1.2.10...1.3.0
+[unreleased]: https://github.com/wenex-org/platform-sdk/compare/1.4.0...HEAD
+[1.4.0]: https://github.com/wenex-org/platform-sdk/compare/1.3.16...1.4.0
+[1.3.X]: https://github.com/wenex-org/platform-sdk/compare/1.2.10...1.3.16
 [1.2.X]: https://github.com/wenex-org/platform-sdk/compare/1.1.53...1.2.10
 [1.1.X]: https://github.com/wenex-org/platform-sdk/compare/1.0.56...1.1.53
 [1.0.X]: https://github.com/wenex-org/platform-sdk/releases/tag/1.0.56
